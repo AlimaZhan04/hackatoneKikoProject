@@ -49,7 +49,7 @@ const HomePage = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="d-block w-100"
+            className="d-block w-100 "
             src="https://images.kikocosmetics.com/mediaObject/2022/info/makeup-services/Info_MakeupServices_HP_Carousel/webp-resolutions/res-720x600/Info_MakeupServices_HP_Carousel.webp"
           />
 
