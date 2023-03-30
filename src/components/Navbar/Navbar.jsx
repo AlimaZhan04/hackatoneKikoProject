@@ -12,8 +12,19 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import { Link } from "react-router-dom";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = [
+  {
+    name: "About Us",
+    link: "/aboutus",
+    id: 1,
+  },
+  { name: "Best Sellers", link: "/", id: 2 },
+  { name: "Offers", link: "/offers", id: 3 },
+  { name: "About Us", link: "/aboutus", id: 4 },
+  { name: "Accessories", link: "/accessories", id: 5 },
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
@@ -87,10 +98,16 @@ function Navbar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
+              {pages.map((page, index) => (
+                <Link
+                  key={index}
+                  to={page.link}
+                  style={{ textDecoration: "none" }}
+                >
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page.name}</Typography>
+                  </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
@@ -110,18 +127,21 @@ function Navbar() {
               color: "inherit",
               textDecoration: "none",
             }}
-          >
-            LOGO
-          </Typography>
+          ></Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+            {pages.map((page, index) => (
+              <Link
+                key={index}
+                to={page.link}
+                style={{ textDecoration: "none" }}
               >
-                {page}
-              </Button>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page.name}
+                </Button>
+              </Link>
             ))}
           </Box>
 
