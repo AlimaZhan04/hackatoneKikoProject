@@ -1,6 +1,6 @@
 import React from "react";
 
-const Contacts = () => {
+const ContactUs = () => {
   return (
     <center>
       <h6>Kiko Milano - PARMA - Via Cavour 6</h6>
@@ -19,4 +19,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default ContactUs;
