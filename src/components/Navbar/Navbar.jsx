@@ -47,10 +47,14 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar
+      position="static"
+      sx={{
+        backgroundColor: "black",
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -66,7 +70,17 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            <a href="/">
+              <img
+                width={100}
+                src="https://static.kikocosmetics.com/docroot/dist/images/kiko-logo-text.svg"
+                alt=""
+                style={{
+                  display: "block",
+                  maxWidth: "100%",
+                }}
+              />
+            </a>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
