@@ -33,10 +33,7 @@ let cosmetics = [
     id: 3,
   },
 ];
-const HomePage = ({ cosmetics, getCosmetics }) => {
-  useEffect(() => {
-    getCosmetics();
-  }, []);
+const HomePage = () => {
   return (
     <div className="">
       <Carousel>
