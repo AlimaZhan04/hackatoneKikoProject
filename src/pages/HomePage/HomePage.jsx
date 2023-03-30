@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Carousel } from "react-bootstrap";
-import CardBlock from "../CardBlock/CardBlock";
+import CardBlock from "../../components/Product/ProductCard";
 
 let cosmetics = [
   {
@@ -33,7 +33,7 @@ let cosmetics = [
     id: 3,
   },
 ];
-const Home = ({ cosmetics, getCosmetics }) => {
+const HomePage = ({ cosmetics, getCosmetics }) => {
   useEffect(() => {
     getCosmetics();
   }, []);
@@ -151,4 +151,4 @@ const Home = ({ cosmetics, getCosmetics }) => {
   );
 };
 
-export default Home;
+export default HomePage;
