@@ -15,11 +15,15 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 
 const pages = [
-  { name: "About Us", link: "/aboutus", id: 1 },
-  { name: "Contact Us", link: "/contacts", id: 2 },
-  { name: "Offers", link: "/contacts", id: 3 },
-  { name: "Best Sellers", link: "/contacts", id: 4 },
-  { name: "Accessories", link: "/contacts", id: 5 },
+  {
+    name: "About Us",
+    link: "/aboutus",
+    id: 1,
+  },
+  { name: "Best Sellers", link: "/", id: 2 },
+  { name: "Offers", link: "/offers", id: 3 },
+  { name: "About Us", link: "/aboutus", id: 4 },
+  { name: "Accessories", link: "/accessories", id: 5 },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -114,7 +118,7 @@ function Navbar() {
                   to={page.link}
                   style={{ textDecoration: "none" }}
                 >
-                  <MenuItem onClick={handleCloseNavMenu}>
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{page.name}</Typography>
                   </MenuItem>
                 </Link>
