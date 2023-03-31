@@ -73,7 +73,6 @@ const HomePage = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      KIKO MILANO
       <center>
         <h1>KIKO COSMETICS</h1>
         <div className="d-flex justify-content-between container mt-5 flex-wrap">

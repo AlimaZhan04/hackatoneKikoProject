@@ -22,10 +22,7 @@ function Copyright(props) {
       {...props}
     >
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
+      <Link color="inherit">Your Website</Link> {new Date().getFullYear()}
       {"."}
     </Typography>
   );
@@ -149,7 +146,6 @@ export default function Auth() {
               <Grid item>
                 {hasAccount ? (
                   <Link
-                    href="#"
                     variant="body2"
                     onClick={() => setHasAccount(!hasAccount)}
                   >
@@ -157,7 +153,6 @@ export default function Auth() {
                   </Link>
                 ) : (
                   <Link
-                    href="#"
                     variant="body2"
                     onClick={() => setHasAccount(!hasAccount)}
                   >
