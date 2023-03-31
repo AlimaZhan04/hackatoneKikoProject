@@ -50,6 +50,9 @@ const HomePage = () => {
           {cosmetics.map((item) => (
             <CardBlock key={item.id} item={item} />
           ))}
+          <div>
+            <ProductList />
+          </div>
         </div>
         <div>
           <ProductList />

@@ -10,8 +10,8 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContextProvider";
 
 export default function ProductCard({ item }) {
-  const navigate = useNavigate();
   const { deleteCosmetics } = useProducts();
+  const navigate = useNavigate();
   const {
     user: { email },
   } = useAuth();
@@ -46,6 +46,14 @@ export default function ProductCard({ item }) {
           </Typography>
         </CardContent>
       </CardActionArea>
+
+      <Button
+        onClick={() => navigate(`/edit/${item.id}`)}
+        size="small"
+        color="primary"
+      >
+        edit
+      </Button>
       {email === ADMIN ? (
         <>
           <Button size="small" color="primary">
@@ -61,7 +69,6 @@ export default function ProductCard({ item }) {
           </Button>
         </>
       ) : null}
-      <CardActions></CardActions>
     </Card>
   );
 }

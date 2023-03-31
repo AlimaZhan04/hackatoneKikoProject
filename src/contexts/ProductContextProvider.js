@@ -1,4 +1,5 @@
 import axios from "axios";
+import { async } from "q";
 import React, { createContext, useContext, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { API } from "../helpers/consts";
@@ -10,12 +11,16 @@ export const useProducts = () => {
 
 const INIT_STATE = {
   cosmetics: [],
+  cosmeticsDetails: {},
 };
 
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case "GET_COSMETICS":
       return { ...state, cosmetics: action.payload };
+
+    case "GET_PRODUCT_DETAILS":
+      return { ...state, cosmeticsDetails: action.payload };
 
     default:
       return state;
@@ -45,11 +50,24 @@ const ProductContextProvider = ({ children }) => {
     getCosmetics();
   };
 
+  //! get product details
+
+  const getCosmeticsDetails = async (id) => {
+    const { data } = await axios.get(`${API}/${id}`);
+    dispatch({ type: "GET_PRODUCT_DETAILS", payload: data });
+  };
+
+  const saveEditedCosmetics = async (editedCosmetics) => {
+    await axios.patch(`${API}/${editedCosmetics.id}`, editedCosmetics);
+  };
   const values = {
     getCosmetics,
     addCosmetics,
     deleteCosmetics,
     cosmetics: state.cosmetics,
+    getCosmeticsDetails,
+    cosmeticsDetails: state.cosmeticsDetails,
+    saveEditedCosmetics,
   };
 
   return (
