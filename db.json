@@ -1,60 +1,11 @@
 {
   "cosmetics": [
     {
-      "image": "https://i.pinimg.com/474x/0e/d5/66/0ed566b7ba5ed0e142d5a550c09949ab.jpg",
-      "title": "lipstick",
-      "description": "Universal lipstick with a customised shade of pink and a subtle radiant effect. Ideal for: enhancing the natural colour of your lips with a natural and tailored finish that will make your smile pop. Suited to all skin tones.",
-      "price": 234,
-      "id": 1
-    },
-    {
       "title": "Lipstick",
       "description": "Universal lipstick with a customised shade of pink and a subtle radiant effect. Ideal for: enhancing the natural colour of your lips with a natural and tailored finish that will make your smile pop. Suited to all skin tones",
       "price": 3445,
       "image": "https://i.pinimg.com/736x/bb/3e/93/bb3e93da03b4b01718e6e59ddfac3350.jpg",
       "id": 2
-    },
-    {
-      "title": "",
-      "price": "",
-      "description": "",
-      "image": "",
-      "id": 3
-    },
-    {
-      "title": "",
-      "price": "",
-      "description": "",
-      "image": "",
-      "id": 4
-    },
-    {
-      "title": "ghjk",
-      "price": "ghjk",
-      "description": "hgjk",
-      "image": "bhnjm",
-      "id": 5
-    },
-    {
-      "title": "Unlimited Foundation",
-      "price": "345",
-      "description": "ts exclusive buildable texture allows for both wet and dry use - it’s ideal for quick on-the-go touch-ups thanks to the handy integrated mirror and applicator sponge - it has a pleasant coconut scent",
-      "image": "https://i.pinimg.com/474x/a6/7d/a4/a67da40c5d56013a4e4b7a0771edbd80.jpg",
-      "id": 6
-    },
-    {
-      "title": "fghjk",
-      "price": "567890",
-      "description": "fghjk",
-      "image": "https://i.pinimg.com/474x/14/89/7d/14897db18bc8e6faf4c0d452ba71844f.jpg",
-      "id": 7
-    },
-    {
-      "title": "uio",
-      "price": "jkl",
-      "description": "ghjk",
-      "image": "uio",
-      "id": 8
     }
   ]
 }

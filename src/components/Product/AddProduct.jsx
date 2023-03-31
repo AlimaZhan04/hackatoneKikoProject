@@ -3,32 +3,35 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
+import { useProducts } from "../../contexts/ProductContextProvider";
 
 const AddProduct = () => {
   const navigate = useNavigate();
-  const [product, setproduct] = useState({
+  const [cosmetics, setCosmetics] = useState({
     name: "",
     description: "",
     price: "",
     image: "",
     type: "",
   });
+
+  const { addCosmetics } = useProducts();
   const handleInp = (e) => {
     if (e.target.name == "price") {
       let obj = {
-        ...product,
+        ...cosmetics,
         [e.target.name]: Number(e.target.value),
       };
-      setproduct(obj);
+      setCosmetics(obj);
     } else {
       let obj = {
-        ...product,
+        ...cosmetics,
         [e.target.name]: e.target.value,
       };
-      setproduct(obj);
+      setCosmetics(obj);
     }
   };
-  console.log(product);
+  console.log(cosmetics);
   return (
     <Box
       sx={{
@@ -90,6 +93,7 @@ const AddProduct = () => {
         onChange={handleInp}
       />
       <Button
+        onClick={() => addCosmetics(cosmetics)}
         variant="contained"
         size="large"
         sx={{

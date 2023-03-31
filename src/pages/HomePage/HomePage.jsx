@@ -50,7 +50,7 @@ const HomePage = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 "
-            src="https://images.kikocosmetics.com/mediaObject/2022/info/makeup-services/Info_MakeupServices_HP_Carousel/webp-resolutions/res-720x600/Info_MakeupServices_HP_Carousel.webp"
+            src="https://images.kikocosmetics.com/mediaObject/2023/launches/welcome-flawless/Launch_WelcomeFlawless_Landing_Header-Desktop/webp-resolutions/res-1920x600/Launch_WelcomeFlawless_Landing_Header-Desktop.webp"
           />
 
           <Carousel.Caption>
@@ -61,7 +61,7 @@ const HomePage = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://images.kikocosmetics.com/mediaObject/2022/launches/eyes-just-wanna-have-fun/Launch_EyesJustWannaHaveFun_HP_Carousel/webp-resolutions/res-720x600/Launch_EyesJustWannaHaveFun_HP_Carousel.webp"
+            src="https://images.kikocosmetics.com/mediaObject/2023/launches/reshape-your-lips/Launch_ReshapeYourLips_HP-Desktop/webp-resolutions/res-1920x600/Launch_ReshapeYourLips_HP-Desktop.webp"
             alt="Third slide"
           />
 
