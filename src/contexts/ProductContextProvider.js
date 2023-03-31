@@ -17,7 +17,7 @@ const reducer = (state = INIT_STATE, action) => {
       return { ...state, cosmetics: action.payload };
 
     default:
-      break;
+      return state;
   }
 };
 const ProductContextProvider = ({ children }) => {
@@ -43,7 +43,12 @@ const ProductContextProvider = ({ children }) => {
     getCosmetics();
   };
 
-  const values = { getCosmetics, addCosmetics, deleteCosmetics };
+  const values = {
+    getCosmetics,
+    addCosmetics,
+    deleteCosmetics,
+    cosmetics: state.cosmetics,
+  };
 
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>
