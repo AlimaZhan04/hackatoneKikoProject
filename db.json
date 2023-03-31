@@ -1,11 +1,12 @@
 {
   "cosmetics": [
     {
-      "title": "Lipstick",
-      "description": "Universal lipstick with a customised shade of pink and a subtle radiant effect. Ideal for: enhancing the natural colour of your lips with a natural and tailored finish that will make your smile pop. Suited to all skin tones",
-      "price": 3445,
-      "image": "https://i.pinimg.com/736x/bb/3e/93/bb3e93da03b4b01718e6e59ddfac3350.jpg",
-      "id": 2
+      "name": "gdhf",
+      "description": "ghfgj",
+      "price": 4656,
+      "image": "fhgh",
+      "type": "fg",
+      "id": 1
     }
   ]
 }
