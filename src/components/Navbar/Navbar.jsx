@@ -64,7 +64,6 @@ function Navbar() {
             variant="h6"
             noWrap
             component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -75,7 +74,7 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            <a href="/">
+            <Link to="/">
               <img
                 width={100}
                 src="https://static.kikocosmetics.com/docroot/dist/images/kiko-logo-text.svg"
@@ -85,7 +84,7 @@ function Navbar() {
                   maxWidth: "100%",
                 }}
               />
-            </a>
+            </Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -135,7 +134,6 @@ function Navbar() {
             variant="h5"
             noWrap
             component="a"
-            href=""
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },

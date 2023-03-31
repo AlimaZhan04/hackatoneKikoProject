@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { createContext, useContext, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 import { API } from "../helpers/consts";
 
 export const productContext = createContext();
@@ -23,6 +24,7 @@ const reducer = (state = INIT_STATE, action) => {
 const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
+  const navigate = useNavigate();
   //! read (get request)
 
   const getCosmetics = async () => {
