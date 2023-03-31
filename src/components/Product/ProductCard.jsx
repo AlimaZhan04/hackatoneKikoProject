@@ -1,19 +1,48 @@
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { Button, CardActionArea, CardActions } from "@mui/material";
+import { useProducts } from "../../contexts/ProductContextProvider";
 
-function BasicExample(props) {
+export default function ProductCard({ item }) {
+  const { deleteCosmetics } = useProducts();
   return (
-    <Card style={{ width: "18rem", margin: "10px 5px" }}>
-      <Card.Img variant="top" src={props.item.image} />
-      <Card.Body>
-        <Card.Title>{props.item.title}</Card.Title>
-        <Card.Text>{props.item.description}</Card.Text>
-        <Card.Text>{props.item.price}</Card.Text>
-        <Button variant="primary">buy</Button>
-        <Button>delete</Button>
-      </Card.Body>
+    <Card sx={{ maxWidth: 255 }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="260"
+          image={item.image}
+          alt="green iguana"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {item.name}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {item.description}
+          </Typography>
+
+          <Typography variant="body2" color="text.secondary">
+            {item.price} $
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          edit
+        </Button>
+
+        <Button
+          onClick={() => deleteCosmetics(item.id)}
+          size="small"
+          color="primary"
+        >
+          delete
+        </Button>
+      </CardActions>
     </Card>
   );
 }
-
-export default BasicExample;
