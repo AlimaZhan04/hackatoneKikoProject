@@ -1,0 +1,8 @@
+.HMcard_with {
+  width: 300px;
+}
+.HM_flex {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10px;
+}

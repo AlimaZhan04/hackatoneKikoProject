@@ -1,38 +1,10 @@
 import React, { useEffect } from "react";
 import { Carousel } from "react-bootstrap";
 import CardBlock from "../../components/Product/ProductCard";
+import HMcard from "../../components/Product/ProductList/HMcard";
+import ProductList from "../../components/Product/ProductList/ProductList";
 
-let cosmetics = [
-  {
-    image:
-      "https://i.pinimg.com/474x/0e/d5/66/0ed566b7ba5ed0e142d5a550c09949ab.jpg",
-    title: "lipstick",
-    description:
-      "Universal lipstick with a customised shade of pink and a subtle radiant effect. Ideal for: enhancing the natural colour of your lips with a natural and tailored finish that will make your smile pop. Suited to all skin tones.",
-    price: 234,
-    id: 1,
-  },
-
-  {
-    title: "Lipstick",
-    description:
-      ' "Universal lipstick with a customised shade of pink and a subtle radiant effect. Ideal for: enhancing the natural colour of your lips with a natural and tailored finish that will make your smile pop. Suited to all skin tones',
-    price: 3445,
-    image:
-      "https://i.pinimg.com/736x/bb/3e/93/bb3e93da03b4b01718e6e59ddfac3350.jpg",
-    id: 2,
-  },
-
-  {
-    title: "Blush",
-    image:
-      "https://images.kikocosmetics.com/mediaObject/2023/launches/reshape-your-lips/Launch_ReshapeYourLips_HP-Desktop/webp-resolutions/res-1920x600/Launch_ReshapeYourLips_HP-Desktop.webp",
-    description:
-      "Gel blush with a luminous and pearly finish. Dermatologically tested, non-comedogenic. The complexion is enveloped in a silky veil of dewy colour that leaves the skin feeling wonderfully fresh. The cheekbones are enhanced by an eye-catching sculpted effect.",
-    price: 123,
-    id: 3,
-  },
-];
+let cosmetics = [];
 const HomePage = () => {
   return (
     <div className="">
@@ -79,6 +51,10 @@ const HomePage = () => {
           {cosmetics.map((item) => (
             <CardBlock key={item.id} item={item} />
           ))}
+        </div>
+        <div>
+          <ProductList />
+          <HMcard />
         </div>
       </center>
       <div>
