@@ -93,7 +93,10 @@ const AddProduct = () => {
         onChange={handleInp}
       />
       <Button
-        onClick={() => addCosmetics(cosmetics)}
+        onClick={() => {
+          addCosmetics(cosmetics);
+          navigate("/");
+        }}
         variant="contained"
         size="large"
         sx={{
@@ -104,10 +107,6 @@ const AddProduct = () => {
       >
         ADD PRODUCT
       </Button>
-      <img
-        src="https://images.kikocosmetics.com/sys-master/images/h1f/h94/9359085764638/KS0200106900044secondario_304Wx304H.webp#k-bundle-secondary"
-        alt=""
-      />
     </Box>
   );
 };

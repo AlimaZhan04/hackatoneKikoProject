@@ -13,9 +13,9 @@ const ProductList = () => {
   }, []);
   return (
     <Box>
-      {cosmetics.map((item) => {
-        <ProductCard item={item} key={item.id} />;
-      })}
+      {cosmetics.map((item) => (
+        <ProductCard item={item} key={item.id} />
+      ))}
     </Box>
   );
 };
