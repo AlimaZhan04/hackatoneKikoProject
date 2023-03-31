@@ -12,22 +12,27 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Badge } from "@mui/material";
+import { ADMIN } from "../../helpers/consts";
+import { useAuth } from "../../contexts/AuthContextProvider";
 
 const pages = [
-  {
-    name: "About Us",
-    link: "/aboutus",
-    id: 1,
-  },
+  { name: "About Us", link: "/aboutus", id: 1 },
   { name: "Best Sellers", link: "/", id: 2 },
   { name: "Offers", link: "/offers", id: 3 },
   { name: "About Us", link: "/aboutus", id: 4 },
   { name: "Accessories", link: "/accessories", id: 5 },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
+  const {
+    handleLogOut,
+    user: { email },
+  } = useAuth();
+
+  const navigate = useNavigate();
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -159,35 +164,32 @@ function Navbar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
+          {email === ADMIN ? (
+            <Button
+              onClick={() => navigate("/admin")}
+              sx={{ my: 2, display: "block" }}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+              <Typography id="pages_link">Admin Page</Typography>
+            </Button>
+          ) : null}
+
+          {email ? (
+            <Button onClick={handleLogOut} sx={{ my: 2, display: "block" }}>
+              <Typography id="pages_link">Log Out</Typography>
+            </Button>
+          ) : (
+            <Button
+              onClick={() => navigate("/auth")}
+              sx={{ my: 2, display: "block" }}
+            >
+              <Typography id="pages_link">Log In</Typography>
+            </Button>
+          )}
+          {/* <IconButton onClick={() => navigate("/cart")}>
+            <Badge badgeContent={count} color="primary">
+              <ShoppingCartIcon />
+            </Badge>
+          </IconButton> */}
         </Toolbar>
       </Container>
     </AppBar>
