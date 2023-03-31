@@ -5,11 +5,27 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useProducts } from "../../contexts/ProductContextProvider";
+import { ADMIN } from "../../helpers/consts";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContextProvider";
 
 export default function ProductCard({ item }) {
+  const navigate = useNavigate();
   const { deleteCosmetics } = useProducts();
+  const {
+    user: { email },
+  } = useAuth();
   return (
-    <Card sx={{ maxWidth: 255 }}>
+    <Card
+      sx={{
+        maxWidth: 225,
+        display: "flex",
+        flexDirection: "column",
+        margin: "1rem",
+        flexWrap: "wrap",
+        justifyContent: "space-between",
+      }}
+    >
       <CardActionArea>
         <CardMedia
           component="img"
@@ -30,19 +46,22 @@ export default function ProductCard({ item }) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          edit
-        </Button>
+      {email === ADMIN ? (
+        <>
+          <Button size="small" color="primary">
+            edit
+          </Button>
 
-        <Button
-          onClick={() => deleteCosmetics(item.id)}
-          size="small"
-          color="primary"
-        >
-          delete
-        </Button>
-      </CardActions>
+          <Button
+            onClick={() => deleteCosmetics(item.id)}
+            size="small"
+            color="primary"
+          >
+            delete
+          </Button>
+        </>
+      ) : null}
+      <CardActions></CardActions>
     </Card>
   );
 }
