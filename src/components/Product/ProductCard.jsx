@@ -5,9 +5,11 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useProducts } from "../../contexts/ProductContextProvider";
+import { useNavigate } from "react-router";
 
 export default function ProductCard({ item }) {
   const { deleteCosmetics } = useProducts();
+  const navigate = useNavigate();
   return (
     <Card sx={{ maxWidth: 255 }}>
       <CardActionArea>
@@ -31,7 +33,11 @@ export default function ProductCard({ item }) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button
+          onClick={() => navigate(`/edit/${item.id}`)}
+          size="small"
+          color="primary"
+        >
           edit
         </Button>
 

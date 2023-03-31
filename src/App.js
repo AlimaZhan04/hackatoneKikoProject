@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
+import ProductList from "./components/Product/ProductList/ProductList";
 import AuthContextProvider from "./contexts/AuthContextProvider";
 import ProductContextProvider from "./contexts/ProductContextProvider";
 import MainRoutes from "./routes/MainRoutes";

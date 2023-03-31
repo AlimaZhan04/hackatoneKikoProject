@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+}
+
+.wrapper-right-side {
+  margin: 7%;
+}
+
+.icons-with-parg {
+  display: flex;
+}
+
+.black-btn {
+  background-color: black;
+  color: white;
+  width: 40%;
+  height: 30%;
+  border: none;
+  border-radius: 100vmax;
+}
+
+.pink-btn {
+  color: white;
+  width: 40%;
+  height: 30%;
+  border: none;
+  border-radius: 100vmax;
+  background-color: #d11a6f;
+  margin-top: 1%;
+}
+
+.btn-div {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
