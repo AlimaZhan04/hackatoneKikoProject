@@ -1,3 +1,16 @@
 {
+<<<<<<< HEAD
   "cosmetics": []
+=======
+  "cosmetics": [
+    {
+      "name": "gdhf",
+      "description": "ghfgj",
+      "price": 4656,
+      "image": "fhgh",
+      "type": "fg",
+      "id": 1
+    }
+  ]
+>>>>>>> 6427e355b4e0722da3a2b06e1eaaa0f90e4c6fab
 }
