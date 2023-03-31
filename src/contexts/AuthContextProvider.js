@@ -43,7 +43,6 @@ const AuthContextProvider = ({ children }) => {
   };
 
   const handleLogIn = () => {
-    clearErrors();
     fire
       .auth()
       .signInWithEmailAndPassword(email, password)
@@ -60,6 +59,7 @@ const AuthContextProvider = ({ children }) => {
             break;
         }
       });
+    clearErrors();
   };
   const handleLogOut = () => {
     fire.auth().signOut();
@@ -68,8 +68,8 @@ const AuthContextProvider = ({ children }) => {
   const authListener = () => {
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
-        clearInputs();
         setUser(user);
+        clearInputs();
       } else {
         setUser("");
       }

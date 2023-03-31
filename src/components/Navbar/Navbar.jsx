@@ -18,11 +18,11 @@ import { ADMIN } from "../../helpers/consts";
 import { useAuth } from "../../contexts/AuthContextProvider";
 
 const pages = [
-  { name: "About Us", link: "/aboutus", id: 1 },
   { name: "Best Sellers", link: "/", id: 2 },
   { name: "Offers", link: "/offers", id: 3 },
-  { name: "About Us", link: "/aboutus", id: 4 },
   { name: "Accessories", link: "/accessories", id: 5 },
+  { name: "About Us", link: "/aboutus", id: 1 },
+  { name: "Contact Us", link: "/contacts", id: 4 },
 ];
 
 function Navbar() {
@@ -74,17 +74,18 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            <Link to="/">
-              <img
-                width={100}
-                src="https://static.kikocosmetics.com/docroot/dist/images/kiko-logo-text.svg"
-                alt=""
-                style={{
-                  display: "block",
-                  maxWidth: "100%",
-                }}
-              />
-            </Link>
+            <img
+              onClick={() => {
+                navigate("/");
+              }}
+              width={100}
+              src="https://static.kikocosmetics.com/docroot/dist/images/kiko-logo-text.svg"
+              alt="Hello"
+              style={{
+                display: "block",
+                maxWidth: "100%",
+              }}
+            />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import { Carousel } from "react-bootstrap";
 import CardBlock from "../../components/Product/ProductCard";
+
 import HMcard from "../../components/Product/ProductList/HMcard";
+
+
 import ProductList from "../../components/Product/ProductList/ProductList";
 
 let cosmetics = [];
@@ -51,6 +54,12 @@ const HomePage = () => {
           {cosmetics.map((item) => (
             <CardBlock key={item.id} item={item} />
           ))}
+          <div>
+            <ProductList />
+          </div>
+        </div>
+        <div>
+          <ProductList />
         </div>
         <div>
           <ProductList />

@@ -1,3 +1,15 @@
 {
-  "cosmetics": []
+
+
+  "cosmetics": [
+    {
+      "name": "gdhf",
+      "description": "ghfgj",
+      "price": 4656,
+      "image": "fhgh",
+      "type": "fg",
+      "id": 1
+    }
+  ]
 }
+
