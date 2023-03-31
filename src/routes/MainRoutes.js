@@ -9,6 +9,7 @@ import HomePage from "../pages/HomePage/HomePage";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import ProductPage from "../pages/ProductsPage/ProductPage";
 import Accessories from "../pages/Accessories/Accessories";
+import AuthPage from "../pages/AuthPage/AuthPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -21,8 +22,9 @@ const MainRoutes = () => {
     { link: "/aboutus", element: <AboutUs />, id: 7 },
     { link: "/offers", element: <Offers />, id: 8 },
     { link: "/accessories", element: <Accessories />, id: 8 },
+    { link: "/auth", element: <AuthPage />, id: 8 },
   ];
-  const PRIVATE_ROUTES = [];
+  // const PRIVATE_ROUTES = [];
   return (
     <>
       <Routes>

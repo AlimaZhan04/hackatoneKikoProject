@@ -26,7 +26,7 @@ let cosmetics = [
   {
     title: "Blush",
     image:
-      "https://i.pinimg.com/474x/91/c0/f4/91c0f4888dcd3aa242b27654436291d3.jpg",
+      "https://images.kikocosmetics.com/mediaObject/2023/launches/reshape-your-lips/Launch_ReshapeYourLips_HP-Desktop/webp-resolutions/res-1920x600/Launch_ReshapeYourLips_HP-Desktop.webp",
     description:
       "Gel blush with a luminous and pearly finish. Dermatologically tested, non-comedogenic. The complexion is enveloped in a silky veil of dewy colour that leaves the skin feeling wonderfully fresh. The cheekbones are enhanced by an eye-catching sculpted effect.",
     price: 123,
