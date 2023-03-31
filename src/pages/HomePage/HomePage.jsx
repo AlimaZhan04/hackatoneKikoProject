@@ -54,6 +54,9 @@ const HomePage = () => {
             <ProductList />
           </div>
         </div>
+        <div>
+          <ProductList />
+        </div>
       </center>
       <div>
         <center>

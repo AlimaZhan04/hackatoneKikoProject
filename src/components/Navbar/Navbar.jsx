@@ -74,17 +74,18 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            <Link to="/">
-              <img
-                width={100}
-                src="https://static.kikocosmetics.com/docroot/dist/images/kiko-logo-text.svg"
-                alt=""
-                style={{
-                  display: "block",
-                  maxWidth: "100%",
-                }}
-              />
-            </Link>
+            <img
+              onClick={() => {
+                navigate("/");
+              }}
+              width={100}
+              src="https://static.kikocosmetics.com/docroot/dist/images/kiko-logo-text.svg"
+              alt="Hello"
+              style={{
+                display: "block",
+                maxWidth: "100%",
+              }}
+            />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

@@ -22,24 +22,24 @@ const ContactUs = () => {
             <p>+39 0521 285315</p>
           </div>
 
-          <div className="">
+          <div className="icons-with-parg">
             <WatchLaterIcon />
             <p>
               <strong>FRI:</strong>09:30-19:30
             </p>
-            <div className="btn-div">
-              <button className="black-btn">Info and promotions</button>
-              <button className="pink-btn">Take me here</button>
-            </div>
+          </div>
+          <div className="btn-div">
+            <button className="black-btn">Info and promotions</button>
+            <button className="pink-btn">Take me here</button>
+          </div>
 
-            <div>
-              <img
-                width={450}
-                height={350}
-                src="https://kiko-stores.kikocosmetics.com/upload/store/big/add/kiko882/0.jpg"
-                alt=""
-              />
-            </div>
+          <div>
+            <img
+              width={450}
+              height={350}
+              src="https://kiko-stores.kikocosmetics.com/upload/store/big/add/kiko882/0.jpg"
+              alt=""
+            />
           </div>
         </Box>
 
