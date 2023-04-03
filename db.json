@@ -1,26 +1,44 @@
 {
   "cosmetics": [
     {
-
-      "name": "gdhf",
-      "description": "ghfgj",
-      "price": 4656,
-      "image": "fhgh",
-      "type": "fg",
+      "name": "powder",
+      "description": "strawberry",
+      "price": 65,
+      "image": "https://images.kikocosmetics.com/sys-master/images/h02/h67/9206202728478/KM0010300500133principale_608Wx608H.jpg",
+      "type": "decoration",
       "id": 1
     },
-
-   
-  ]
-}
-
+    {
+      "name": "lipstick",
+      "description": "balsam",
+      "price": 25,
+      "image": "https://theo.lv/wp-content/uploads/2021/09/02-34.jpg",
+      "type": "decoration",
+      "id": 4
+    },
+    {
       "name": "lipstick",
       "description": "bkjjlk",
       "price": 890,
       "image": "https://i.pinimg.com/474x/51/52/b2/5152b26afefd432f506a9cbdcef8a0b1.jpg",
       "type": "decorative",
       "id": 2
+    },
+    {
+      "name": "Smart Urban Shield Face Base",
+      "description": "fg",
+      "price": 456,
+      "image": "https://images.kikocosmetics.com/sys-master/images/he9/h94/10358335406110/KS180301047001Aprincipale_900Wx900H#k-zoom",
+      "type": "vgbhj",
+      "id": 5
+    },
+    {
+      "name": "Lasting Precision Automatic Eyeliner",
+      "description": "Automatic eye pencil ",
+      "price": 17,
+      "image": "https://images.kikocosmetics.com/sys-master/images/hcf/h9a/9395581943838/KM0030302500533principale_900Wx900H.jpg#k-zoom",
+      "type": "decoration",
+      "id": 6
     }
   ]
 }
-

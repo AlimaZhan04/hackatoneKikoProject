@@ -55,7 +55,7 @@ export default function Cart() {
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                <img src={row.item.picture} width="100" height="100" alt="" />
+                <img src={row.item.image} width="100" height="100" alt="" />
               </TableCell>
               <TableCell align="right">{row.item.name}</TableCell>
               <TableCell align="right">{row.item.type}</TableCell>
