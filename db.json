@@ -1,15 +1,20 @@
 {
-
-
   "cosmetics": [
     {
-      "name": "gdhf",
-      "description": "ghfgj",
-      "price": 4656,
-      "image": "fhgh",
-      "type": "fg",
+      "name": "powder",
+      "description": "aaa",
+      "price": 50,
+      "image": "https://images.kikocosmetics.com/sys-master/images/h02/h67/9206202728478/KM0010300500133principale_608Wx608H.jpg",
+      "type": "decoration",
       "id": 1
+    },
+    {
+      "name": "lipstick",
+      "description": "balsam",
+      "price": 25,
+      "image": "https://theo.lv/wp-content/uploads/2021/09/02-34.jpg",
+      "type": "decoration",
+      "id": 4
     }
   ]
 }
-
