@@ -21,11 +21,12 @@ import { getCountProductsInCart } from "../../helpers/functions";
 import { useCart } from "../../contexts/CartContextProvider";
 
 const pages = [
-  { name: "Best Sellers", link: "/", id: 2 },
+  { name: "Best Sellers", link: "/best", id: 2 },
   { name: "Offers", link: "/offers", id: 3 },
   { name: "Accessories", link: "/accessories", id: 5 },
   { name: "About Us", link: "/aboutus", id: 1 },
   { name: "Contact Us", link: "/contacts", id: 4 },
+  { name: "", link: "/*", id: 6 },
 ];
 
 function Navbar() {

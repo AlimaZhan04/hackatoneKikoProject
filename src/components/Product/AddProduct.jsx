@@ -31,7 +31,7 @@ const AddProduct = () => {
       setCosmetics(obj);
     }
   };
-  console.log(cosmetics);
+  // console.log(cosmetics);
   return (
     <Box
       sx={{

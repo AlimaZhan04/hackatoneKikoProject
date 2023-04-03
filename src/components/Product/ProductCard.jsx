@@ -59,6 +59,7 @@ export default function ProductCard({ item }) {
         </CardContent>
       </CardActionArea>
 
+
       <Button
         onClick={() => navigate(`/edit/${item.id}`)}
         size="small"
@@ -71,9 +72,14 @@ export default function ProductCard({ item }) {
         <LocalMallIcon color={checkProductInCart(item.id) ? "primary" : ""} />
       </IconButton> */}
 
+
       {email === ADMIN ? (
         <>
-          <Button size="small" color="primary">
+          <Button
+            onClick={() => navigate(`/edit/${item.id}`)}
+            size="small"
+            color="primary"
+          >
             edit
           </Button>
 
