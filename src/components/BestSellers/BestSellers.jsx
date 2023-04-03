@@ -3,9 +3,9 @@ import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import ProductCard from "../../components/Product/ProductCard";
 import { useProducts } from "../../contexts/ProductContextProvider";
-import "./accessories.css";
+import "./bestSellers.css";
 
-const Accessories = () => {
+const BestSellers = () => {
   const { getCosmetics, cosmetics } = useProducts();
   const [searchParams] = useSearchParams();
   useEffect(() => {
@@ -104,5 +104,4 @@ const Accessories = () => {
     </div>
   );
 };
-
-export default Accessories;
+export default BestSellers;

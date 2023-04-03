@@ -16,13 +16,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { Badge } from "@mui/material";
 import { ADMIN } from "../../helpers/consts";
 import { useAuth } from "../../contexts/AuthContextProvider";
+import LocalMallIcon from "@mui/icons-material/LocalMall";
+import { getCountProductsInCart } from "../../helpers/functions";
+import { useCart } from "../../contexts/CartContextProvider";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const pages = [
-  { name: "Best Sellers", link: "/", id: 2 },
+  { name: "Best Sellers", link: "/best", id: 2 },
   { name: "Offers", link: "/offers", id: 3 },
   { name: "Accessories", link: "/accessories", id: 5 },
   { name: "About Us", link: "/aboutus", id: 1 },
   { name: "Contact Us", link: "/contacts", id: 4 },
+  { name: "", link: "/*", id: 6 },
 ];
 
 function Navbar() {
@@ -39,17 +44,19 @@ function Navbar() {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  // корзина//
+
+  const [count, setCount] = React.useState(0);
+  const { addProductToCart } = useCart();
+
+  React.useEffect(() => {
+    setCount(getCountProductsInCart());
+  }, [addProductToCart]);
 
   return (
     <AppBar
@@ -123,7 +130,7 @@ function Navbar() {
                   to={page.link}
                   style={{ textDecoration: "none" }}
                 >
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <MenuItem key={index} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{page.name}</Typography>
                   </MenuItem>
                 </Link>
@@ -184,11 +191,12 @@ function Navbar() {
               <Typography id="pages_link">Log In</Typography>
             </Button>
           )}
-          {/* <IconButton onClick={() => navigate("/cart")}>
+          <IconButton onClick={() => navigate("/cart")}>
             <Badge badgeContent={count} color="primary">
-              <ShoppingCartIcon />
+              {/* <LocalMallIcon /> */}
+              <ShoppingCartIcon color="info" />
             </Badge>
-          </IconButton> */}
+          </IconButton>
         </Toolbar>
       </Container>
     </AppBar>
