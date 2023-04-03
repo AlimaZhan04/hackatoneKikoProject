@@ -40,7 +40,7 @@ const BestSellers = () => {
           src="https://www.chinapowdercoating.com/ru/wp-content/gallery/d0bad0bed0b6d0b0d0bdd18bd0b9-d18dd184d184d0b5d0bad182/cache/brown-leather-effect-powder-coating.jpg-nggid03112-ngg0dyn-330x200x100-00f0w010c011r110f110r010t010.jpg"
           alt="picture"
         />
-        <h1 className="acc_h">Accessories</h1>
+        <h1 className="acc_h">Best Sellers</h1>
         <p className="acc_text2">
           Make the best use of your cosmetics with KIKO’s face, eye and hand
           accessories. Browse our brush sets, make-up pouches, manicure sets and
@@ -71,11 +71,6 @@ const BestSellers = () => {
           onChange={handleChange}
         />
       </Stack>
-      <img
-        className="acc_picture3"
-        src="https://images.kikocosmetics.com/mediaObject/2021/prod/NewCategoryImages_Dec2021/CategoryAccessories_01_brushes/webp-resolutions/res-600x600/CategoryAccessories_01_brushes.webp"
-        alt="photo33"
-      />
 
       <h2 className="acc_h2">Make up bags</h2>
 
@@ -96,11 +91,6 @@ const BestSellers = () => {
           onChange={handleChange}
         />
       </Stack>
-      <img
-        className="acc_picture4"
-        src="https://images.kikocosmetics.com/mediaObject/2021/prod/NewCategoryImages_Dec2021/CategoryAccessories_02_pochette/webp-resolutions/res-600x600/CategoryAccessories_02_pochette.webp"
-        alt="photo33"
-      />
     </div>
   );
 };

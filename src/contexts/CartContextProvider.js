@@ -13,7 +13,7 @@ const INIT_STATE = {
   cart: JSON.parse(localStorage.getItem("cart")),
   cartLength: getCountProductsInCart(),
 };
-
+ы
 function reducer(state = INIT_STATE, action) {
   switch (action.type) {
     case CART.GET_CART:

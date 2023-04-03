@@ -21,7 +21,7 @@ export default function ProductCard({ item }) {
 
   // корзина/
 
-  // const { addProductToCart, checkProductInCart } = useCart();
+  const { addProductToCart, checkProductInCart } = useCart();
 
   return (
     <Card
@@ -59,7 +59,6 @@ export default function ProductCard({ item }) {
         </CardContent>
       </CardActionArea>
 
-
       <Button
         onClick={() => navigate(`/edit/${item.id}`)}
         size="small"
@@ -68,10 +67,9 @@ export default function ProductCard({ item }) {
         edit
       </Button>
 
-      {/* <IconButton onClick={() => addProductToCart(item)}>
+      <IconButton onClick={() => addProductToCart(item)}>
         <LocalMallIcon color={checkProductInCart(item.id) ? "primary" : ""} />
-      </IconButton> */}
-
+      </IconButton>
 
       {email === ADMIN ? (
         <>

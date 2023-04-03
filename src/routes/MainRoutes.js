@@ -20,15 +20,13 @@ const MainRoutes = () => {
   const { user } = useAuth();
   const PUBLIC_ROUTES = [
     { link: "/", element: <HomePage />, id: 1 },
-
     { link: "/products", element: <ProductPage />, id: 2 },
     { link: "/*", element: <NotFoundPage />, id: 3 },
     { link: "/contacts", element: <ContactUs />, id: 4 },
     { link: "/aboutus", element: <AboutUs />, id: 7 },
     { link: "/offers", element: <Offers />, id: 8 },
-    { link: "/accessories", element: <Accessories />, id: 8 },
+    { link: "/accessories", element: <Accessories />, id: 9 },
     { link: "/auth", element: <AuthPage />, id: 10 },
-
     { link: "/footer", element: <Footer />, id: 11 },
     { link: "/best", element: <BestSellers />, id: 12 },
   ];
