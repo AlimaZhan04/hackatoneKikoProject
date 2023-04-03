@@ -1,7 +1,7 @@
 import axios from "axios";
 import { async } from "q";
-import React, { createContext, useContext, useReducer } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { createContext, useContext, useReducer, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { API } from "../helpers/consts";
 
 export const productContext = createContext();
@@ -28,13 +28,19 @@ const reducer = (state = INIT_STATE, action) => {
 };
 const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState(searchParams.get("q") || "");
 
   const navigate = useNavigate();
   //! read (get request)
 
   const getCosmetics = async () => {
-    const { data } = await axios.get(`${API}`);
+    const { data } = await axios.get(`${API}/${window.location.search}`);
     dispatch({ type: "GET_COSMETICS", payload: data });
+  };
+
+  const getRandomProducts = async () => {
+    const { data } = await axios.get(API + "?_limit=3");
   };
 
   // ! create (post request)
@@ -60,6 +66,20 @@ const ProductContextProvider = ({ children }) => {
   const saveEditedCosmetics = async (editedCosmetics) => {
     await axios.patch(`${API}/${editedCosmetics.id}`, editedCosmetics);
   };
+
+  const fetchByParams = async (query, value) => {
+    const search = new URLSearchParams(window.location.search);
+
+    if (value == "all") {
+      search.delete(query);
+    } else {
+      search.set(query, value);
+    }
+
+    const url = `${window.location.pathname}?${search.toString()}`;
+
+    navigate(url);
+  };
   const values = {
     getCosmetics,
     addCosmetics,
@@ -68,6 +88,12 @@ const ProductContextProvider = ({ children }) => {
     getCosmeticsDetails,
     cosmeticsDetails: state.cosmeticsDetails,
     saveEditedCosmetics,
+    fetchByParams,
+    getRandomProducts,
+    search,
+    setSearch,
+    searchParams,
+    setSearchParams,
   };
 
   return (

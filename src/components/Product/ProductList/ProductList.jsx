@@ -6,10 +6,10 @@ import { useProducts } from "../../../contexts/ProductContextProvider";
 import ProductCard from "../ProductCard";
 
 const ProductList = () => {
-  const { getCosmetics, cosmetics } = useProducts();
-  const [searchParams] = useSearchParams();
+  const { getCosmetics, cosmetics, searchParams } = useProducts();
   useEffect(() => {
     getCosmetics();
+    console.log("SEARch");
   }, [searchParams]);
   useEffect(() => {
     getCosmetics();

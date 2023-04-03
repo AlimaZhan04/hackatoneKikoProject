@@ -13,8 +13,6 @@ import AuthPage from "../pages/AuthPage/AuthPage";
 import { ADMIN } from "../helpers/consts";
 import { useAuth } from "../contexts/AuthContextProvider";
 
-import Cart from "../components/Cart/Cart";
-
 import Footer from "../components/Footer/Footer";
 import BestSellers from "../components/BestSellers/BestSellers";
 

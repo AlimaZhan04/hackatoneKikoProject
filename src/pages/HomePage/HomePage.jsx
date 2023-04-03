@@ -3,8 +3,8 @@ import { Carousel } from "react-bootstrap";
 import CardBlock from "../../components/Product/ProductCard";
 import HMcard from "../../components/Product/ProductList/HMcard";
 
-
 import ProductList from "../../components/Product/ProductList/ProductList";
+import SideBar from "../../components/Product/SideBar";
 
 let cosmetics = [];
 const HomePage = () => {
@@ -47,6 +47,8 @@ const HomePage = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+
+      <SideBar />
       <center>
         <h1>KIKO COSMETICS</h1>
         <div className="d-flex justify-content-between container mt-5 flex-wrap">

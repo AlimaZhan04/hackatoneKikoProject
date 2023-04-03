@@ -7,12 +7,14 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import kiko from "../../helpers/kiko_first.png";
 import kiko2 from "../../helpers/Новая папка/Снимок экрана 2023-04-03 135256.png";
+import kiko3 from "../../helpers/Новая папка/Снимок экрана 2023-04-03 162801.png";
+import kiko4 from "../../helpers/Новая папка/Снимок экрана 2023-04-03 163124.png";
 const Footer = () => {
   return (
     <Box className="footer_wrapper">
       <Box className="main_footer_box">
         <Box className="main_footer_icons">
-          <img width={60} height={50} src={kiko} alt="" />
+          <img width={50} height={40} src={kiko} alt="" />
 
           <p>Sign up now</p>
           <span>
@@ -21,7 +23,7 @@ const Footer = () => {
         </Box>
 
         <Box className="main_footer_icons">
-          <img src={kiko2} alt="" />
+          <img width={50} height={40} src={kiko2} alt="" />
           <p>FREE shipping</p>
           <span>
             <strong>FOR ORDERS OVER $29</strong>
@@ -29,7 +31,7 @@ const Footer = () => {
         </Box>
 
         <Box className="main_footer_icons">
-          <img src="" alt="" />
+          <img width={50} height={40} src={kiko3} alt="" />
           <p>SECURE PAYMENTS</p>
           <span>
             <strong>PURCHASES ARE SECURE AND GUARANTEED</strong>
@@ -37,7 +39,7 @@ const Footer = () => {
         </Box>
 
         <Box className="main_footer_icons">
-          <img src="" alt="" />
+          <img width={50} height={40} src={kiko4} alt="" />
           <p> Easy returns</p>
           <span>
             <strong> UP TO 30 DAYS AFTER ORDER DELIVERY</strong>
@@ -97,11 +99,11 @@ const Footer = () => {
 
               <TextField
                 id="standard-basic"
-                label="Standard"
+                label="Email*"
                 variant="standard"
               />
 
-              <button>Send</button>
+              <button className="send_btn">Send</button>
             </Box>
           </Box>
         </Box>
