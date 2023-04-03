@@ -40,8 +40,8 @@ const Accessories = () => {
           src="https://www.chinapowdercoating.com/ru/wp-content/gallery/d0bad0bed0b6d0b0d0bdd18bd0b9-d18dd184d184d0b5d0bad182/cache/brown-leather-effect-powder-coating.jpg-nggid03112-ngg0dyn-330x200x100-00f0w010c011r110f110r010t010.jpg"
           alt="picture"
         />
-        <h1>Accessories</h1>
-        <p>
+        <h1 className="acc_h">Accessories</h1>
+        <p className="acc_text2">
           Make the best use of your cosmetics with KIKO’s face, eye and hand
           accessories. Browse our brush sets, make-up pouches, manicure sets and
           travel must-haves.
@@ -55,7 +55,7 @@ const Accessories = () => {
           <button className="acc_button">MakeUp Cases</button>
         </div>
       </div>
-      <h2>Make up brushes</h2>
+      <h2 className="acc_h2">Make up brushes</h2>
       <p className="acc_text">DO YOU DREAM OF A FLAWLESS FINISH?</p>
 
       <Box sx={{ display: "flex", flexWrap: "wrap", marginTop: "90px" }}>
@@ -77,7 +77,8 @@ const Accessories = () => {
         alt="photo33"
       />
 
-      <h2>Make up bags</h2>
+      <h2 className="acc_h2">Make up bags</h2>
+
       <p className="acc_text1">
         ARE YOU LOOKING FOR A SOLUTION TO KEEP YOUR COSMETICS?
       </p>
