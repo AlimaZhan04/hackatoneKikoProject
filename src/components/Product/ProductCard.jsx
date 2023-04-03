@@ -47,16 +47,13 @@ export default function ProductCard({ item }) {
         </CardContent>
       </CardActionArea>
 
-      <Button
-        onClick={() => navigate(`/edit/${item.id}`)}
-        size="small"
-        color="primary"
-      >
-        edit
-      </Button>
       {email === ADMIN ? (
         <>
-          <Button size="small" color="primary">
+          <Button
+            onClick={() => navigate(`/edit/${item.id}`)}
+            size="small"
+            color="primary"
+          >
             edit
           </Button>
 
