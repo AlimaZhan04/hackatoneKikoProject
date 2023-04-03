@@ -3,7 +3,16 @@
 }
 
 .wrapper-right-side {
-  margin: 7%;
+  margin: 9%;
+}
+
+.left-side {
+  padding: 4%;
+  margin-top: 7.5%;
+}
+
+.right-side {
+  margin-bottom: 20px;
 }
 
 .icons-with-parg {
@@ -13,16 +22,17 @@
 .black-btn {
   background-color: black;
   color: white;
-  width: 40%;
-  height: 30%;
+  width: 444px;
+  height: 40px;
   border: none;
   border-radius: 100vmax;
+  margin-right: 10px;
 }
 
 .pink-btn {
   color: white;
-  width: 40%;
-  height: 30%;
+  width: 444px;
+  height: 40px;
   border: none;
   border-radius: 100vmax;
   background-color: #d11a6f;

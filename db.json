@@ -1,15 +1,12 @@
 {
-
-
   "cosmetics": [
     {
-      "name": "gdhf",
-      "description": "ghfgj",
-      "price": 4656,
-      "image": "fhgh",
-      "type": "fg",
-      "id": 1
+      "name": "lipstick",
+      "description": "bkjjlk",
+      "price": 890,
+      "image": "https://i.pinimg.com/474x/51/52/b2/5152b26afefd432f506a9cbdcef8a0b1.jpg",
+      "type": "decorative",
+      "id": 2
     }
   ]
 }
-

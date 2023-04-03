@@ -1,0 +1,12 @@
+.notFound_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.notFound_wrapper span {
+  font-size: 45px;
+  color: #d11a6f;
+}
