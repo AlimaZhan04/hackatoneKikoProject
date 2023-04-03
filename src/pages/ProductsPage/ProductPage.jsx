@@ -5,11 +5,13 @@ import SideBar from "../../components/Product/SideBar";
 
 const ProductPage = () => {
   return (
+
     <Grid sx={{ display: "flex" }}>
       <Grid item md={3}>
         <SideBar />
       </Grid>
     </Grid>
+
   );
 };
 

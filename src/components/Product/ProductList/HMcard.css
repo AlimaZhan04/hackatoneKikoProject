@@ -1,8 +1,31 @@
-.HMcard_with {
-  width: 300px;
+.HM_with {
+  width: 40%;
+  height: 35%;
 }
 .HM_flex {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 10px;
+}
+
+@media all and (max-width: 1025px) {
+  .swiper {
+    width: 100%;
+    height: 12%;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+@media all and (max-width: 321px) {
+  .swiper {
+    width: 100%;
+    height: 12%;
+  }
 }
