@@ -2,19 +2,20 @@ import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import ProductList from "./components/Product/ProductList/ProductList";
 import AuthContextProvider from "./contexts/AuthContextProvider";
+import CartContextProvider from "./contexts/CartContextProvider";
 import ProductContextProvider from "./contexts/ProductContextProvider";
 import MainRoutes from "./routes/MainRoutes";
 
 const App = () => {
   return (
-    <div>
+    <CartContextProvider>
       <AuthContextProvider>
         <ProductContextProvider>
           <Navbar />
           <MainRoutes />
         </ProductContextProvider>
       </AuthContextProvider>
-    </div>
+    </CartContextProvider>
   );
 };
 

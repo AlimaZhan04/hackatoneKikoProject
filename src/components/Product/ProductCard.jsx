@@ -3,33 +3,45 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import { Button, CardActionArea, CardActions, IconButton } from "@mui/material";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import { ADMIN } from "../../helpers/consts";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContextProvider";
+import LocalMallIcon from "@mui/icons-material/LocalMall";
+
+import { useCart } from "../../contexts/CartContextProvider";
 
 export default function ProductCard({ item }) {
-  const navigate = useNavigate();
   const { deleteCosmetics } = useProducts();
+  const navigate = useNavigate();
   const {
     user: { email },
   } = useAuth();
+
+  // корзина/
+
+  // const { addProductToCart, checkProductInCart } = useCart();
+
   return (
     <Card
       sx={{
-        maxWidth: 225,
+        maxWidth: 325,
         display: "flex",
-        flexDirection: "column",
+        flexDirection: "row",
         margin: "1rem",
         flexWrap: "wrap",
-        justifyContent: "space-between",
+        justifyContent: "space-around",
+        height: 400,
+        width: 280,
+        margin: 2,
+        marginLeft: 10,
       }}
     >
       <CardActionArea>
         <CardMedia
           component="img"
-          height="260"
+          height="200"
           image={item.image}
           alt="green iguana"
         />
@@ -46,6 +58,19 @@ export default function ProductCard({ item }) {
           </Typography>
         </CardContent>
       </CardActionArea>
+
+      <Button
+        onClick={() => navigate(`/edit/${item.id}`)}
+        size="small"
+        color="primary"
+      >
+        edit
+      </Button>
+
+      {/* <IconButton onClick={() => addProductToCart(item)}>
+        <LocalMallIcon color={checkProductInCart(item.id) ? "primary" : ""} />
+      </IconButton> */}
+
       {email === ADMIN ? (
         <>
           <Button size="small" color="primary">
@@ -61,7 +86,6 @@ export default function ProductCard({ item }) {
           </Button>
         </>
       ) : null}
-      <CardActions></CardActions>
     </Card>
   );
 }

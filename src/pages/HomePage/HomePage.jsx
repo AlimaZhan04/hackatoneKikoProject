@@ -52,6 +52,7 @@ const HomePage = () => {
             <CardBlock key={item.id} item={item} />
           ))}
         </div>
+
         <div>
           <ProductList />
           <HMcard />

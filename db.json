@@ -1,7 +1,4 @@
 {
-<<<<<<< HEAD
-  "cosmetics": []
-=======
   "cosmetics": [
     {
       "name": "gdhf",
@@ -10,7 +7,47 @@
       "image": "fhgh",
       "type": "fg",
       "id": 1
+    },
+
+    {
+      "name": "gdhf",
+      "description": "ghfgj",
+      "price": 4656,
+      "image": "fhgh",
+      "type": "fg",
+      "id": 2
+    },
+    {
+      "name": "gdhf",
+      "description": "ghfgj",
+      "price": 4656,
+      "image": "fhgh",
+      "type": "fg",
+      "id": 3
+    },
+    {
+      "name": "gdhf",
+      "description": "ghfgj",
+      "price": 4656,
+      "image": "fhgh",
+      "type": "fg",
+      "id": 4
+    },
+    {
+      "name": "gdhf",
+      "description": "ghfgj",
+      "price": 4656,
+      "image": "fhgh",
+      "type": "fg",
+      "id": 5
+    },
+    {
+      "name": "gdhf",
+      "description": "ghfgj",
+      "price": 4656,
+      "image": "fhgh",
+      "type": "fg",
+      "id": 6
     }
   ]
->>>>>>> 6427e355b4e0722da3a2b06e1eaaa0f90e4c6fab
 }
