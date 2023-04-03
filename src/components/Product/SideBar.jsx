@@ -13,14 +13,23 @@ import {
 } from "@mui/material";
 
 const SideBar = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearch] = useState(searchParams.get("q") || "");
-  const { fetchByParams, getCosmetics } = useProducts();
+  const {
+    fetchByParams,
+    getCosmetics,
+    search,
+    setSearch,
+    searchParams,
+    setSearchParams,
+  } = useProducts();
 
   useEffect(() => {
     setSearchParams({ q: search });
     getCosmetics();
   }, [search]);
+
+  useEffect(() => {
+    getCosmetics();
+  }, [searchParams]);
   return (
     <Grid item md={4}>
       <Paper elevation={1} sx={{ width: "200px", boxShadow: "none" }}>
@@ -44,11 +53,11 @@ const SideBar = () => {
             onChange={(e) => fetchByParams("type", e.target.value)}
           >
             <FormControlLabel
-              value="Decorative"
+              value="decorative"
               control={<Radio />}
               label="decorative"
             />
-            <FormControlLabel value="Care" control={<Radio />} label="care" />
+            <FormControlLabel value="care" control={<Radio />} label="care" />
             <FormControlLabel
               value="Accessories"
               control={<Radio />}
