@@ -1,5 +1,6 @@
 .wrapper {
   display: flex;
+  width: 100%;
 }
 
 .wrapper-right-side {
@@ -13,6 +14,9 @@
 
 .right-side {
   margin-bottom: 20px;
+}
+.right-side > h2 {
+  margin-left: 0;
 }
 
 .icons-with-parg {

@@ -5,13 +5,15 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-
+import kiko from "../../helpers/kiko_first.png";
+import kiko2 from "../../helpers/Новая папка/Снимок экрана 2023-04-03 135256.png";
 const Footer = () => {
   return (
     <Box className="footer_wrapper">
       <Box className="main_footer_box">
         <Box className="main_footer_icons">
-          <img width={60} height={50} src="" alt="" />
+          <img width={60} height={50} src={kiko} alt="" />
+
           <p>Sign up now</p>
           <span>
             <strong>REGISTER FOR EXCLUSIVE ADVANTAGES</strong>
@@ -19,7 +21,7 @@ const Footer = () => {
         </Box>
 
         <Box className="main_footer_icons">
-          <img src="" alt="" />
+          <img src={kiko2} alt="" />
           <p>FREE shipping</p>
           <span>
             <strong>FOR ORDERS OVER $29</strong>
