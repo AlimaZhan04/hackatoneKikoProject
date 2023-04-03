@@ -19,6 +19,7 @@ import { useAuth } from "../../contexts/AuthContextProvider";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import { getCountProductsInCart } from "../../helpers/functions";
 import { useCart } from "../../contexts/CartContextProvider";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const pages = [
   { name: "Best Sellers", link: "/best", id: 2 },
@@ -192,7 +193,8 @@ function Navbar() {
           )}
           <IconButton onClick={() => navigate("/cart")}>
             <Badge badgeContent={count} color="primary">
-              <LocalMallIcon />
+              {/* <LocalMallIcon /> */}
+              <ShoppingCartIcon color="info" />
             </Badge>
           </IconButton>
         </Toolbar>

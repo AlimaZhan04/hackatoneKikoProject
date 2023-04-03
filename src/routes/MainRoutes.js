@@ -15,6 +15,7 @@ import { useAuth } from "../contexts/AuthContextProvider";
 
 import Footer from "../components/Footer/Footer";
 import BestSellers from "../components/BestSellers/BestSellers";
+import Cart from "../components/Cart/Cart";
 
 const MainRoutes = () => {
   const { user } = useAuth();
@@ -28,9 +29,9 @@ const MainRoutes = () => {
     { link: "/offers", element: <Offers />, id: 8 },
     { link: "/accessories", element: <Accessories />, id: 8 },
     { link: "/auth", element: <AuthPage />, id: 10 },
-
     { link: "/footer", element: <Footer />, id: 11 },
     { link: "/best", element: <BestSellers />, id: 12 },
+    { link: "/cart", element: <Cart />, id: 12 },
   ];
   const PRIVATE_ROUTES = [
     { link: "/edit/:id", element: <EditProductPage />, id: 6 },
