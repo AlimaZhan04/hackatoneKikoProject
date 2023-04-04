@@ -1,5 +1,5 @@
 import { Box, Pagination } from "@mui/material";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Stack } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
 import { useProducts } from "../../../contexts/ProductContextProvider";
@@ -9,11 +9,12 @@ const ProductList = () => {
   const { getCosmetics, cosmetics, searchParams } = useProducts();
   useEffect(() => {
     getCosmetics();
-    console.log("SEARch");
-  }, [searchParams]);
+  }, []);
+
   useEffect(() => {
     getCosmetics();
-  }, []);
+  }, [searchParams]);
+
   //! pagination
   const [page, setPage] = React.useState(1);
   const handleChange = (event, value) => {

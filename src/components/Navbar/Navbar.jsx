@@ -191,6 +191,7 @@ function Navbar() {
             ))}
           </Box>
         </Toolbar>
+
         <Box
           sx={{
             flexGrow: 1,

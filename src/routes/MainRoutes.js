@@ -16,7 +16,6 @@ import { useAuth } from "../contexts/AuthContextProvider";
 import Footer from "../components/Footer/Footer";
 import BestSellers from "../components/BestSellers/BestSellers";
 import Cart from "../components/Cart/Cart";
-
 const MainRoutes = () => {
   const { user } = useAuth();
   const PUBLIC_ROUTES = [
