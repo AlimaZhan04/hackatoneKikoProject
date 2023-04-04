@@ -9,10 +9,15 @@ import { ADMIN } from "../../helpers/consts";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
+// import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+// import LocalMallIcon from '@mui/icons-material/LocalMall';
 // import { IconButton } from "@mui/material";
 
+import "./Product.css";
+
 import { useCart } from "../../contexts/CartContextProvider";
+import { pink } from "@mui/material/colors";
 
 export default function ProductCard({ item }) {
   const { deleteCosmetics } = useProducts();
@@ -71,12 +76,15 @@ export default function ProductCard({ item }) {
             fontSize: "15px",
             backgroundColor: "black",
             color: "white",
+            hover: "pink",
           }}
+          className="iconButton"
         >
-          <ShoppingCartIcon
+          <LocalMallOutlinedIcon
+            className="icon"
             color={checkProductInCart(item.id) ? "primary" : ""}
           />
-          <span>Add to cart</span>
+          <span>Add to bag</span>
         </IconButton>
       </div>
 

@@ -75,11 +75,9 @@
   margin-left: 3%;
 }
 
-.send_btn {
-  border-radius: 100vmax;
-  width: 100px;
-  height: 20px;
-  border-color: black;
+.send_btn:hover {
+  background-color: #ee0a74 !important;
+  border: none;
 }
 
 .footer_icon {

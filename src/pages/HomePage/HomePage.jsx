@@ -5,6 +5,7 @@ import HMcard from "../../components/Product/ProductList/HMcard";
 
 import ProductList from "../../components/Product/ProductList/ProductList";
 import SideBar from "../../components/Product/SideBar";
+import Footer from "../../components/Footer/Footer";
 
 let cosmetics = [];
 const HomePage = () => {

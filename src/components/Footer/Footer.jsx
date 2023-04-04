@@ -10,6 +10,7 @@ import kiko2 from "../../helpers/Новая папка/Снимок экрана
 import kiko3 from "../../helpers/Новая папка/Снимок экрана 2023-04-03 162801.png";
 import kiko4 from "../../helpers/Новая папка/Снимок экрана 2023-04-03 163124.png";
 import FooterEnd from "../FooterEnd/FooterEnd";
+import Button from "@mui/material/Button";
 const Footer = () => {
   return (
     <Box className="footer_wrapper">
@@ -103,8 +104,23 @@ const Footer = () => {
                 label="Email*"
                 variant="standard"
               />
-
-              <button className="send_btn">Send</button>
+              <Box>
+                <Button
+                  className="send_btn"
+                  sx={{
+                    width: "200px",
+                    border: "solid 2px black",
+                    height: "30px",
+                    borderRadius: "2rem",
+                    marginTop: "22%",
+                    color: "white",
+                    backgroundColor: "black",
+                    fontSize: "10px",
+                  }}
+                >
+                  Send
+                </Button>
+              </Box>
             </Box>
           </Box>
         </Box>

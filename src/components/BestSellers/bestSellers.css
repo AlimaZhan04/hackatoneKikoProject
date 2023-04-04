@@ -19,7 +19,7 @@
 .acc_buttons {
   position: absolute;
   top: 270px;
-  left: 330px;
+  left: 480px;
 }
 .acc_button {
   border: none;
@@ -33,35 +33,9 @@
   background-color: #d11a6f;
 }
 
-.acc_text {
-  margin-top: 210px;
-  color: black;
-  font-weight: bold;
-}
 .pagination {
   margin-left: 740px;
   margin-bottom: 30px;
-}
-.acc_picture3 {
-  position: absolute;
-  top: 475px;
-  border-radius: 30px;
-  height: 65%;
-  width: 28%;
-  margin-left: 20px;
-}
-.acc_text1 {
-  margin-top: 880px;
-  color: black;
-  font-weight: bold;
-}
-.acc_picture4 {
-  position: absolute;
-  top: 1125px;
-  border-radius: 30px;
-  height: 65%;
-  width: 28%;
-  margin-left: 1106px;
 }
 
 .acc_text2 {
@@ -78,4 +52,19 @@
   margin-top: 20px;
   font-weight: bold;
   font-size: 52px;
+  margin-bottom: 10px;
+}
+.acc_best {
+  margin-top: 20px;
+  color: black;
+  font-weight: bold;
+  margin-left: 700px;
+  margin-bottom: 40px;
+}
+.acc_text1 {
+  margin-top: 20px;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-left: 500px;
 }

@@ -7,7 +7,7 @@ import "./accessories.css";
 
 const Accessories = () => {
   const { getCosmetics, cosmetics } = useProducts();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   useEffect(() => {
     getCosmetics();
   }, [searchParams]);
@@ -46,7 +46,7 @@ const Accessories = () => {
           accessories. Browse our brush sets, make-up pouches, manicure sets and
           travel must-haves.
         </p>
-        <div className="acc_buttons">
+        <div className="acc_buttons1">
           <button className="acc_button">Face Accessories</button>
           <button className="acc_button">Eye Accessories</button>
           <button className="acc_button">Hand Care Accessories</button>
@@ -58,7 +58,7 @@ const Accessories = () => {
       <h2 className="acc_h2">Make up brushes</h2>
       <p className="acc_text">DO YOU DREAM OF A FLAWLESS FINISH?</p>
 
-      <Box sx={{ display: "flex", flexWrap: "wrap", marginTop: "90px" }}>
+      <Box sx={{ display: "flex", flexWrap: "wrap", marginTop: "0px" }}>
         {currentData().map((item) => (
           <ProductCard item={item} key={item.id} />
         ))}
@@ -83,7 +83,7 @@ const Accessories = () => {
         ARE YOU LOOKING FOR A SOLUTION TO KEEP YOUR COSMETICS?
       </p>
 
-      <Box sx={{ display: "flex", flexWrap: "wrap", marginTop: "90px" }}>
+      <Box sx={{ display: "flex", flexWrap: "wrap", marginTop: "0px" }}>
         {currentData().map((item) => (
           <ProductCard item={item} key={item.id} />
         ))}

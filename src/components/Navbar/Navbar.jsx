@@ -7,28 +7,36 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link, useNavigate } from "react-router-dom";
 import { Badge } from "@mui/material";
 import { ADMIN } from "../../helpers/consts";
 import { useAuth } from "../../contexts/AuthContextProvider";
-import LocalMallIcon from "@mui/icons-material/LocalMall";
 import { getCountProductsInCart } from "../../helpers/functions";
 import { useCart } from "../../contexts/CartContextProvider";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-
+import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 const pages = [
   { name: "Best Sellers", link: "/best", id: 2 },
   { name: "Offers", link: "/offers", id: 3 },
-  { name: "Accessories", link: "/accessories", id: 5 },
+  { name: "Accessories", link: "/accessories?type=accessories", id: 5 },
   { name: "About Us", link: "/aboutus", id: 1 },
   { name: "Contact Us", link: "/contacts", id: 4 },
   { name: "", link: "/*", id: 6 },
 ];
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 350,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
 
 function Navbar() {
   const {
@@ -39,7 +47,7 @@ function Navbar() {
   const navigate = useNavigate();
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -65,7 +73,26 @@ function Navbar() {
         backgroundColor: "black",
       }}
     >
-      <Container maxWidth="xl">
+      <Box>
+        <img
+          onClick={() => {
+            navigate("/");
+          }}
+          width={100}
+          src="https://static.kikocosmetics.com/docroot/dist/images/kiko-logo-text.svg"
+          alt="Hello"
+          style={{
+            display: "block",
+            maxWidth: "100%",
+            marginTop: "1rem",
+            marginLeft: "43rem",
+          }}
+        />
+      </Box>
+      <Container
+        maxWidth="xl"
+        sx={{ display: "flex", justifyContent: "space-around" }}
+      >
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -80,22 +107,16 @@ function Navbar() {
               color: "inherit",
               textDecoration: "none",
             }}
-          >
-            <img
-              onClick={() => {
-                navigate("/");
-              }}
-              width={100}
-              src="https://static.kikocosmetics.com/docroot/dist/images/kiko-logo-text.svg"
-              alt="Hello"
-              style={{
-                display: "block",
-                maxWidth: "100%",
-              }}
-            />
-          </Typography>
+          ></Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              display: "flex",
+              justifyContent: "space-around",
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -169,7 +190,18 @@ function Navbar() {
               </Link>
             ))}
           </Box>
-
+        </Toolbar>
+        <Box
+          sx={{
+            flexGrow: 1,
+            display: {
+              xs: "none",
+              md: "flex",
+            },
+            display: "flex",
+            justifyContent: "end",
+          }}
+        >
           {email === ADMIN ? (
             <Button
               onClick={() => navigate("/admin")}
@@ -193,11 +225,10 @@ function Navbar() {
           )}
           <IconButton onClick={() => navigate("/cart")}>
             <Badge badgeContent={count} color="primary">
-              {/* <LocalMallIcon /> */}
-              <ShoppingCartIcon color="info" />
+              <LocalMallOutlinedIcon color="info" />
             </Badge>
           </IconButton>
-        </Toolbar>
+        </Box>
       </Container>
     </AppBar>
   );
