@@ -9,8 +9,11 @@ import { ADMIN } from "../../helpers/consts";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+// import { IconButton } from "@mui/material";
 
 import { useCart } from "../../contexts/CartContextProvider";
+import { pink } from "@mui/material/colors";
 
 export default function ProductCard({ item }) {
   const { deleteCosmetics } = useProducts();
@@ -58,18 +61,26 @@ export default function ProductCard({ item }) {
           </Typography>
         </CardContent>
       </CardActionArea>
-
-      <Button
-        onClick={() => navigate(`/edit/${item.id}`)}
-        size="small"
-        color="primary"
-      >
-        edit
-      </Button>
-
-      <IconButton onClick={() => addProductToCart(item)}>
-        <LocalMallIcon color={checkProductInCart(item.id) ? "primary" : ""} />
-      </IconButton>
+      <div className="btn_cart">
+        <IconButton
+          onClick={() => addProductToCart(item)}
+          sx={{
+            border: "2px solid black",
+            width: "250px",
+            borderRadius: "2rem",
+            height: "40px",
+            fontSize: "15px",
+            backgroundColor: "black",
+            color: "white",
+            hover: "pink",
+          }}
+        >
+          <ShoppingCartIcon
+            color={checkProductInCart(item.id) ? "primary" : ""}
+          />
+          <span>Add to bag</span>
+        </IconButton>
+      </div>
 
       {email === ADMIN ? (
         <>
@@ -80,7 +91,6 @@ export default function ProductCard({ item }) {
           >
             edit
           </Button>
-
           <Button
             onClick={() => deleteCosmetics(item.id)}
             size="small"

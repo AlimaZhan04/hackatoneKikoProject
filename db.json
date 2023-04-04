@@ -1,26 +1,44 @@
 {
   "cosmetics": [
     {
-
-      "name": "gdhf",
-      "description": "ghfgj",
-      "price": 4656,
-      "image": "fhgh",
-      "type": "fg",
+      "name": "powder",
+      "description": "strawberry",
+      "price": 65,
+      "image": "https://images.kikocosmetics.com/sys-master/images/h02/h67/9206202728478/KM0010300500133principale_608Wx608H.jpg",
+      "type": "decoration",
       "id": 1
     },
-
-   
-  ]
-}
-
+    {
+      "name": "lipstick",
+      "description": "balsam",
+      "price": 25,
+      "image": "https://theo.lv/wp-content/uploads/2021/09/02-34.jpg",
+      "type": "decoration",
+      "id": 4
+    },
+    {
       "name": "lipstick",
       "description": "bkjjlk",
       "price": 890,
       "image": "https://i.pinimg.com/474x/51/52/b2/5152b26afefd432f506a9cbdcef8a0b1.jpg",
       "type": "decorative",
       "id": 2
+    },
+    {
+      "name": "Lasting Precision Automatic Eyeliner",
+      "description": "Automatic eye pencil ",
+      "price": 17,
+      "image": "https://images.kikocosmetics.com/sys-master/images/hcf/h9a/9395581943838/KM0030302500533principale_900Wx900H.jpg#k-zoom",
+      "type": "decoration",
+      "id": 6
+    },
+    {
+      "name": "п",
+      "description": "апо",
+      "price": 5566,
+      "image": "4364",
+      "type": "46",
+      "id": 7
     }
   ]
 }
-

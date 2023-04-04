@@ -37,26 +37,20 @@ const BestSellers = () => {
       <div className="color">
         <img
           className="Acc_img"
-          src="https://www.chinapowdercoating.com/ru/wp-content/gallery/d0bad0bed0b6d0b0d0bdd18bd0b9-d18dd184d184d0b5d0bad182/cache/brown-leather-effect-powder-coating.jpg-nggid03112-ngg0dyn-330x200x100-00f0w010c011r110f110r010t010.jpg"
+          src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ-y6nbbrSJlmtBO9x9mKx_xlSvAPqFEfBXPZ2RchfDc_q1p6gy"
           alt="picture"
         />
         <h1 className="acc_h">Best Sellers</h1>
-        <p className="acc_text2">
-          Make the best use of your cosmetics with KIKO’s face, eye and hand
-          accessories. Browse our brush sets, make-up pouches, manicure sets and
-          travel must-haves.
-        </p>
+
         <div className="acc_buttons">
-          <button className="acc_button">Face Accessories</button>
-          <button className="acc_button">Eye Accessories</button>
-          <button className="acc_button">Hand Care Accessories</button>
-          <button className="acc_button">Brushes</button>
-          <button className="acc_button">Empty Travel Containers</button>
-          <button className="acc_button">MakeUp Cases</button>
+          <button className="acc_button">All</button>
+          <button className="acc_button">MakeUp Best Sellers</button>
+          <button className="acc_button">Skin Care Best Sellers</button>
+          <button className="acc_button">Accessories Best Sellers</button>
         </div>
       </div>
-      <h2 className="acc_h2">Make up brushes</h2>
-      <p className="acc_text">DO YOU DREAM OF A FLAWLESS FINISH?</p>
+
+      <p className="acc_best">24 Results</p>
 
       <Box sx={{ display: "flex", flexWrap: "wrap", marginTop: "90px" }}>
         {currentData().map((item) => (
@@ -71,12 +65,6 @@ const BestSellers = () => {
           onChange={handleChange}
         />
       </Stack>
-
-      <h2 className="acc_h2">Make up bags</h2>
-
-      <p className="acc_text1">
-        ARE YOU LOOKING FOR A SOLUTION TO KEEP YOUR COSMETICS?
-      </p>
 
       <Box sx={{ display: "flex", flexWrap: "wrap", marginTop: "90px" }}>
         {currentData().map((item) => (
