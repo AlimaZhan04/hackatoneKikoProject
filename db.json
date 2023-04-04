@@ -33,6 +33,23 @@
       "id": 3
     },
     {
+
+      "name": "aa",
+      "description": "kl",
+      "price": 789,
+      "image": "https://i.pinimg.com/474x/1d/91/6a/1d916a4aee9b43fc86895a9965e48412.jpg",
+      "type": "care",
+      "id": 4
+    },
+    {
+      "name": "nm,",
+      "description": "jk",
+      "price": 78,
+      "image": "ghjk",
+      "type": "care",
+      "id": 5
+    },
+    {
       "name": "Smart Urban Shield Face Base",
       "description": "fg",
       "price": 456,
@@ -55,6 +72,7 @@
       "image": "https://i.pinimg.com/564x/09/ec/ea/09ecea4670a61d72d4c86549c6eca778.jpg",
       "type": "accessories",
       "id": 7
+
     }
   ]
 }

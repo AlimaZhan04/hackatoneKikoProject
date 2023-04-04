@@ -17,6 +17,7 @@ import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import "./Product.css";
 
 import { useCart } from "../../contexts/CartContextProvider";
+import { pink } from "@mui/material/colors";
 
 export default function ProductCard({ item }) {
   const { deleteCosmetics } = useProducts();
@@ -75,6 +76,7 @@ export default function ProductCard({ item }) {
             fontSize: "15px",
             backgroundColor: "black",
             color: "white",
+            hover: "pink",
           }}
           className="iconButton"
         >
@@ -82,7 +84,7 @@ export default function ProductCard({ item }) {
             className="icon"
             color={checkProductInCart(item.id) ? "primary" : ""}
           />
-          <span>Add to cart</span>
+          <span>Add to bag</span>
         </IconButton>
       </div>
 
