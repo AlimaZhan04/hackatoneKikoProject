@@ -81,7 +81,7 @@ const SideBar = () => {
               control={<Radio />}
               label="less than 300$"
             />
-            <FormControlLabel value="Care" control={<Radio />} label="care" />
+
             <FormControlLabel
               value="500"
               control={<Radio />}
