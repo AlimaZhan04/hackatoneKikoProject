@@ -41,14 +41,6 @@
       "id": 4
     },
     {
-      "name": "nm,",
-      "description": "jk",
-      "price": 78,
-      "image": "ghjk",
-      "type": "care",
-      "id": 5
-    },
-    {
       "name": "Smart Urban Shield Face Base",
       "description": "fg",
       "price": 456,
@@ -73,12 +65,53 @@
       "id": 7
     },
     {
+<<<<<<< HEAD
       "name": "ytguh",
       "description": "ftygu",
       "price": 65,
       "image": "gh",
       "type": "accessories",
       "id": 8
+=======
+      "name": "Brush Cleanser",
+      "description": "Gentle no-rinse cleanser for brushes",
+      "price": 10,
+      "image": "https://images.kikocosmetics.com/sys-master/images/hca/h89/9953120616478/KM0050204600044principale_900Wx900H#k-zoom",
+      "type": " accessories",
+      "id": 8
+    },
+    {
+      "name": "Beauty Essentials 4-In-1 Brush",
+      "description": "4-in-1 multi-purpose face and eye brush",
+      "price": 21.99,
+      "image": "https://images.kikocosmetics.com/sys-master/images/h66/hf3/12697009225758/KC000000611001Bprincipale_900Wx900H#k-zoom",
+      "type": "accessories",
+      "id": 9
+    },
+    {
+      "name": "Blue Me 2-In-1 Eyes & Face Brush",
+      "description": "BUY 2 GET 1 FOR FREE Face and eye brush with recycled synthetic fibres duo",
+      "price": 19.99,
+      "image": "https://images.kikocosmetics.com/sys-master/images/h82/hd5/12350741446686/KC000000500001Bprincipale_900Wx900H#k-zoom",
+      "type": "accessories",
+      "id": 10
+    },
+    {
+      "name": "Energy Shake Bag",
+      "description": "Energy Shake Bag",
+      "price": 14,
+      "image": "https://images.kikocosmetics.com/sys-master/images/hc5/h06/12440270929950/KC000000523001Bprincipale_900Wx900H#k-zoom",
+      "type": "accessories",
+      "id": 11
+    },
+    {
+      "name": "Brush Cleansing Pad",
+      "description": "Brush cleansing pad",
+      "price": 9.5,
+      "image": "https://images.kikocosmetics.com/sys-master/images/hfe/h83/11017696837662/KA000000007001Bprincipale_900Wx900H#k-zoom",
+      "type": "accessories",
+      "id": 12
+>>>>>>> e0d575de0a852a3490f2eb8ebe9c46568edfb354
     }
   ]
 }
