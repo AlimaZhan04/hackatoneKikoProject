@@ -9,6 +9,7 @@ import kiko from "../../helpers/kiko_first.png";
 import kiko2 from "../../helpers/Новая папка/Снимок экрана 2023-04-03 135256.png";
 import kiko3 from "../../helpers/Новая папка/Снимок экрана 2023-04-03 162801.png";
 import kiko4 from "../../helpers/Новая папка/Снимок экрана 2023-04-03 163124.png";
+import FooterEnd from "../FooterEnd/FooterEnd";
 import Button from "@mui/material/Button";
 const Footer = () => {
   return (
@@ -125,24 +126,50 @@ const Footer = () => {
         </Box>
 
         <Box className="mui_tiny_icons">
-          <a href="https://www.facebook.com/KikoMilanoIT">
-            <FacebookIcon
-              sx={{ backgroundColor: " #3b5998", color: "white" }}
-            />
-          </a>
-          <a href="https://www.instagram.com/kikomilano/">
-            <InstagramIcon
-              sx={{ backgroundColor: " #c03a68", color: "white" }}
-            />
-          </a>
+          <Box className="footer_icon_box">
+            <a href="https://www.facebook.com/KikoMilanoIT">
+              <FacebookIcon
+                className="footer_icon"
+                sx={{
+                  backgroundColor: " #3b5998",
+                  color: "white",
+                  // width: "150px",
+                  // height: "150px",
+                }}
+              />
+            </a>
+          </Box>
 
-          <a href="https://twitter.com/KikoMilanoIT">
-            <TwitterIcon sx={{ backgroundColor: " #55acee", color: "white" }} />
-          </a>
+          <Box className="footer_icon_box">
+            <a href="https://www.instagram.com/kikomilano/">
+              <InstagramIcon
+                className="footer_icon"
+                sx={{ backgroundColor: " #c03a68", color: "white" }}
+              />
+            </a>
+          </Box>
 
-          <a href="https://www.youtube.com/user/KIKOCOSMETICS">
-            <YouTubeIcon sx={{ backgroundColor: " #ed302f", color: "white" }} />
-          </a>
+          <Box className="footer_icon_box">
+            <a href="https://twitter.com/KikoMilanoIT">
+              <TwitterIcon
+                className="footer_icon"
+                sx={{ backgroundColor: " #55acee", color: "white" }}
+              />
+            </a>
+          </Box>
+
+          <Box className="footer_icon_box">
+            <a href="https://www.youtube.com/user/KIKOCOSMETICS">
+              <YouTubeIcon
+                className="footer_icon"
+                sx={{ backgroundColor: " #ed302f", color: "white" }}
+              />
+            </a>
+          </Box>
+        </Box>
+
+        <Box className="footer_container">
+          <FooterEnd className="footer_icon" />
         </Box>
       </Box>
     </Box>

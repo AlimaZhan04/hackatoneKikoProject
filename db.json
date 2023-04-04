@@ -33,7 +33,6 @@
       "id": 3
     },
     {
-
       "name": "aa",
       "description": "kl",
       "price": 789,
@@ -72,7 +71,6 @@
       "image": "https://i.pinimg.com/564x/09/ec/ea/09ecea4670a61d72d4c86549c6eca778.jpg",
       "type": "accessories",
       "id": 7
-
     }
   ]
 }
