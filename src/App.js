@@ -9,8 +9,6 @@ import MainRoutes from "./routes/MainRoutes";
 import Footer from "./components/Footer/Footer";
 
 import "react-credit-cards/es/styles-compiled.css";
-import Payment from "./components/Product/Payment/Payment";
-
 
 const App = () => {
   return (

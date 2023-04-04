@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import ProductCard from "../../components/Product/ProductCard";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import "./bestSellers.css";
+import SideBar from "../Product/SideBar";
 
 const BestSellers = () => {
   const { getCosmetics, cosmetics } = useProducts();
@@ -49,7 +50,9 @@ const BestSellers = () => {
           <button className="acc_button">Accessories Best Sellers</button>
         </div>
       </div>
-
+      <div>
+        <SideBar />
+      </div>
       <p className="acc_best">24 Results</p>
 
       <Box sx={{ display: "flex", flexWrap: "wrap", marginTop: "90px" }}>

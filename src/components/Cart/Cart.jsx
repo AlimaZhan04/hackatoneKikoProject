@@ -9,6 +9,7 @@ import Paper from "@mui/material/Paper";
 import { useCart } from "../../contexts/CartContextProvider";
 import { Button } from "@mui/material";
 import Payment from "../Product/Payment/Payment";
+import { Box } from "@mui/system";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -84,6 +85,7 @@ export default function Cart() {
         </TableBody>
       </Table>
       <Button onClick={cartCleaner}>BUY NOW FOR {cart?.totalPrice} $</Button>
+
       <Payment />
     </TableContainer>
   );

@@ -6,6 +6,7 @@ import HMcard from "../../components/Product/ProductList/HMcard";
 import ProductList from "../../components/Product/ProductList/ProductList";
 import SideBar from "../../components/Product/SideBar";
 import Footer from "../../components/Footer/Footer";
+import { fontSize } from "@mui/system";
 
 let cosmetics = [];
 const HomePage = () => {
@@ -18,8 +19,8 @@ const HomePage = () => {
             src="https://images.kikocosmetics.com/mediaObject/2023/launches/greenme-2023/Launch_GreenMe_HPslider-Desktop/webp-resolutions/res-1920x600/Launch_GreenMe_HPslider-Desktop.webp"
           />
           <Carousel.Caption>
-            <h3>NEW GREEN ME</h3>
-            <p>REDUCED PLASTIC PACKAGING</p>
+            <h3 style={{ fontSize: "75px" }}>NEW GREEN ME</h3>
+            <p style={{ fontSize: "30px" }}>REDUCED PLASTIC PACKAGING</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -29,8 +30,12 @@ const HomePage = () => {
           />
 
           <Carousel.Caption>
-            <h3>NEW BEAUTY ESSENTIALS COLLECTION</h3>
-            <p>YOUR DAILY ROUTINE TO RECHARGE YOURSELF</p>
+            <h3 style={{ fontSize: "75px" }}>
+              NEW BEAUTY ESSENTIALS COLLECTION
+            </h3>
+            <p style={{ fontSize: "30px" }}>
+              YOUR DAILY ROUTINE TO RECHARGE YOURSELF
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -41,15 +46,15 @@ const HomePage = () => {
           />
 
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
+            <h3 style={{ fontSize: "75px" }}>Third slide label</h3>
+            <p style={{ fontSize: "30px" }}>
               Praesent commodo cursus magna, vel scelerisque nisl consectetur.
             </p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
 
-      <SideBar />
+      {/* <SideBar /> */}
       <center>
         <h1>KIKO COSMETICS</h1>
         <div className="d-flex justify-content-between container mt-5 flex-wrap">
