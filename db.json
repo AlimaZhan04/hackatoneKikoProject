@@ -18,11 +18,43 @@
     },
     {
       "name": "lipstick",
-      "description": "bkjjlk",
-      "price": 890,
+      "description": "hgjk",
+      "price": 367,
       "image": "https://i.pinimg.com/474x/51/52/b2/5152b26afefd432f506a9cbdcef8a0b1.jpg",
       "type": "decorative",
       "id": 2
+    },
+    {
+      "name": "blush",
+      "description": "ghjk",
+      "price": 678,
+      "image": "https://i.pinimg.com/474x/17/b4/af/17b4af7ff75023a86db32fdea1f8093e.jpg",
+      "type": "decorative",
+      "id": 3
+    },
+    {
+      "name": "aa",
+      "description": "kl",
+      "price": 789,
+      "image": "https://i.pinimg.com/474x/1d/91/6a/1d916a4aee9b43fc86895a9965e48412.jpg",
+      "type": "care",
+      "id": 4
+    },
+    {
+      "name": "nm,",
+      "description": "jk",
+      "price": 78,
+      "image": "ghjk",
+      "type": "care",
+      "id": 5
+    },
+    {
+      "name": "Smart Urban Shield Face Base",
+      "description": "fg",
+      "price": 456,
+      "image": "https://images.kikocosmetics.com/sys-master/images/he9/h94/10358335406110/KS180301047001Aprincipale_900Wx900H#k-zoom",
+      "type": "vgbhj",
+      "id": 5
     },
     {
       "name": "Lasting Precision Automatic Eyeliner",
@@ -31,14 +63,6 @@
       "image": "https://images.kikocosmetics.com/sys-master/images/hcf/h9a/9395581943838/KM0030302500533principale_900Wx900H.jpg#k-zoom",
       "type": "decoration",
       "id": 6
-    },
-    {
-      "name": "п",
-      "description": "апо",
-      "price": 5566,
-      "image": "4364",
-      "type": "46",
-      "id": 7
     }
   ]
 }

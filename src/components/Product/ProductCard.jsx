@@ -9,7 +9,9 @@ import { ADMIN } from "../../helpers/consts";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
+// import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+// import LocalMallIcon from '@mui/icons-material/LocalMall';
 // import { IconButton } from "@mui/material";
 
 import { useCart } from "../../contexts/CartContextProvider";
@@ -75,7 +77,8 @@ export default function ProductCard({ item }) {
             hover: "pink",
           }}
         >
-          <ShoppingCartIcon
+          <LocalMallOutlinedIcon
+            className="icon"
             color={checkProductInCart(item.id) ? "primary" : ""}
           />
           <span>Add to bag</span>
