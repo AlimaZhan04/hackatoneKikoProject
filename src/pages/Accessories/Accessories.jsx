@@ -7,7 +7,7 @@ import "./accessories.css";
 
 const Accessories = () => {
   const { getCosmetics, cosmetics } = useProducts();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   useEffect(() => {
     getCosmetics();
   }, [searchParams]);

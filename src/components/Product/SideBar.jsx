@@ -59,7 +59,7 @@ const SideBar = () => {
             />
             <FormControlLabel value="care" control={<Radio />} label="care" />
             <FormControlLabel
-              value="Accessories"
+              value="accessories"
               control={<Radio />}
               label="accessories"
             />
@@ -81,7 +81,6 @@ const SideBar = () => {
               control={<Radio />}
               label="less than 300$"
             />
-            <FormControlLabel value="Care" control={<Radio />} label="care" />
             <FormControlLabel
               value="500"
               control={<Radio />}

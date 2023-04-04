@@ -5,7 +5,7 @@
       "description": "strawberry",
       "price": 65,
       "image": "https://images.kikocosmetics.com/sys-master/images/h02/h67/9206202728478/KM0010300500133principale_608Wx608H.jpg",
-      "type": "decoration",
+      "type": "decorative",
       "id": 1
     },
     {
@@ -13,7 +13,7 @@
       "description": "balsam",
       "price": 25,
       "image": "https://theo.lv/wp-content/uploads/2021/09/02-34.jpg",
-      "type": "decoration",
+      "type": "decorative",
       "id": 4
     },
     {
@@ -33,6 +33,7 @@
       "id": 3
     },
     {
+
       "name": "aa",
       "description": "kl",
       "price": 789,
@@ -52,8 +53,8 @@
       "name": "Smart Urban Shield Face Base",
       "description": "fg",
       "price": 456,
-      "image": "https://images.kikocosmetics.com/sys-master/images/he9/h94/10358335406110/KS180301047001Aprincipale_900Wx900H#k-zoom",
-      "type": "vgbhj",
+      "image": "https://i.pinimg.com/564x/ca/28/d6/ca28d6b97695b5907edf4b33588e8c4a.jpg",
+      "type": "care",
       "id": 5
     },
     {
@@ -61,8 +62,17 @@
       "description": "Automatic eye pencil ",
       "price": 17,
       "image": "https://images.kikocosmetics.com/sys-master/images/hcf/h9a/9395581943838/KM0030302500533principale_900Wx900H.jpg#k-zoom",
-      "type": "decoration",
+      "type": "decorative",
       "id": 6
+    },
+    {
+      "name": "yftg",
+      "description": "ygu",
+      "price": 754,
+      "image": "https://i.pinimg.com/564x/09/ec/ea/09ecea4670a61d72d4c86549c6eca778.jpg",
+      "type": "accessories",
+      "id": 7
+
     }
   ]
 }
