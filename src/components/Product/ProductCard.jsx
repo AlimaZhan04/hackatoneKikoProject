@@ -14,6 +14,8 @@ import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 // import LocalMallIcon from '@mui/icons-material/LocalMall';
 // import { IconButton } from "@mui/material";
 
+import "./Product.css";
+
 import { useCart } from "../../contexts/CartContextProvider";
 
 export default function ProductCard({ item }) {
@@ -74,6 +76,7 @@ export default function ProductCard({ item }) {
             backgroundColor: "black",
             color: "white",
           }}
+          className="iconButton"
         >
           <LocalMallOutlinedIcon
             className="icon"
