@@ -57,22 +57,6 @@
       "id": 6
     },
     {
-      "name": "yftg",
-      "description": "ygu",
-      "price": 754,
-      "image": "https://i.pinimg.com/564x/09/ec/ea/09ecea4670a61d72d4c86549c6eca778.jpg",
-      "type": "accessories",
-      "id": 7
-    },
-    {
-<<<<<<< HEAD
-      "name": "ytguh",
-      "description": "ftygu",
-      "price": 65,
-      "image": "gh",
-      "type": "accessories",
-      "id": 8
-=======
       "name": "Brush Cleanser",
       "description": "Gentle no-rinse cleanser for brushes",
       "price": 10,
@@ -111,7 +95,14 @@
       "image": "https://images.kikocosmetics.com/sys-master/images/hfe/h83/11017696837662/KA000000007001Bprincipale_900Wx900H#k-zoom",
       "type": "accessories",
       "id": 12
->>>>>>> e0d575de0a852a3490f2eb8ebe9c46568edfb354
+    },
+    {
+      "name": "Green Me Pochette - Edition 2022",
+      "description": "Handmade cork and cotton pouch ",
+      "price": 19.99,
+      "image": "https://images.kikocosmetics.com/sys-master/images/h55/h5b/12244007354398/KA000000088001Bprincipale_900Wx900H#k-zoom",
+      "type": "accessories",
+      "id": 13
     }
   ]
 }

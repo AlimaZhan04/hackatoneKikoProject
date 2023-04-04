@@ -43,6 +43,10 @@ export default function ProductCard({ item }) {
         width: 280,
         margin: 2,
         marginLeft: 10,
+
+        marginLeft: { xl: 10, lg: 8, md: 3, sm: 2, xs: 2 },
+        with: { xl: 325, lg: 300, md: 100, sm: 160 },
+        height: { xl: 400, lg: 400, md: 460, sm: 160 },
       }}
     >
       <CardActionArea>
