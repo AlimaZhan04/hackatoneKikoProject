@@ -39,7 +39,7 @@ export default () => {
         },
       }}
       modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={20}
+      spaceBetween={570}
       slidesPerView={3}
       navigation
       pagination={{ clickable: true }}
@@ -48,54 +48,40 @@ export default () => {
       // onSlideChange={() => console.log("slide change")}
     >
       <SwiperSlide>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src="https://images.kikocosmetics.com/sys-master/images/h86/h60/9397589180446/KM0010400100544principale_900Wx900H.jpg#k-zoom"
-          />
-          <Card.Body>
-            <Card.Title>Velvet Touch Creamy Stick Blush</Card.Title>
-            <Card.Text>$ 14.00</Card.Text>
-          </Card.Body>
-        </Card>
+        <img
+          className="HM_with"
+          src="https://images.kikocosmetics.com/mediaObject/2022/info/makeup-services/Info_MakeupServices_HP_Carousel/webp-resolutions/res-720x600/Info_MakeupServices_HP_Carousel.webp"
+          alt="photo"
+        />
       </SwiperSlide>
       <SwiperSlide>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src="https://images.kikocosmetics.com/sys-master/images/h39/hb3/9919206260766/KM0050103000044principale_900Wx900H#k-zoom"
-          />
-          <Card.Body>
-            <Card.Title>Velvet Touch Creamy Stick Blush</Card.Title>
-            <Card.Text>$ 14.00</Card.Text>
-          </Card.Body>
-        </Card>
+        <img
+          className="HM_with"
+          src="https://images.kikocosmetics.com/mediaObject/2022/tutorial-how-to/video-tutorial/lips/Info_Editorial-VideoTutorial_Lips_TutorialHubPage-Banner/webp-resolutions/res-720x600/Info_Editorial-VideoTutorial_Lips_TutorialHubPage-Banner.webp"
+          alt="photo1"
+        />
       </SwiperSlide>
       <SwiperSlide>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src="https://images.kikocosmetics.com/sys-master/images/hef/h2e/10957493043230/KM000000077003Bprincipale_900Wx900H#k-zoom"
-          />
-          <Card.Body>
-            <Card.Title>Velvet Touch Creamy Stick Blush</Card.Title>
-            <Card.Text>$ 14.00</Card.Text>
-          </Card.Body>
-        </Card>
+        <img
+          className="HM_with"
+          src="https://images.kikocosmetics.com/mediaObject/2022/launches/makeup-and-skincare-set/Launch_MakeupAndSkincareSet_HP_Carousel/webp-resolutions/res-720x600/Launch_MakeupAndSkincareSet_HP_Carousel.webp"
+          alt="photo3"
+        />
       </SwiperSlide>
       <SwiperSlide>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src="https://images.kikocosmetics.com/sys-master/images/hef/h2e/10957493043230/KM000000077003Bprincipale_900Wx900H#k-zoom"
-          />
-          <Card.Body>
-            <Card.Title>Velvet Touch Creamy Stick Blush</Card.Title>
-            <Card.Text>$ 14.00</Card.Text>
-          </Card.Body>
-        </Card>
+        <img
+          className="HM_with"
+          src="https://images.kikocosmetics.com/mediaObject/2021/Info/foundation-finder/version-01/Info_FoundationFinder_Carousel/webp-resolutions/res-720x600/Info_FoundationFinder_Carousel.webp"
+          alt="photo4"
+        />
       </SwiperSlide>
-      <SwiperSlide>Slide 5</SwiperSlide>
+      <SwiperSlide>
+        <img
+          className="HM_with"
+          src="https://images.kikocosmetics.com/mediaObject/2021/Info/foundation-finder/version-01/Info_FoundationFinder_Carousel/webp-resolutions/res-720x600/Info_FoundationFinder_Carousel.webp"
+          alt="photo4"
+        />
+      </SwiperSlide>
     </Swiper>
   );
 };

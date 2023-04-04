@@ -1,16 +1,6 @@
 {
   "cosmetics": [
     {
-<<<<<<< HEAD
-      "name": "ALIMA",
-      "description": "ghfgj",
-      "price": 4656,
-      "image": "fhgh",
-      "type": "fg",
-      "id": 1
-    },
-    {
-=======
       "name": "powder",
       "description": "strawberry",
       "price": 65,
@@ -27,7 +17,6 @@
       "id": 4
     },
     {
->>>>>>> f62be4754c635e6ec6dfb3f481d6ef59c06ad49c
       "name": "lipstick",
       "description": "hgjk",
       "price": 367,
@@ -36,7 +25,6 @@
       "id": 2
     },
     {
-<<<<<<< HEAD
       "name": "blush",
       "description": "ghjk",
       "price": 678,
@@ -59,7 +47,8 @@
       "image": "ghjk",
       "type": "care",
       "id": 5
-=======
+    },
+    {
       "name": "Smart Urban Shield Face Base",
       "description": "fg",
       "price": 456,
@@ -74,7 +63,6 @@
       "image": "https://images.kikocosmetics.com/sys-master/images/hcf/h9a/9395581943838/KM0030302500533principale_900Wx900H.jpg#k-zoom",
       "type": "decoration",
       "id": 6
->>>>>>> f62be4754c635e6ec6dfb3f481d6ef59c06ad49c
     }
   ]
 }
