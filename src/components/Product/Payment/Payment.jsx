@@ -10,6 +10,19 @@ const Payment = () => {
   const [cvc, setCvc] = useState("");
   const [focus, setFocus] = useState("");
 
+  function Clear() {
+    if (!number || !name || !expiry || !cvc || !focus) {
+      alert("some inputs are empty");
+      return;
+    }
+
+    setNumber("");
+    setName("");
+    setExpiry("");
+    setCvc("");
+    setFocus("");
+  }
+
   return (
     <div className="payment_card">
       <Cards
@@ -57,7 +70,7 @@ const Payment = () => {
           onChange={(e) => setCvc(e.target.value)}
           onFocus={(e) => setFocus(e.target.name)}
         />
-        <Button>Pay with Card</Button>
+        <Button onClick={Clear}>Pay with Card</Button>
       </form>
     </div>
   );

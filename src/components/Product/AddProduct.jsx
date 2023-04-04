@@ -17,7 +17,7 @@ const AddProduct = () => {
 
   const { addCosmetics } = useProducts();
   const handleInp = (e) => {
-    if (e.target.name == "price") {
+    if (e.target.name === "price") {
       let obj = {
         ...cosmetics,
         [e.target.name]: Number(e.target.value),

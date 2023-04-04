@@ -4,10 +4,11 @@ import { useSearchParams } from "react-router-dom";
 import ProductCard from "../../components/Product/ProductCard";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import "./accessories.css";
+import "./adaptivka-Acc.css";
 
 const Accessories = () => {
   const { getCosmetics, cosmetics } = useProducts();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   useEffect(() => {
     getCosmetics();
   }, [searchParams]);

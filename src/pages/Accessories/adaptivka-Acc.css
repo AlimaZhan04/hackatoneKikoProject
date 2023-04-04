@@ -1,0 +1,23 @@
+@media all and (max-width: 1441px) {
+  .acc_h {
+    left: 400px;
+  }
+  .acc_text2 {
+    left: 260px;
+  }
+  .acc_buttons1 {
+    left: 240px;
+  }
+  .acc_picture3 {
+    height: 50%;
+    top: 500px;
+  }
+  .acc_picture4 {
+    height: 50%;
+    top: 1600px;
+    right: 280px;
+  }
+}
+
+@media all and (max-width: 1025px) {
+}

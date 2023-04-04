@@ -14,6 +14,8 @@ import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 // import LocalMallIcon from '@mui/icons-material/LocalMall';
 // import { IconButton } from "@mui/material";
 
+import "./Product.css";
+
 import { useCart } from "../../contexts/CartContextProvider";
 import { pink } from "@mui/material/colors";
 
@@ -76,6 +78,7 @@ export default function ProductCard({ item }) {
             color: "white",
             hover: "pink",
           }}
+          className="iconButton"
         >
           <LocalMallOutlinedIcon
             className="icon"
