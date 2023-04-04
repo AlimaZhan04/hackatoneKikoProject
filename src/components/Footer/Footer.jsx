@@ -90,7 +90,7 @@ const Footer = () => {
             />
 
             <Box className="white_paper">
-              <p>
+              <p style={{ marginTop: "3%" }}>
                 <strong>NEWSLETTER SIGN UP</strong>
               </p>
               <p>
@@ -100,6 +100,9 @@ const Footer = () => {
               </p>
 
               <TextField
+                sx={{
+                  marginLeft: "15px",
+                }}
                 id="standard-basic"
                 label="Email*"
                 variant="standard"
@@ -116,6 +119,7 @@ const Footer = () => {
                     color: "white",
                     backgroundColor: "black",
                     fontSize: "10px",
+                    marginLeft: "33px",
                   }}
                 >
                   Send
@@ -127,7 +131,7 @@ const Footer = () => {
 
         <Box className="mui_tiny_icons">
           <Box className="footer_icon_box">
-            <a href="https://www.facebook.com/KikoMilanoIT">
+            <a href="https://www.facebook.com/KikoMilanoIT" target="blank">
               <FacebookIcon
                 className="footer_icon"
                 sx={{
@@ -141,7 +145,7 @@ const Footer = () => {
           </Box>
 
           <Box className="footer_icon_box">
-            <a href="https://www.instagram.com/kikomilano/">
+            <a href="https://www.instagram.com/kikomilano/" target="blank">
               <InstagramIcon
                 className="footer_icon"
                 sx={{ backgroundColor: " #c03a68", color: "white" }}
@@ -150,7 +154,7 @@ const Footer = () => {
           </Box>
 
           <Box className="footer_icon_box">
-            <a href="https://twitter.com/KikoMilanoIT">
+            <a href="https://twitter.com/KikoMilanoIT" target="blank">
               <TwitterIcon
                 className="footer_icon"
                 sx={{ backgroundColor: " #55acee", color: "white" }}
@@ -159,7 +163,7 @@ const Footer = () => {
           </Box>
 
           <Box className="footer_icon_box">
-            <a href="https://www.youtube.com/user/KIKOCOSMETICS">
+            <a href="https://www.youtube.com/user/KIKOCOSMETICS" target="blank">
               <YouTubeIcon
                 className="footer_icon"
                 sx={{ backgroundColor: " #ed302f", color: "white" }}
@@ -169,7 +173,7 @@ const Footer = () => {
         </Box>
 
         <Box className="footer_container">
-          <FooterEnd className="footer_icon" />
+          <FooterEnd />
         </Box>
       </Box>
     </Box>

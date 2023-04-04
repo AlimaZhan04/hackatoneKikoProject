@@ -1,0 +1,8 @@
+.offers_first_photo > img {
+  width: 100%;
+}
+
+.offers_second_photo > img {
+  border-radius: 2%;
+  height: 40%;
+}
