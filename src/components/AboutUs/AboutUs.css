@@ -18,6 +18,19 @@
     font-size: 23px;
   }
 }
+@media all and (max-width: 768px) {
+  .aboutUs {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .aboutImg {
+    width: 768px;
+  }
+  .aboutUsText {
+    font-size: 20px;
+  }
+}
 @media all and (max-width: 426px) {
   .aboutUs {
     display: flex;
