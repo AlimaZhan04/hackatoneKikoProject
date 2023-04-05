@@ -19,3 +19,21 @@
 .pay_btn:hover {
   background-color: rgb(223, 59, 86) !important;
 }
+@media all and (max-width: 1024px) {
+  .payment {
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+    position: absolute;
+    bottom: 0px;
+  }
+}
+@media all and (max-width: 768px) {
+  .payment {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    position: absolute;
+    bottom: 0px;
+  }
+}
