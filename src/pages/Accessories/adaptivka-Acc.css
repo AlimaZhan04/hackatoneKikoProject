@@ -1,23 +1,152 @@
 @media all and (max-width: 1441px) {
   .acc_h {
-    left: 400px;
+    left: 500px;
   }
   .acc_text2 {
-    left: 260px;
+    left: 340px;
   }
   .acc_buttons1 {
-    left: 240px;
+    left: 320px;
   }
   .acc_picture3 {
     height: 50%;
-    top: 500px;
+    top: 510px;
   }
   .acc_picture4 {
     height: 50%;
-    top: 1600px;
-    right: 280px;
+    top: 1140px;
+    right: 10px;
   }
 }
 
 @media all and (max-width: 1025px) {
+  .acc_h {
+    left: 300px;
+  }
+  .acc_text2 {
+    left: 230px;
+  }
+  .acc_buttons1 {
+    left: 120px;
+    margin-top: 20px;
+  }
+  .acc_picture3 {
+    height: 70%;
+    top: 545px;
+    width: 44%;
+    left: 1px;
+  }
+  .acc_picture4 {
+    height: 70%;
+    top: 2220px;
+    right: 10px;
+    width: 44%;
+  }
+  .acc_h2 {
+    margin-left: 300px;
+  }
+  .acc_text {
+    margin-left: 350px;
+  }
+  .acc_text1 {
+    margin-left: 210px;
+  }
+  .pagination {
+    margin-left: 500px;
+  }
+}
+
+@media all and (max-width: 769px) {
+  .acc_h {
+    left: 200px;
+  }
+  .acc_text2 {
+    left: 200px;
+    font-size: 14px;
+  }
+  .acc_buttons1 {
+    left: 150px;
+    margin-top: 7px;
+    justify-content: center;
+  }
+  .acc_picture3 {
+    height: 70%;
+    top: 1039px;
+    width: 44%;
+    left: 400px;
+  }
+  .acc_picture4 {
+    height: 70%;
+    top: 2220px;
+    width: 44%;
+  }
+  .acc_h2 {
+    margin-left: 300px;
+  }
+  .acc_text {
+    margin-left: 350px;
+  }
+  .acc_text1 {
+    margin-left: 210px;
+  }
+  .pagination {
+    margin-left: 300px;
+  }
+}
+
+@media all and (max-width: 426px) {
+  .acc_h {
+    left: 80px;
+    font-size: 32px;
+    margin-top: 20px;
+  }
+  .acc_text2 {
+    left: 5px;
+    font-size: 2px;
+    display: none;
+  }
+
+  .acc_buttons1 {
+    left: 10px;
+    margin-top: 0px;
+    justify-content: center;
+    top: 200px;
+  }
+  .acc_picture3 {
+    height: 50%;
+    top: 1039px;
+    width: 60%;
+    left: 10px;
+    display: none;
+  }
+  .acc_picture4 {
+    height: 50%;
+    top: 2220px;
+    width: 60%;
+    margin-right: 190px;
+    display: none;
+  }
+  .acc_h2 {
+    margin-left: 10px;
+    font-size: 32px;
+  }
+  .acc_text {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+  .acc_text1 {
+    margin-left: 10px;
+    font-size: 10px;
+  }
+  .pagination {
+    margin-left: 100px;
+  }
+}
+
+@media all and (max-width: 321px) {
+  .acc_h {
+    left: 80px;
+    font-size: 32px;
+    margin-top: 50px;
+  }
 }

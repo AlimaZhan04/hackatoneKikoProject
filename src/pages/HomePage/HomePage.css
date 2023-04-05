@@ -1,0 +1,29 @@
+.promo_btn {
+  border-radius: 10px;
+  background: black;
+  color: white;
+}
+.promo_btn:hover {
+  background-color: #ee0a74;
+}
+.promo2 {
+  position: relative;
+}
+.promo_right {
+  position: absolute;
+  top: 1000px;
+  right: 550px;
+  color: white;
+}
+.promo1 {
+  position: relative;
+}
+.promo_left {
+  position: absolute;
+  top: 920px;
+  color: white;
+}
+
+.our_brand:hover {
+  border: 2px solid rgb(238, 70, 98) !important;
+}

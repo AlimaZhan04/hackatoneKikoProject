@@ -84,7 +84,7 @@ const SideBar = () => {
             <FormControlLabel
               value="500"
               control={<Radio />}
-              label="less than 500"
+              label="less than 500$"
             />
 
             <FormControlLabel

@@ -10,14 +10,6 @@
     },
     {
       "name": "lipstick",
-      "description": "balsam",
-      "price": 45,
-      "image": "https://theo.lv/wp-content/uploads/2021/09/02-34.jpg",
-      "type": "decorative",
-      "id": 4
-    },
-    {
-      "name": "lipstick",
       "description": "hgjk",
       "price": 367,
       "image": "https://i.pinimg.com/474x/51/52/b2/5152b26afefd432f506a9cbdcef8a0b1.jpg",
@@ -64,6 +56,7 @@
       "type": "accessories",
       "id": 7
     },
+
     {
       "name": "Brush Cleanser",
       "description": "Gentle no-rinse cleanser for brushes",
@@ -81,14 +74,6 @@
       "id": 9
     },
     {
-      "name": "Blue Me 2-In-1 Eyes & Face Brush",
-      "description": "BUY 2 GET 1 FOR FREE Face and eye brush with recycled synthetic fibres duo",
-      "price": 19.99,
-      "image": "https://images.kikocosmetics.com/sys-master/images/h82/hd5/12350741446686/KC000000500001Bprincipale_900Wx900H#k-zoom",
-      "type": "accessories",
-      "id": 10
-    },
-    {
       "name": "Energy Shake Bag",
       "description": "Energy Shake Bag",
       "price": 14,
@@ -103,6 +88,21 @@
       "image": "https://images.kikocosmetics.com/sys-master/images/hfe/h83/11017696837662/KA000000007001Bprincipale_900Wx900H#k-zoom",
       "type": "accessories",
       "id": 12
+    },
+    {
+      "name": "lipstick",
+      "description": "balsam",
+      "price": 25,
+      "image": "https://theo.lv/wp-content/uploads/2021/09/02-34.jpg",
+      "type": "decorative"
+    },
+    {
+      "name": "Brush Cleansing Pad",
+      "description": "Brush cleansing pad",
+      "price": 9.5,
+      "image": "https://images.kikocosmetics.com/sys-master/images/h41/h7d/11017696641054/KA000000007001Bprincipale_608Wx608H.webp#k-product-retina",
+      "type": "accessories",
+      "id": 13
     }
   ]
 }

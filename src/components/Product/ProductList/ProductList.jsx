@@ -1,7 +1,7 @@
 import { Box, Pagination } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Stack } from "react-bootstrap";
-import { useSearchParams } from "react-router-dom";
+// import { useSearchParams } from "react-router-dom";
 import { useProducts } from "../../../contexts/ProductContextProvider";
 import ProductCard from "../ProductCard";
 
@@ -27,9 +27,11 @@ const ProductList = () => {
   const currentData = () => {
     const begin = (page - 1) * itemsPerPage;
     const end = begin + itemsPerPage;
-    return cosmetics.slice(begin, end);
+    const arr = cosmetics.slice(begin, end);
+    console.log(arr);
+    return arr;
   };
-
+  console.log(currentData());
   //! pagination
   return (
     <>
@@ -39,6 +41,7 @@ const ProductList = () => {
           flexWrap: "wrap",
           marginTop: "90px",
           marginBottom: "20px",
+          // justifyContent: "space-between",
         }}
       >
         {currentData().map((item) => (
