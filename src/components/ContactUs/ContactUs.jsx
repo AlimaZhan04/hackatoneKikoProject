@@ -35,7 +35,7 @@ const ContactUs = () => {
 
           <div>
             <img
-              width={450}
+              width="100%"
               height={350}
               src="https://kiko-stores.kikocosmetics.com/upload/store/big/add/kiko882/0.jpg"
               alt=""
@@ -62,9 +62,9 @@ const ContactUs = () => {
             <button className="black-btn">Info and promotions</button>
             <button className="pink-btn">Take me here</button>
           </div>
-
           <div>
             <img
+              className="end_pict"
               width={450}
               height={350}
               src="https://kiko-stores.kikocosmetics.com/upload/store/big/add/kiko732/0.jpg"

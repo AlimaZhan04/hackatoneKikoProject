@@ -167,4 +167,21 @@
       margin-right: 30%;
     }
   }
+
+  @media all and (max-width: 376px) {
+    .white_paper {
+      display: none;
+    }
+  }
+
+  @media all and (max-width: 320px) {
+    .img_box > img {
+      height: 89px;
+      width: 120px;
+    }
+
+    .white_paper {
+      display: none;
+    }
+  }
 }
