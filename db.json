@@ -11,7 +11,7 @@
     {
       "name": "lipstick",
       "description": "balsam",
-      "price": 25,
+      "price": 45,
       "image": "https://theo.lv/wp-content/uploads/2021/09/02-34.jpg",
       "type": "decorative",
       "id": 4
@@ -65,14 +65,6 @@
       "id": 7
     },
     {
-<<<<<<< HEAD
-      "name": "ytguh",
-      "description": "ftygu",
-      "price": 65,
-      "image": "gh",
-      "type": "accessories",
-      "id": 8
-=======
       "name": "Brush Cleanser",
       "description": "Gentle no-rinse cleanser for brushes",
       "price": 10,
@@ -111,7 +103,6 @@
       "image": "https://images.kikocosmetics.com/sys-master/images/hfe/h83/11017696837662/KA000000007001Bprincipale_900Wx900H#k-zoom",
       "type": "accessories",
       "id": 12
->>>>>>> e0d575de0a852a3490f2eb8ebe9c46568edfb354
     }
   ]
 }

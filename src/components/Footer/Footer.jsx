@@ -100,6 +100,7 @@ const Footer = () => {
               </p>
 
               <TextField
+                className="inp_email"
                 sx={{
                   marginLeft: "15px",
                 }}
