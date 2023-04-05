@@ -49,7 +49,7 @@ const HomePage = () => {
           />
 
           <Carousel.Caption>
-            <h3 className="carousel_text1">Third slide label</h3>
+            <h3 className="carousel_text1">MakeUp</h3>
             <p className="carousel_text2">
               Praesent commodo cursus magna, vel scelerisque nisl consectetur.
             </p>
