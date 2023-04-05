@@ -24,14 +24,7 @@
       "type": "decorative",
       "id": 3
     },
-    {
-      "name": "aa",
-      "description": "kl",
-      "price": 789,
-      "image": "https://i.pinimg.com/474x/1d/91/6a/1d916a4aee9b43fc86895a9965e48412.jpg",
-      "type": "care",
-      "id": 4
-    },
+
     {
       "name": "Smart Urban Shield Face Base",
       "description": "fg",
@@ -102,6 +95,14 @@
       "image": "https://images.kikocosmetics.com/sys-master/images/h41/h7d/11017696641054/KA000000007001Bprincipale_608Wx608H.webp#k-product-retina",
       "type": "accessories",
       "id": 13
+    },
+    {
+      "name": "Lipstick",
+      "description": "lipstik",
+      "price": 508,
+      "image": "https://i.pinimg.com/564x/78/5e/55/785e55b7d2f0eb81a14d57f59af4d062.jpg",
+      "type": "accessories",
+      "id": 14
     }
   ]
 }
