@@ -17,6 +17,8 @@ import { useAuth } from "../../contexts/AuthContextProvider";
 import { getCountProductsInCart } from "../../helpers/functions";
 import { useCart } from "../../contexts/CartContextProvider";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+
 const pages = [
   { name: "Best Sellers", link: "/best", id: 2 },
   { name: "Offers", link: "/offers", id: 3 },
