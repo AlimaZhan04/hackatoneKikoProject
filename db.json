@@ -56,7 +56,6 @@
       "type": "accessories",
       "id": 7
     },
-
     {
       "name": "Brush Cleanser",
       "description": "Gentle no-rinse cleanser for brushes",
@@ -103,6 +102,14 @@
       "image": "https://images.kikocosmetics.com/sys-master/images/h41/h7d/11017696641054/KA000000007001Bprincipale_608Wx608H.webp#k-product-retina",
       "type": "accessories",
       "id": 13
+    },
+    {
+      "name": "Lipstick",
+      "description": "lipstik",
+      "price": 508,
+      "image": "https://i.pinimg.com/564x/78/5e/55/785e55b7d2f0eb81a14d57f59af4d062.jpg",
+      "type": "accessories",
+      "id": 14
     }
   ]
 }
