@@ -103,7 +103,6 @@
       "type": "decorative",
       "id": 17
     },
-
     {
       "name": "Skin Tone Face Base",
       "description": "Base correctora del",
@@ -111,6 +110,14 @@
       "image": "https://i.pinimg.com/564x/38/0f/ba/380fbad5dc33eaf987f4e518a9f8f8af.jpg",
       "type": "care",
       "id": 19
+    },
+    {
+      "name": "Primer",
+      "description": "3 in 1 primer",
+      "price": 789,
+      "image": "https://i.pinimg.com/474x/5c/83/bc/5c83bc72732ef2c4a92ce0f15804d9cb.jpg",
+      "type": "care",
+      "id": 20
     }
   ]
 }
