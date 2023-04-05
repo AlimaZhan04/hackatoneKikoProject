@@ -2,6 +2,7 @@ import { Button, Input } from "@mui/material";
 import React, { useState } from "react";
 import Cards from "react-credit-cards";
 import "./Payment.css";
+import { useNavigate } from "react-router-dom";
 
 const Payment = () => {
   const [number, setNumber] = useState("");
@@ -9,6 +10,8 @@ const Payment = () => {
   const [expiry, setExpiry] = useState("");
   const [cvc, setCvc] = useState("");
   const [focus, setFocus] = useState("");
+
+  const navigate = useNavigate();
 
   function Clear() {
     if (!number || !name || !expiry || !cvc || !focus) {
@@ -70,7 +73,23 @@ const Payment = () => {
           onChange={(e) => setCvc(e.target.value)}
           onFocus={(e) => setFocus(e.target.name)}
         />
-        <Button onClick={Clear}>Pay with Card</Button>
+        <Button
+          className="pay_btn"
+          style={{
+            border: "2px solid black",
+            borderRadius: "100rem",
+            color: "white",
+            marginTop: "5px ",
+            background: "black",
+            height: "30px",
+          }}
+          onClick={() => {
+            // Clear;
+            navigate("/thanks");
+          }}
+        >
+          Pay with Card
+        </Button>
       </form>
     </div>
   );

@@ -3,3 +3,14 @@
   border: none !important;
   color: black;
 }
+
+.likes {
+  cursor: pointer;
+  transition: color, transform ease;
+}
+.likes:hover {
+  color: #dc3d3d;
+}
+.likes.active {
+  color: #dc3d3d;
+}

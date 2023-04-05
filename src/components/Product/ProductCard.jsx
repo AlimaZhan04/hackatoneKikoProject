@@ -13,11 +13,12 @@ import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 // import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 // import LocalMallIcon from '@mui/icons-material/LocalMall';
 // import { IconButton } from "@mui/material";
-
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import "./Product.css";
 
 import { useCart } from "../../contexts/CartContextProvider";
 import { pink } from "@mui/material/colors";
+import { useState } from "react";
 
 export default function ProductCard({ item }) {
   const { deleteCosmetics } = useProducts();
@@ -29,6 +30,9 @@ export default function ProductCard({ item }) {
   // корзина/
 
   const { addProductToCart, checkProductInCart } = useCart();
+
+  const [like, setLike] = useState(0);
+  let [heartOpen, setHeartOpen] = useState(false);
 
   return (
     <Card
@@ -46,7 +50,7 @@ export default function ProductCard({ item }) {
 
         marginLeft: { xl: 10, lg: 8, md: 20, sm: 10, xs: 5 },
         with: { xl: 325, lg: 300, md: 200, sm: 160 },
-        height: { xl: 400, lg: 400, md: 460, sm: 460 },
+        height: { xl: 430, lg: 430, md: 460, sm: 460 },
       }}
     >
       <CardActionArea>
@@ -68,6 +72,17 @@ export default function ProductCard({ item }) {
             {item.price} $
           </Typography>
         </CardContent>
+
+        <IconButton>
+          <FavoriteIcon
+            className={`likes ${heartOpen && "active"}`}
+            onClick={() => {
+              setLike(like + 1);
+              setHeartOpen((heartOpen = !heartOpen));
+            }}
+          />
+          <p>{like}</p>
+        </IconButton>
       </CardActionArea>
       <div className="btn_cart">
         <IconButton
