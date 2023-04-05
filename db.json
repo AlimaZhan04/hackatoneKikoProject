@@ -24,23 +24,6 @@
       "type": "decorative",
       "id": 3
     },
-
-    {
-      "name": "Smart Urban Shield Face Base",
-      "description": "fg",
-      "price": 456,
-      "image": "https://i.pinimg.com/564x/ca/28/d6/ca28d6b97695b5907edf4b33588e8c4a.jpg",
-      "type": "care",
-      "id": 5
-    },
-    {
-      "name": "Lasting Precision Automatic Eyeliner",
-      "description": "Automatic eye pencil ",
-      "price": 17,
-      "image": "https://images.kikocosmetics.com/sys-master/images/hcf/h9a/9395581943838/KM0030302500533principale_900Wx900H.jpg#k-zoom",
-      "type": "decorative",
-      "id": 6
-    },
     {
       "name": "yftg",
       "description": "ygu",
@@ -56,14 +39,6 @@
       "image": "https://images.kikocosmetics.com/sys-master/images/hca/h89/9953120616478/KM0050204600044principale_900Wx900H#k-zoom",
       "type": " accessories",
       "id": 8
-    },
-    {
-      "name": "Beauty Essentials 4-In-1 Brush",
-      "description": "4-in-1 multi-purpose face and eye brush",
-      "price": 21.99,
-      "image": "https://images.kikocosmetics.com/sys-master/images/h66/hf3/12697009225758/KC000000611001Bprincipale_900Wx900H#k-zoom",
-      "type": "accessories",
-      "id": 9
     },
     {
       "name": "Energy Shake Bag",
@@ -103,6 +78,39 @@
       "image": "https://i.pinimg.com/564x/78/5e/55/785e55b7d2f0eb81a14d57f59af4d062.jpg",
       "type": "accessories",
       "id": 14
+    },
+    {
+      "name": "lipstick Double",
+      "description": "realy perfect pigmentation",
+      "price": 144,
+      "image": "https://i.pinimg.com/474x/fa/d8/34/fad834c39e3796d62e2417d56fa61002.jpg",
+      "type": "decorative",
+      "id": 15
+    },
+    {
+      "name": "Oil lipstick",
+      "description": "excellent hydration",
+      "price": 123,
+      "image": "https://i.pinimg.com/474x/70/c5/b5/70c5b55b5ea5b7c2aa69ff1d93fcf820.jpg",
+      "type": "care",
+      "id": 16
+    },
+    {
+      "name": "Pensil",
+      "description": "colorful lip pensil",
+      "price": 234,
+      "image": "https://i.pinimg.com/474x/77/ff/32/77ff324ed4db0aa89646e6aad0c264b4.jpg",
+      "type": "decorative",
+      "id": 17
+    },
+
+    {
+      "name": "Skin Tone Face Base",
+      "description": "Base correctora del",
+      "price": 123,
+      "image": "https://i.pinimg.com/564x/38/0f/ba/380fbad5dc33eaf987f4e518a9f8f8af.jpg",
+      "type": "care",
+      "id": 19
     }
   ]
 }
