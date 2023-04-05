@@ -86,7 +86,7 @@ function Navbar() {
             display: "block",
             maxWidth: "100%",
             marginTop: "1rem",
-            marginLeft: "43rem",
+            // marginLeft: "43rem",
           }}
         />
       </Box>
