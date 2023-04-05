@@ -9,12 +9,12 @@
     left: 320px;
   }
   .acc_picture3 {
-    height: 50%;
+    height: 55%;
     top: 510px;
   }
   .acc_picture4 {
-    height: 50%;
-    top: 1140px;
+    height: 55%;
+    top: 1170px;
     right: 10px;
   }
 }
@@ -31,16 +31,16 @@
     margin-top: 20px;
   }
   .acc_picture3 {
-    height: 70%;
-    top: 545px;
-    width: 44%;
+    height: 12%;
+    top: 560px;
+    width: 400px;
     left: 1px;
   }
   .acc_picture4 {
-    height: 70%;
-    top: 2220px;
+    height: 12%;
+    top: 2236px;
     right: 10px;
-    width: 44%;
+    width: 400px;
   }
   .acc_h2 {
     margin-left: 300px;
@@ -70,14 +70,14 @@
     justify-content: center;
   }
   .acc_picture3 {
-    height: 70%;
-    top: 1039px;
+    height: 12%;
+    top: 1049px;
     width: 44%;
     left: 400px;
   }
   .acc_picture4 {
-    height: 70%;
-    top: 2220px;
+    height: 12%;
+    top: 2230px;
     width: 44%;
   }
   .acc_h2 {
