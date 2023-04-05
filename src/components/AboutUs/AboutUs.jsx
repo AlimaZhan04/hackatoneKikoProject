@@ -1,9 +1,10 @@
 import React from "react";
+import "./AboutUs.css";
 
 const AboutUs = () => {
   return (
-    <div className="d-flex ">
-      <div>
+    <div className="aboutUs ">
+      <div className="aboutUsText">
         <center>
           <h3>KIKO MILANO</h3>
         </center>
@@ -21,9 +22,9 @@ const AboutUs = () => {
           Love.
         </p>
       </div>
-      <div>
+      <div className="aboutUsImg">
         <img
-          width={700}
+          className="aboutImg"
           src="https://images.kikocosmetics.com/mediaObject/2022/info/US-about-us/02_Info_AboutUs_Box/webp-resolutions/res-1200x1200/02_Info_AboutUs_Box.webp"
           alt=""
         />

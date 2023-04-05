@@ -4,9 +4,6 @@ import CardBlock from "../../components/Product/ProductCard";
 import HMcard from "../../components/Product/ProductList/HMcard";
 import "./HomePage.css";
 import ProductList from "../../components/Product/ProductList/ProductList";
-import SideBar from "../../components/Product/SideBar";
-import Footer from "../../components/Footer/Footer";
-import { fontSize } from "@mui/system";
 import { useNavigate } from "react-router";
 import img1 from "./images/img1.png";
 import img2 from "./images/img2.png";
@@ -27,8 +24,8 @@ const HomePage = () => {
             src="https://images.kikocosmetics.com/mediaObject/2023/launches/greenme-2023/Launch_GreenMe_HPslider-Desktop/webp-resolutions/res-1920x600/Launch_GreenMe_HPslider-Desktop.webp"
           />
           <Carousel.Caption>
-            <h3 style={{ fontSize: "75px" }}>NEW GREEN ME</h3>
-            <p style={{ fontSize: "30px" }}>REDUCED PLASTIC PACKAGING</p>
+            <h3 className="carousel_text1">NEW GREEN ME</h3>
+            <p className="carousel_text2">REDUCED PLASTIC PACKAGING</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -38,10 +35,8 @@ const HomePage = () => {
           />
 
           <Carousel.Caption>
-            <h3 style={{ fontSize: "75px" }}>
-              NEW BEAUTY ESSENTIALS COLLECTION
-            </h3>
-            <p style={{ fontSize: "30px" }}>
+            <h3 className="carousel_text1">NEW BEAUTY ESSENTIALS COLLECTION</h3>
+            <p className="carousel_text2">
               YOUR DAILY ROUTINE TO RECHARGE YOURSELF
             </p>
           </Carousel.Caption>
@@ -54,8 +49,8 @@ const HomePage = () => {
           />
 
           <Carousel.Caption>
-            <h3 style={{ fontSize: "75px" }}>Third slide label</h3>
-            <p style={{ fontSize: "30px" }}>
+            <h3 className="carousel_text1">Third slide label</h3>
+            <p className="carousel_text2">
               Praesent commodo cursus magna, vel scelerisque nisl consectetur.
             </p>
           </Carousel.Caption>
@@ -78,7 +73,7 @@ const HomePage = () => {
             />
           </div>
           <div className="promo_left">
-            <h3>
+            <h3 className="promo_h3">
               GET UP TO 2 FREE PRODUCTS
               <br />
               WITH YOUR ONLINE ORDER
@@ -118,47 +113,53 @@ const HomePage = () => {
         </div>
       </center>
       <center>
-        <h2 style={{ fontSize: "50px", marginTop: "20px" }}>KIKO is...</h2>
+        <h2 className="kikoName">KIKO is...</h2>
       </center>
 
       <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          marginTop: "1rem",
-          marginBottom: "1rem",
-        }}
+        style={{ display: "flex", marginTop: "1rem", marginLeft: "1rem" }}
+        className="kiko_is"
       >
-        <h3>COLOUR</h3>
-        <h3>INNOVATION</h3>
-        <h3>SAFETY</h3>
-        <h3>OUR MISSION</h3>
-      </div>
-      <div style={{ display: "flex" }}>
-        <img
-          style={{ marginLeft: "25px", borderRadius: "10px" }}
-          width={350}
-          src={img1}
-          alt="a"
-        />
-        <img
-          style={{ marginLeft: "25px", borderRadius: "10px" }}
-          width={350}
-          src={img2}
-          alt="a"
-        />
-        <img
-          style={{ marginLeft: "25px", borderRadius: "10px" }}
-          width={350}
-          src={img3}
-          alt="a"
-        />
-        <img
-          style={{ marginLeft: "25px", borderRadius: "10px" }}
-          width={350}
-          src={img4}
-          alt="a"
-        />
+        <div>
+          <h3 className="kikoIs">COLOUR</h3>
+          <img
+            className="kikoIsImg"
+            style={{ marginLeft: "25px", borderRadius: "10px" }}
+            width={350}
+            src={img1}
+            alt="a"
+          />
+        </div>
+        <div>
+          <h3 className="kikoIs">INNOVATION</h3>
+          <img
+            className="kikoIsImg"
+            style={{ marginLeft: "25px", borderRadius: "10px" }}
+            width={350}
+            src={img2}
+            alt="a"
+          />
+        </div>
+        <div>
+          <h3 className="kikoIs">SAFETY</h3>
+          <img
+            className="kikoIsImg"
+            style={{ marginLeft: "25px", borderRadius: "10px" }}
+            width={350}
+            src={img3}
+            alt="a"
+          />
+        </div>
+        <div>
+          <h3 className="kikoIs">OUR MISSION</h3>
+          <img
+            className="kikoIsImg"
+            style={{ marginLeft: "25px", borderRadius: "10px" }}
+            width={350}
+            src={img4}
+            alt="a"
+          />
+        </div>
       </div>
       <center>
         <Button
@@ -176,11 +177,12 @@ const HomePage = () => {
           Our Brand
         </Button>
       </center>
-      <div>
+      <div className="ourBrand">
         <img
+          className="ourBrandImg"
           src={img5}
           width={1500}
-          style={{ marginTop: "2rem", marginLeft: "10px" }}
+          style={{ marginTop: "2rem" }}
         />
       </div>
     </div>
