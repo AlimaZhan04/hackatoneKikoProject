@@ -39,6 +39,7 @@ const ProductList = () => {
           flexWrap: "wrap",
           marginTop: "90px",
           marginBottom: "20px",
+          // justifyContent: "space-between",
         }}
       >
         {currentData().map((item) => (

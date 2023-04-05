@@ -57,22 +57,6 @@
       "id": 6
     },
     {
-      "name": "yftg",
-      "description": "ygu",
-      "price": 754,
-      "image": "https://i.pinimg.com/564x/09/ec/ea/09ecea4670a61d72d4c86549c6eca778.jpg",
-      "type": "accessories",
-      "id": 7
-    },
-    {
-<<<<<<< HEAD
-      "name": "ytguh",
-      "description": "ftygu",
-      "price": 65,
-      "image": "gh",
-      "type": "accessories",
-      "id": 8
-=======
       "name": "Brush Cleanser",
       "description": "Gentle no-rinse cleanser for brushes",
       "price": 10,
@@ -89,14 +73,6 @@
       "id": 9
     },
     {
-      "name": "Blue Me 2-In-1 Eyes & Face Brush",
-      "description": "BUY 2 GET 1 FOR FREE Face and eye brush with recycled synthetic fibres duo",
-      "price": 19.99,
-      "image": "https://images.kikocosmetics.com/sys-master/images/h82/hd5/12350741446686/KC000000500001Bprincipale_900Wx900H#k-zoom",
-      "type": "accessories",
-      "id": 10
-    },
-    {
       "name": "Energy Shake Bag",
       "description": "Energy Shake Bag",
       "price": 14,
@@ -111,7 +87,14 @@
       "image": "https://images.kikocosmetics.com/sys-master/images/hfe/h83/11017696837662/KA000000007001Bprincipale_900Wx900H#k-zoom",
       "type": "accessories",
       "id": 12
->>>>>>> e0d575de0a852a3490f2eb8ebe9c46568edfb354
+    },
+    {
+      "name": "Brush Cleansing Pad",
+      "description": "Brush cleansing pad",
+      "price": 9.5,
+      "image": "https://images.kikocosmetics.com/sys-master/images/h41/h7d/11017696641054/KA000000007001Bprincipale_608Wx608H.webp#k-product-retina",
+      "type": "accessories",
+      "id": 13
     }
   ]
 }

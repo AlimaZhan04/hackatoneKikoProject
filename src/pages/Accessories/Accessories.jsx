@@ -35,7 +35,7 @@ const Accessories = () => {
 
   return (
     <div>
-      <div className="color">
+      <div className="colors">
         <img
           className="Acc_img"
           src="https://www.chinapowdercoating.com/ru/wp-content/gallery/d0bad0bed0b6d0b0d0bdd18bd0b9-d18dd184d184d0b5d0bad182/cache/brown-leather-effect-powder-coating.jpg-nggid03112-ngg0dyn-330x200x100-00f0w010c011r110f110r010t010.jpg"
