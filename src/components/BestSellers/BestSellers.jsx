@@ -5,6 +5,7 @@ import ProductCard from "../../components/Product/ProductCard";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import "./bestSellers.css";
 import SideBar from "../Product/SideBar";
+import "./bestSellersAdapt.css";
 
 const BestSellers = () => {
   const { getCosmetics, cosmetics } = useProducts();
@@ -41,9 +42,9 @@ const BestSellers = () => {
           src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ-y6nbbrSJlmtBO9x9mKx_xlSvAPqFEfBXPZ2RchfDc_q1p6gy"
           alt="picture"
         />
-        <h1 className="acc_h">Best Sellers</h1>
+        <h1 className="acc_b">Best Sellers</h1>
 
-        <div className="acc_buttons">
+        <div className="best_buttons">
           <button className="acc_button">All</button>
           <button className="acc_button">MakeUp Best Sellers</button>
           <button className="acc_button">Skin Care Best Sellers</button>
@@ -76,6 +77,7 @@ const BestSellers = () => {
       </Box>
       <Stack spacing={2}>
         <Pagination
+          sx={{ marginLeft: { medium: 100 } }}
           className="pagination"
           count={count}
           page={page}
