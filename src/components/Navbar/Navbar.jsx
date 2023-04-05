@@ -9,7 +9,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { Link, useNavigate } from "react-router-dom";
 import { Badge } from "@mui/material";
 import { ADMIN } from "../../helpers/consts";
@@ -20,6 +19,8 @@ import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import "./Navbar.css";
 import { useState } from "react";
+import "./Navbar.css";
+import { Directions } from "@mui/icons-material";
 
 const pages = [
   { name: "Best Sellers", link: "/best", id: 2 },
@@ -77,9 +78,14 @@ function Navbar() {
       position="static"
       sx={{
         backgroundColor: "black",
+        display: "flex",
+        justifyContent: "center",
       }}
     >
-      <Box>
+      <Box
+        className="nav_logo"
+        sx={{ display: "flex", justifyContent: "center", width: "100%" }}
+      >
         <img
           onClick={() => {
             navigate("/");
@@ -87,12 +93,6 @@ function Navbar() {
           width={100}
           src="https://static.kikocosmetics.com/docroot/dist/images/kiko-logo-text.svg"
           alt="Hello"
-          style={{
-            display: "block",
-            maxWidth: "100%",
-            marginTop: "1rem",
-            marginLeft: "43rem",
-          }}
         />
       </Box>
       <Container
@@ -164,7 +164,6 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -243,7 +242,7 @@ function Navbar() {
           )}
           <IconButton onClick={() => navigate("/cart")}>
             <Badge badgeContent={count} color="primary">
-              <LocalMallOutlinedIcon color="info" />
+              <LocalMallOutlinedIcon className="cart_logo" color="info" />
             </Badge>
           </IconButton>
         </Box>

@@ -1,3 +1,31 @@
 .h6 {
   margin: 5% 10%;
 }
+
+.map {
+  width: 500px;
+  height: 1000px;
+}
+
+@media all and (max-width: 425px) {
+  .map {
+    width: 330px;
+    height: 500px;
+    padding-right: 30%;
+  }
+
+  .h6 {
+    display: none;
+  }
+
+  @media all and (max-width: 320px) {
+    .map {
+      width: 250px;
+      height: 450px;
+    }
+
+    .h6 {
+      display: none;
+    }
+  }
+}

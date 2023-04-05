@@ -65,10 +65,12 @@ const HomePage = () => {
       <center>
         <h1 style={{ marginTop: "2%" }}>PROMO</h1>
         <div
+          className="promo"
           style={{ display: "flex", margin: "20px 10px", paddingLeft: "5%" }}
         >
           <div className="promo1">
             <img
+              className="promo_img"
               style={{ borderRadius: "10px" }}
               width={600}
               height={400}
@@ -86,8 +88,9 @@ const HomePage = () => {
               SHOP NOW
             </button>
           </div>
-          <div className="promo2" style={{ marginLeft: "2%" }}>
+          <div className="promo2">
             <img
+              className="promo_img"
               style={{ borderRadius: "10px" }}
               width={600}
               height={400}
@@ -101,7 +104,7 @@ const HomePage = () => {
             </button>
           </div>
         </div>
-        <h1>THE MUST-HAVES OF THE MOMENT</h1>
+        <h1 className="must_have">THE MUST-HAVES OF THE MOMENT</h1>
         <div className="d-flex justify-content-between container  flex-wrap">
           {cosmetics.map((item) => (
             <CardBlock key={item.id} item={item} />
