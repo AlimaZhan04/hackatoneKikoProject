@@ -4,7 +4,7 @@
       "name": "powder",
       "description": "strawberry",
       "price": 65,
-      "image": "https://images.kikocosmetics.com/sys-master/images/h02/h67/9206202728478/KM0010300500133principale_608Wx608H.jpg",
+      "image": "https://imges.kikocosmetics.com/sys-master/images/h02/h67/9206202728478/KM0010300500133principale_608Wx608H.jpg",
       "type": "decorative",
       "id": 1
     },
@@ -56,7 +56,6 @@
       "type": "accessories",
       "id": 7
     },
-
     {
       "name": "Brush Cleanser",
       "description": "Gentle no-rinse cleanser for brushes",

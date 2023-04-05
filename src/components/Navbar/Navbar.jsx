@@ -204,7 +204,7 @@ function Navbar() {
             color="primary"
           />
           {heartOpen && (
-            <div className="shop-cart"> THANK YOU FOR YOR LIKE</div>
+            <div className="shop-cart"> THANK YOU FOR YOUR LIKE</div>
           )}
         </IconButton>
 
