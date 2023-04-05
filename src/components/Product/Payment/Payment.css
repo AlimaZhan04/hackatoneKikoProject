@@ -8,10 +8,14 @@
 .payment_card {
   margin-bottom: 90px;
   position: relative;
+  margin-top: 50px;
 }
 .payment_inp {
   width: 200px;
   border: 2px solid black;
   border-radius: 10px;
   margin: 3px;
+}
+.pay_btn:hover {
+  background-color: rgb(223, 59, 86) !important;
 }

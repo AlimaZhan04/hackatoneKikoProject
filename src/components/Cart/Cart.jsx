@@ -10,6 +10,7 @@ import { useCart } from "../../contexts/CartContextProvider";
 import { Button } from "@mui/material";
 import Payment from "../Product/Payment/Payment";
 import { Box } from "@mui/system";
+import { useNavigate } from "react-router-dom";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -29,6 +30,8 @@ export default function Cart() {
   React.useEffect(() => {
     getCart();
   }, []);
+
+  const navigate = useNavigate();
 
   const cartCleaner = () => {
     localStorage.removeItem("cart");
@@ -84,9 +87,21 @@ export default function Cart() {
           ))}
         </TableBody>
       </Table>
-      <Button onClick={cartCleaner}>BUY NOW FOR {cart?.totalPrice} $</Button>
+      <Button
+        style={{
+          border: "2px solid black",
+          width: "250px",
+          borderRadius: "100rem",
+          color: "white",
+          margin: "10px ",
+          background: "black",
+        }}
+        onClick={() => navigate("/payment")}
+      >
+        BUY NOW FOR {cart?.totalPrice} $
+      </Button>
 
-      <Payment />
+      {/* <Payment /> */}
     </TableContainer>
   );
 }
