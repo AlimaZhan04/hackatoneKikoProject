@@ -16,6 +16,9 @@ import { useAuth } from "../../contexts/AuthContextProvider";
 import { getCountProductsInCart } from "../../helpers/functions";
 import { useCart } from "../../contexts/CartContextProvider";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import "./Navbar.css";
+import { useState } from "react";
 import "./Navbar.css";
 import { Directions } from "@mui/icons-material";
 
@@ -67,6 +70,8 @@ function Navbar() {
   React.useEffect(() => {
     setCount(getCountProductsInCart());
   }, [addProductToCart]);
+
+  let [heartOpen, setHeartOpen] = useState(false);
 
   return (
     <AppBar
@@ -191,6 +196,17 @@ function Navbar() {
             ))}
           </Box>
         </Toolbar>
+
+        <IconButton>
+          <FavoriteIcon
+            onClick={() => setHeartOpen((heartOpen = !heartOpen))}
+            className={`favorites ${heartOpen && "active"}`}
+            color="primary"
+          />
+          {heartOpen && (
+            <div className="shop-cart"> THANK YOU FOR YOR LIKE</div>
+          )}
+        </IconButton>
 
         <Box
           sx={{
