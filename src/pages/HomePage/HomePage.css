@@ -9,8 +9,6 @@
 .promo2 {
   position: relative;
   margin-left: 2%;
-  /* width: 600px;
-  height: 400; */
 }
 .promo_right {
   position: absolute;
@@ -18,10 +16,12 @@
   right: 550px;
   color: white;
 }
+.kikoName {
+  font-size: "50px";
+  margin-top: "20px";
+}
 .promo1 {
   position: relative;
-  /* width: 600px;
-  height: 400; */
 }
 .promo_left {
   position: absolute;
@@ -32,8 +32,17 @@
 .our_brand:hover {
   border: 2px solid rgb(238, 70, 98) !important;
 }
+.kikoIs {
+  margin-left: 2rem;
+}
+.carousel_text1 {
+  font-size: 75px;
+}
+.carousel_text2 {
+  font-size: 30px;
+}
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1025px) {
   .promo1 {
     position: relative;
   }
@@ -58,8 +67,29 @@
     top: 947px;
     right: 230px;
   }
+  .kiko_is {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 10px;
+  }
+  .kikoIsImg {
+    width: 650px;
+  }
+  .kikoIs {
+    margin-top: 22px;
+  }
+  .ourBrandImg {
+    width: 1022px;
+  }
+  .carousel_text1 {
+    font-size: 50px;
+  }
+  .carousel_text2 {
+    font-size: 25px;
+  }
 }
-@media all and (max-width: 768px) {
+@media all and (max-width: 769px) {
   .promo_left {
     position: absolute;
     right: 280px;
@@ -70,17 +100,31 @@
     right: 81px;
     top: 897px;
   }
+  .ourBrandImg {
+    width: 767px;
+  }
+  .carousel_text1 {
+    font-size: 30px;
+  }
+  .carousel_text2 {
+    font-size: 15px;
+  }
 }
-@media all and (max-width: 425px) {
-  /* .promo_left {
+@media all and (max-width: 426px) {
+  .promo_left {
     position: absolute;
-    right: 280px;
-    top: 654px;
+    right: 174px;
+    top: 433px;
+    font-size: 10px;
+  }
+  .promo_h3 {
+    font-size: 10px;
   }
   .promo_right {
     position: absolute;
-    right: 81px;
-    top: 897px;
+    right: 78px;
+    top: 578px;
+    font-size: 10px;
   }
   .promo1 {
     position: relative;
@@ -94,9 +138,126 @@
     flex-wrap: wrap;
     flex-direction: column;
     margin-top: 5%;
-  } */
+  }
   .promo_img {
-    height: 225px !important;
-    width: 342px !important;
+    height: 231px;
+    width: 318px;
+  }
+  .kiko_is {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 10px;
+  }
+  .kikoIsImg {
+    width: 350px;
+  }
+  .kikoIs {
+    margin-top: 22px;
+  }
+  .ourBrandImg {
+    width: 430px;
+  }
+  .carousel_text1 {
+    font-size: 45px;
+  }
+  .carousel_text2 {
+    font-size: 22px;
+  }
+  .carousel_text1 {
+    font-size: 20px;
+  }
+  .carousel_text2 {
+    font-size: 10px;
+  }
+  .kikoName {
+    font-size: 35px;
+  }
+}
+
+@media all and (max-width: 376px) {
+  .promo_left {
+    position: absolute;
+    right: 170px;
+    top: 421px;
+    font-size: 9px;
+  }
+  .promo_h3 {
+    font-size: 10px;
+  }
+  .promo_right {
+    position: absolute;
+    right: 35px;
+    top: 559px;
+    font-size: 9px;
+  }
+  .kiko_is {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 10px;
+  }
+  .kikoIsImg {
+    width: 310px;
+  }
+  .kikoIs {
+    margin-top: 22px;
+  }
+  .ourBrandImg {
+    width: 375px;
+  }
+  .carousel_text1 {
+    font-size: 15px;
+    margin-bottom: 20px !important;
+  }
+  .carousel_text2 {
+    font-size: 9px;
+  }
+
+  .kikoName {
+    font-size: 30px;
+  }
+}
+
+@media all and (max-width: 321px) {
+  .promo_img {
+    height: 205px !important;
+    width: 279px !important;
+  }
+  .promo_left {
+    position: absolute;
+    right: 124px;
+    top: 376px;
+    font-size: 9px;
+  }
+  .promo_h3 {
+    font-size: 10px;
+  }
+  .promo_right {
+    position: absolute;
+    right: 28px;
+    top: 519px;
+    font-size: 9px;
+  }
+  .kiko_is {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 10px;
+  }
+  .kikoIsImg {
+    width: 260px;
+  }
+  .kikoIs {
+    margin-top: 22px;
+  }
+  .ourBrandImg {
+    width: 320px;
+  }
+  .carousel_text1 {
+    font-size: 12px;
+  }
+  .carousel_text2 {
+    font-size: 6px;
   }
 }
