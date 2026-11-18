@@ -1,8 +1,9 @@
 import axios from "axios";
-import { async } from "q";
 import React, { createContext, useContext, useReducer, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { API } from "../helpers/consts";
+import { recordAction } from '../project-work/trace.mjs';
+axios.interceptors.request.use(config=>{if(config.url?.startsWith('/api/cosmetics'))recordAction(`${(config.method||'GET').toUpperCase()} ${config.url}`,config.data);return config;});
 
 export const productContext = createContext();
 export const useProducts = () => {
@@ -34,9 +35,10 @@ const ProductContextProvider = ({ children }) => {
   const navigate = useNavigate();
   //! read (get request)
 
-  const getCosmetics = async () => {
-    const { data } = await axios.get(`${API}/${window.location.search}`);
-    dispatch({ type: "GET_COSMETICS", payload: data });
+  const getCosmetics = async ({throwOnError=false}={}) => {
+    try { const { data } = await axios.get(`${API}/${window.location.search}`);
+      dispatch({ type: "GET_COSMETICS", payload: data });
+    } catch(error) { console.error('Не удалось загрузить каталог:',error.message); if(throwOnError)throw error; }
   };
 
   const getRandomProducts = async () => {
@@ -45,15 +47,15 @@ const ProductContextProvider = ({ children }) => {
 
   // ! create (post request)
   const addCosmetics = async (newCosmetics) => {
-    await axios.post(API, newCosmetics);
-    getCosmetics();
+    const {data}=await axios.post(API, newCosmetics);
+    return data;
   };
 
   // !delete
 
   const deleteCosmetics = async (id) => {
-    await axios.delete(`${API}/${id}`);
-    getCosmetics();
+    try { await axios.delete(`${API}/${id}`); await getCosmetics(); }
+    catch(error) { alert(error.response?.data?.message || 'Не удалось удалить товар'); }
   };
 
   //! get product details
@@ -64,7 +66,7 @@ const ProductContextProvider = ({ children }) => {
   };
 
   const saveEditedCosmetics = async (editedCosmetics) => {
-    await axios.patch(`${API}/${editedCosmetics.id}`, editedCosmetics);
+    await axios.put(`${API}/${editedCosmetics.id}`, editedCosmetics);
   };
 
   const fetchByParams = async (query, value) => {

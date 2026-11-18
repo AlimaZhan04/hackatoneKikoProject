@@ -18,9 +18,11 @@ import BestSellers from "../components/BestSellers/BestSellers";
 import Cart from "../components/Cart/Cart";
 import PaymentPage from "../pages/PaymentPage/PaymentPage";
 import Thanks from "../pages/Thanks/Thanks";
+import ProjectWork from "../project-work/ProjectWork.jsx";
 const MainRoutes = () => {
   const { user } = useAuth();
   const PUBLIC_ROUTES = [
+    { link: "/project-work", element: <ProjectWork />, id: "project-work" },
     { link: "/", element: <HomePage />, id: 1 },
     { link: "/products", element: <ProductPage />, id: 2 },
     { link: "/*", element: <NotFoundPage />, id: 3 },

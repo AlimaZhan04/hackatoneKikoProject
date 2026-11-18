@@ -1,102 +1,14 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
-import fire from "../fire.js";
-export const authContext = createContext();
-export const useAuth = () => {
-  return useContext(authContext);
-};
-
-const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorEmail, setErrorEmail] = useState("");
-  const [errorPassword, setErrorPassword] = useState("");
-  const [hasAccount, setHasAccount] = useState("");
-
-  const clearInputs = () => {
-    setEmail("");
-    setPassword("");
-  };
-
-  const clearErrors = () => {
-    setErrorEmail("");
-    setErrorPassword("");
-  };
-
-  const handleSignUp = () => {
-    clearErrors();
-    fire
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .catch((err) => {
-        switch (err.code) {
-          case "auth/email-already-in-use":
-          case "auth/invalid-email":
-            setErrorEmail(err.message);
-            break;
-
-          case "auth/weak-password":
-            setErrorPassword(err.message);
-            break;
-        }
-      });
-  };
-
-  const handleLogIn = () => {
-    fire
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .catch((err) => {
-        switch (err.code) {
-          case "auth/user-disabled":
-          case "auth/invalid-email":
-          case "auth/user-not-found":
-            setErrorEmail(err.message);
-            break;
-
-          case "auth/wrong-password":
-            setErrorPassword(err.message);
-            break;
-        }
-      });
-    clearErrors();
-  };
-  const handleLogOut = () => {
-    fire.auth().signOut();
-  };
-
-  const authListener = () => {
-    fire.auth().onAuthStateChanged((user) => {
-      if (user) {
-        setUser(user);
-        clearInputs();
-      } else {
-        setUser("");
-      }
-    });
-  };
-
-  useEffect(() => {
-    authListener();
-  }, []);
-
-  const values = {
-    email,
-    password,
-    errorEmail,
-    errorPassword,
-    hasAccount,
-    user,
-
-    setEmail,
-    setPassword,
-    setHasAccount,
-
-    handleLogIn,
-    handleLogOut,
-    handleSignUp,
-  };
-  return <authContext.Provider value={values}>{children}</authContext.Provider>;
-};
-
-export default AuthContextProvider;
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { request } from '../studio/api.mjs';
+export const authContext=createContext();
+export const useAuth=()=>useContext(authContext);
+export default function AuthContextProvider({children}) {
+ const [user,setUser]=useState(''),[email,setEmail]=useState(''),[password,setPassword]=useState('');
+ const [errorEmail,setErrorEmail]=useState(''),[errorPassword,setErrorPassword]=useState(''),[hasAccount,setHasAccount]=useState(false);
+ useEffect(()=>{request('/auth/me').then(data=>setUser(data.user||'')).catch(()=>{});},[]);
+ const authenticate=async action=>{setErrorEmail('');setErrorPassword('');try{const data=await request('/auth/'+action,{method:'POST',body:{email,password}});setUser(data.user);setPassword('');return true;}catch(error){setErrorPassword(error.message);return false;}};
+ const handleLogIn=()=>authenticate('login');
+ const handleSignUp=()=>authenticate('register');
+ const handleLogOut=async()=>{try{await request('/auth/logout',{method:'POST'});setUser('');}catch(error){setErrorEmail(error.message);}};
+ return <authContext.Provider value={{user,email,password,errorEmail,errorPassword,hasAccount,setEmail,setPassword,setHasAccount,handleLogIn,handleSignUp,handleLogOut}}>{children}</authContext.Provider>;
+}

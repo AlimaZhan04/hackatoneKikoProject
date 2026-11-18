@@ -40,13 +40,10 @@ export default function ProductCard({ item }) {
         maxWidth: 325,
         display: "flex",
         flexDirection: "row",
-        margin: "1rem",
         flexWrap: "wrap",
         justifyContent: "space-around",
-        height: 400,
         width: 280,
         margin: 2,
-        marginLeft: 10,
 
         marginLeft: { xl: 10, lg: 8, md: 20, sm: 10, xs: 5 },
         with: { xl: 325, lg: 300, md: 200, sm: 160 },

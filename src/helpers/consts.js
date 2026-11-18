@@ -1,4 +1,4 @@
-export const API = "http://localhost:8000/cosmetics";
+export const API = "/api/cosmetics";
 export const ADMIN = "admin1@gmail.com";
 
 export const CART = {

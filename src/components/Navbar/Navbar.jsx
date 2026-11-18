@@ -20,7 +20,6 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import "./Navbar.css";
 import { useState } from "react";
 import "./Navbar.css";
-import { Directions } from "@mui/icons-material";
 
 const pages = [
   { name: "Best Sellers", link: "/best", id: 2 },
@@ -118,7 +117,6 @@ function Navbar() {
           <Box
             sx={{
               flexGrow: 1,
-              display: { xs: "flex", md: "none" },
               display: "flex",
               justifyContent: "space-around",
             }}
@@ -211,10 +209,6 @@ function Navbar() {
         <Box
           sx={{
             flexGrow: 1,
-            display: {
-              xs: "none",
-              md: "flex",
-            },
             display: "flex",
             justifyContent: "end",
           }}

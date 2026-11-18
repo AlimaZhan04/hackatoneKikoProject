@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# KIKO Milano — Project Work
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Исходный магазин косметики на React. Дизайн, CSS, главная страница, меню, карточки, корзина и страницы сохранены. Обновлены запуск и зависимости, вместо JSON-сервера работает Express API с PostgreSQL. Пояснения для защиты вынесены на отдельную страницу `/project-work`.
 
-## Available Scripts
+## Запуск на этом компьютере
 
-In the project directory, you can run:
+Откройте PowerShell в папке проекта:
 
-### `npm start`
+```powershell
+npm run db:local
+npm run db:seed
+npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Магазин: http://localhost:3001
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Лабораторные: http://localhost:3001/project-work
 
-### `npm test`
+Можно также запустить `start-kiko.cmd` двойным щелчком. Сервер работает, пока открыто окно терминала. Остановка: Ctrl+C. Первый запуск включает сборку приложения.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Вход в исходной форме: Log In → Already have an account? Log In → email `admin1@gmail.com`, пароль `KikoDemo2026!`. После входа появятся Admin Page и кнопки edit/delete. Это локальная учебная учётная запись. Её параметры находятся в игнорируемом `.env`.
 
-### `npm run build`
+## Первый запуск после клонирования
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Нужны Node.js 22.12+ и PostgreSQL. На Windows скрипт рассчитан на PostgreSQL 18 в `C:\Program Files\PostgreSQL\18\bin`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```powershell
+npm ci
+npm run db:local
+npm run db:seed
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`db:local` создаёт отдельный кластер в `%LOCALAPPDATA%\KikoProjectPostgres`, слушающий только 127.0.0.1:5433. Установленная служба PostgreSQL и другие БД не меняются. Пароль БД генерируется, `.env` создаётся автоматически. При следующем запуске используется существующий кластер.
 
-### `npm run eject`
+Если используете свою PostgreSQL на Windows/Linux/macOS, создайте отдельную БД `kiko`, скопируйте `.env.example` в `.env`, задайте DATABASE_URL и ADMIN_PASSWORD. Затем выполните `npm run db:seed` и `npm start`. Windows-команда `db:local` в этом случае не нужна. Учётная запись администратора создаётся при seed только при наличии ADMIN_PASSWORD; существующий пароль seed не перезаписывает.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Что работает
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Create: Admin Page → исходная форма Name, Description, Price, Image, Type → ADD PRODUCT.
+- Read: главная, Best Sellers, Accessories; поиск, категории, ограничение цены и пагинация.
+- Update: edit → исходная форма → save changes.
+- Delete: delete на карточке. Как и в исходном приложении, удаление выполняется сразу.
+- Type: `decorative`, `care`, `accessories`. Цена положительная, до 1 000 000, как в исходном интерфейсе обозначена в долларах.
+- Фото: дополнительная страница Project Work → ID существующего товара → выбрать JPEG/PNG/WebP → Загрузить фото. Фото сохраняется в PostgreSQL и появляется в исходной карточке.
+- Регистрация и вход используют PostgreSQL; пароли хранятся как scrypt-хеши, сессии — в HttpOnly cookie. Изменение товаров разрешено администратору.
+- Корзина, избранное и учебная страница оплаты сохранены. Оплата остаётся демонстрацией, без банковского шлюза.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Импорт использует текущий `db.json`, включая существовавшие локальные изменения. Удалённые/отсутствующие ID назначаются PostgreSQL заново; значения товаров сохраняются. Повторный seed не дублирует товары. Старые внешние ссылки на изображения сохранены: доступность изображений 2023 года зависит от исходных сайтов.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Лабораторная 1 — связность
 
-## Learn More
+СС — учебная оценка из заметок, а не автоматически измеренная метрика. Чем больше, тем лучше.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Тип | СС | Реальное место в коде | Что показать |
+|---|---:|---|---|
+| Функциональная | 10 | shared/product-validation.mjs → validateProduct | Price −1 в Admin Page: ошибка, запись не создаётся |
+| Информационная | 9 | server/modules/products/product.photo.mjs → processProductPhoto; product.repository.mjs → savePhoto | Загрузка файла и фото в исходной карточке |
+| Коммуникативная | 7 | src/studio/catalog.mjs → filterProducts, summarizeProducts | Таблица и четыре счётчика на /project-work используют один массив |
+| Процедурная | 5 | src/studio/submit-product.mjs → submitProduct | Отправка → подтверждение БД → обновление каталога → переход из формы |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Название «информационная» для конвейера сохранено по предоставленной лекции. В другой распространённой классификации это sequential cohesion — последовательная связность. Одна операция может рассматриваться на разных уровнях: отдельная функция, модуль обработки или сценарий интерфейса.
 
-### Code Splitting
+## Лабораторная 2 — сцепление
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+СЦ — учебная шкала от 0 до 9; меньше — лучше.
 
-### Analyzing the Bundle Size
+| Тип | СЦ | Между какими модулями | Что передаётся |
+|---|---:|---|---|
+| По данным | 1 | product.routes.mjs → product.repository.mjs → deleteProduct | Простой числовой id |
+| По образцу | 3 | product.routes.mjs → createProduct / updateProduct | Объект с полями товара |
+| По управлению | Не задано в заметках | src/studio/api.mjs → productsApi.photo → request | method: POST выбирает HTTP-действие |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Для «по образцу» использована широкая трактовка из лекции — передача структуры. В строгой трактовке stamp coupling отдельно учитывают наличие избыточных полей. Для сцепления по управлению балл не придуман.
 
-### Making a Progressive Web App
+Журнал на /project-work показывает реальные запросы и этапы текущей вкладки. Для обычного магазина он ничего не добавляет в разметку. Данные входа в журнал не записываются.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Архитектура
 
-### Advanced Configuration
+```text
+Исходные страницы React → ProductContextProvider → Express routes
+                                                     ↓
+                                      validateProduct / обработка фото
+                                                     ↓
+                                            product.repository
+                                                     ↓
+                                                 PostgreSQL
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Таблицы: products, users, sessions. Запросы к PostgreSQL параметризованы. Фото WebP хранится в products.photo (bytea), адрес — в products.image. Обновление фото и адреса выполняется в одной транзакции. Firebase больше не требуется, отсутствующий src/fire.js не используется.
 
-### Deployment
+Новый вход: src/main.jsx. Vite обрабатывает существующие JSX в .js, поэтому файлы страниц не переименованы. Исходные src/index.js и public/index.html оставлены как исторические файлы и не используются новым сборщиком.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Проверки
 
-### `npm run build` fails to minify
+```powershell
+npm test
+npm run test:api
+npm run build
+npm audit --omit=dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Модульные проверки: валидатор, общие данные каталога/статистики, порядок сохранения и поведение при отказе записи. Интеграционная проверка использует настоящий PostgreSQL: авторизация администратора, запрет записи гостю, CRUD, отклонение поддельного изображения, сохранение WebP, 400 и 404. Созданные тестовые записи удаляются в finally.
+
+GitHub Actions запускает сборку и эти проверки с PostgreSQL 18. Для разработки: `npm run dev`, интерфейс http://127.0.0.1:5173 и API http://127.0.0.1:3001. Изменения серверного кода требуют перезапуска.
+
+`.env`, зависимости, БД, логи и временные артефакты не отправляются в GitHub.

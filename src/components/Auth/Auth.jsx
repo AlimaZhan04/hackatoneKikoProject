@@ -28,7 +28,7 @@ function Copyright(props) {
   );
 }
 
-const theme = createTheme();
+const theme = createTheme({palette:{grey:{main:'#757575'}}});
 
 export default function Auth() {
   const {
@@ -52,11 +52,6 @@ export default function Auth() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
   };
 
   return (
@@ -118,9 +113,8 @@ export default function Auth() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
-                onClick={() => {
-                  handleLogIn();
-                  navigate("/");
+                onClick={async () => {
+                  if (await handleLogIn()) navigate("/");
                 }}
               >
                 Log In
