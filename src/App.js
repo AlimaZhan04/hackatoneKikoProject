@@ -7,12 +7,14 @@ import ProductContextProvider from "./contexts/ProductContextProvider";
 import MainRoutes from "./routes/MainRoutes";
 
 import Footer from "./components/Footer/Footer";
+import FavoritesContextProvider from './contexts/FavoritesContextProvider';
 
 import "react-credit-cards/dist/es/styles-compiled.css";
 
 const App = () => {
   return (
     <CartContextProvider>
+      <FavoritesContextProvider>
       <AuthContextProvider>
         <ProductContextProvider>
           <Navbar />
@@ -20,6 +22,7 @@ const App = () => {
           <Footer />
         </ProductContextProvider>
       </AuthContextProvider>
+      </FavoritesContextProvider>
     </CartContextProvider>
   );
 };

@@ -17,14 +17,16 @@ const EditProduct = () => {
   const { id } = useParams();
   const [errors,setErrors]=useState({});
   const [saving,setSaving]=useState(false);
+  const [loadError,setLoadError]=useState('');
 
   useEffect(() => {
-    setCosmetics(cosmeticsDetails);
-  }, [cosmeticsDetails]);
+    if(Number(cosmeticsDetails.id)===Number(id))setCosmetics(cosmeticsDetails);
+  }, [cosmeticsDetails,id]);
 
   useEffect(() => {
-    getCosmeticsDetails(id);
-  }, []);
+    setLoadError('');
+    getCosmeticsDetails(id).catch(error=>setLoadError(error.response?.data?.message||'Unable to load product.'));
+  }, [id]);
 
   const handleInp = (e) => {
     if (e.target.name == "price") {
@@ -41,11 +43,13 @@ const EditProduct = () => {
       setCosmetics(obj);
     }
   };
-  console.log(cosmetics);
+  if(loadError)return <p role="alert" className="catalog-status">{loadError}</p>;
+  if(Number(cosmetics.id)!==Number(id))return <p role="status" className="catalog-status">Loading product…</p>;
   return (
     <Box
+      className="product-form"
       sx={{
-        width: "40vw",
+        width: {xs:'100%',sm:'70vw',md:'40vw'},
         margin: "5vh auto",
         display: "flex",
         justifyContent: "center",

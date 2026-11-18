@@ -4,38 +4,21 @@ import { Stack } from "react-bootstrap";
 // import { useSearchParams } from "react-router-dom";
 import { useProducts } from "../../../contexts/ProductContextProvider";
 import ProductCard from "../ProductCard";
+import useCatalog from '../../../hooks/useCatalog';
+import CatalogStatus from '../CatalogStatus';
 
 const ProductList = () => {
-  const { getCosmetics, cosmetics, searchParams } = useProducts();
-  useEffect(() => {
-    getCosmetics();
-  }, []);
-
-  useEffect(() => {
-    getCosmetics();
-  }, [searchParams]);
-
-  //! pagination
-  const [page, setPage] = React.useState(1);
+  const {page,setPage,count,currentData}=useCatalog();
   const handleChange = (event, value) => {
     setPage(value);
   };
 
-  const itemsPerPage = 4;
-  const count = Math.ceil(cosmetics.length / itemsPerPage);
-
-  const currentData = () => {
-    const begin = (page - 1) * itemsPerPage;
-    const end = begin + itemsPerPage;
-    const arr = cosmetics.slice(begin, end);
-    console.log(arr);
-    return arr;
-  };
-  console.log(currentData());
   //! pagination
   return (
     <>
+      <CatalogStatus />
       <Box
+        className="catalog-grid"
         sx={{
           display: "flex",
           flexWrap: "wrap",

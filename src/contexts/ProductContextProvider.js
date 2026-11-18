@@ -1,106 +1,27 @@
-import axios from "axios";
-import React, { createContext, useContext, useReducer, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { API } from "../helpers/consts";
+import axios from 'axios';
+import React,{createContext,useContext,useState,useCallback,useEffect,useRef} from 'react';
+import { useLocation,useNavigate,useSearchParams } from 'react-router-dom';
+import { API } from '../helpers/consts';
 import { recordAction } from '../project-work/trace.mjs';
-axios.interceptors.request.use(config=>{if(config.url?.startsWith('/api/cosmetics'))recordAction(`${(config.method||'GET').toUpperCase()} ${config.url}`,config.data);return config;});
-
-export const productContext = createContext();
-export const useProducts = () => {
-  return useContext(productContext);
-};
-
-const INIT_STATE = {
-  cosmetics: [],
-  cosmeticsDetails: {},
-};
-
-const reducer = (state = INIT_STATE, action) => {
-  switch (action.type) {
-    case "GET_COSMETICS":
-      return { ...state, cosmetics: action.payload };
-
-    case "GET_PRODUCT_DETAILS":
-      return { ...state, cosmeticsDetails: action.payload };
-
-    default:
-      return state;
-  }
-};
-const ProductContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, INIT_STATE);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearch] = useState(searchParams.get("q") || "");
-
-  const navigate = useNavigate();
-  //! read (get request)
-
-  const getCosmetics = async ({throwOnError=false}={}) => {
-    try { const { data } = await axios.get(`${API}/${window.location.search}`);
-      dispatch({ type: "GET_COSMETICS", payload: data });
-    } catch(error) { console.error('Не удалось загрузить каталог:',error.message); if(throwOnError)throw error; }
-  };
-
-  const getRandomProducts = async () => {
-    const { data } = await axios.get(API + "?_limit=3");
-  };
-
-  // ! create (post request)
-  const addCosmetics = async (newCosmetics) => {
-    const {data}=await axios.post(API, newCosmetics);
-    return data;
-  };
-
-  // !delete
-
-  const deleteCosmetics = async (id) => {
-    try { await axios.delete(`${API}/${id}`); await getCosmetics(); }
-    catch(error) { alert(error.response?.data?.message || 'Не удалось удалить товар'); }
-  };
-
-  //! get product details
-
-  const getCosmeticsDetails = async (id) => {
-    const { data } = await axios.get(`${API}/${id}`);
-    dispatch({ type: "GET_PRODUCT_DETAILS", payload: data });
-  };
-
-  const saveEditedCosmetics = async (editedCosmetics) => {
-    await axios.put(`${API}/${editedCosmetics.id}`, editedCosmetics);
-  };
-
-  const fetchByParams = async (query, value) => {
-    const search = new URLSearchParams(window.location.search);
-
-    if (value === "all") {
-      search.delete(query);
-    } else {
-      search.set(query, value);
-    }
-
-    const url = `${window.location.pathname}?${search.toString()}`;
-
-    navigate(url);
-  };
-  const values = {
-    getCosmetics,
-    addCosmetics,
-    deleteCosmetics,
-    cosmetics: state.cosmetics,
-    getCosmeticsDetails,
-    cosmeticsDetails: state.cosmeticsDetails,
-    saveEditedCosmetics,
-    fetchByParams,
-    getRandomProducts,
-    search,
-    setSearch,
-    searchParams,
-    setSearchParams,
-  };
-
-  return (
-    <productContext.Provider value={values}>{children}</productContext.Provider>
-  );
-};
-
-export default ProductContextProvider;
+axios.interceptors.request.use(config=>{if(config.url?.startsWith(API))recordAction(`${(config.method||'GET').toUpperCase()} ${config.url}${config.params?'?'+config.params.toString():''}`,config.data);return config;});
+export const productContext=createContext();
+export const useProducts=()=>useContext(productContext);
+export default function ProductContextProvider({children}) {
+ const [cosmetics,setCosmetics]=useState([]),[cosmeticsDetails,setDetails]=useState({}),[loading,setLoading]=useState(false),[error,setError]=useState('');
+ const [searchParams,setSearchParams]=useSearchParams();const location=useLocation(),navigate=useNavigate(),sequence=useRef(0);
+ const getCosmetics=useCallback(async({throwOnError=false}={})=>{
+  const current=++sequence.current;setLoading(true);setError('');
+  const params=new URLSearchParams(location.search);
+  if(location.pathname==='/accessories')params.set('type','accessories');
+  try{const {data}=await axios.get(API,{params});if(current===sequence.current)setCosmetics(data);return data;}
+  catch(error){if(current===sequence.current)setError(error.response?.data?.message||'Unable to load products. Please try again.');if(throwOnError)throw error;}
+  finally{if(current===sequence.current)setLoading(false);}
+ },[location.search,location.pathname]);
+ useEffect(()=>{if(['/','/best','/accessories','/products','/favorites'].includes(location.pathname))getCosmetics();return()=>{sequence.current++;};},[getCosmetics,location.pathname]);
+ const fetchByParams=(query,value)=>{const params=new URLSearchParams(location.search);if(!value||value==='all')params.delete(query);else params.set(query,value);navigate({pathname:location.pathname,search:params.toString()},{replace:query==='q'});};
+ const addCosmetics=async product=>(await axios.post(API,product)).data;
+ const saveEditedCosmetics=async product=>(await axios.put(`${API}/${product.id}`,product)).data;
+ const getCosmeticsDetails=async id=>{const {data}=await axios.get(`${API}/${id}`);setDetails(data);return data;};
+ const deleteCosmetics=async id=>{try{await axios.delete(`${API}/${id}`);await getCosmetics({throwOnError:true});}catch(error){alert(error.response?.data?.message||'Unable to delete product.');}};
+ return <productContext.Provider value={{cosmetics,cosmeticsDetails,loading,error,getCosmetics,addCosmetics,saveEditedCosmetics,getCosmeticsDetails,deleteCosmetics,fetchByParams,search:searchParams.get('q')||'',setSearch:value=>fetchByParams('q',value),searchParams,setSearchParams,getRandomProducts:async()=>{return(await axios.get(API,{params:{_limit:3}})).data;}}}>{children}</productContext.Provider>;
+}

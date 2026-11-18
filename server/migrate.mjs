@@ -12,6 +12,10 @@ export async function migrate() {
     created_at timestamptz NOT NULL DEFAULT now(),
     updated_at timestamptz NOT NULL DEFAULT now()
   )`);
+  await pool.query(`CREATE TABLE IF NOT EXISTS newsletter_subscriptions (
+    email varchar(254) PRIMARY KEY,
+    created_at timestamptz NOT NULL DEFAULT now()
+  )`);
   await pool.query(`CREATE TABLE IF NOT EXISTS users (
     id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     email varchar(254) NOT NULL UNIQUE,

@@ -25,7 +25,7 @@ const AboutUs = () => {
       <div className="aboutUsImg">
         <img
           className="aboutImg"
-          src="https://images.kikocosmetics.com/mediaObject/2022/info/US-about-us/02_Info_AboutUs_Box/webp-resolutions/res-1200x1200/02_Info_AboutUs_Box.webp"
+          src="/images/beauty-care.jpg"
           alt=""
         />
       </div>

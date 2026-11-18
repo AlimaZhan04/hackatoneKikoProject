@@ -5,40 +5,24 @@ import ProductCard from "../../components/Product/ProductCard";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import "./accessories.css";
 import "./adaptivka-Acc.css";
+import useCatalog from '../../hooks/useCatalog';
+import CatalogStatus from '../../components/Product/CatalogStatus';
 
 const Accessories = () => {
-  const { getCosmetics, cosmetics } = useProducts();
-  const [searchParams, setSearchParams] = useSearchParams();
-  useEffect(() => {
-    getCosmetics();
-  }, [searchParams]);
-  useEffect(() => {
-    getCosmetics();
-  }, []);
-
-  //! pagination
-  const [page, setPage] = React.useState(1);
+  const {page,setPage,count,currentData,fetchByParams}=useCatalog();
   const handleChange = (event, value) => {
     setPage(value);
   };
 
-  const itemsPerPage = 4;
-  const count = Math.ceil(cosmetics.length / itemsPerPage);
-
-  const currentData = () => {
-    const begin = (page - 1) * itemsPerPage;
-    const end = begin + itemsPerPage;
-    return cosmetics.slice(begin, end);
-  };
 
   //! pagination
 
   return (
-    <div>
+    <div className="accessories-page">
       <div className="colors">
         <img
           className="Acc_img"
-          src="https://www.chinapowdercoating.com/ru/wp-content/gallery/d0bad0bed0b6d0b0d0bdd18bd0b9-d18dd184d184d0b5d0bad182/cache/brown-leather-effect-powder-coating.jpg-nggid03112-ngg0dyn-330x200x100-00f0w010c011r110f110r010t010.jpg"
+          src="/images/hero-gifts.webp"
           alt="picture"
         />
         <h1 className="acc_h">Accessories</h1>
@@ -48,18 +32,20 @@ const Accessories = () => {
           travel must-haves.
         </p>
         <div className="acc_buttons1">
-          <button className="acc_button">Face Accessories</button>
-          <button className="acc_button">Eye Accessories</button>
-          <button className="acc_button">Hand Care Accessories</button>
-          <button className="acc_button">Brushes</button>
-          <button className="acc_button">Empty Travel Containers</button>
-          <button className="acc_button">MakeUp Cases</button>
+          <button className="acc_button" onClick={()=>fetchByParams('q','face')}>Face Accessories</button>
+          <button className="acc_button" onClick={()=>fetchByParams('q','eye')}>Eye Accessories</button>
+          <button className="acc_button" onClick={()=>fetchByParams('q','hand')}>Hand Care Accessories</button>
+          <button className="acc_button" onClick={()=>fetchByParams('q','brush')}>Brushes</button>
+          <button className="acc_button" onClick={()=>fetchByParams('q','travel')}>Empty Travel Containers</button>
+          <button className="acc_button" onClick={()=>fetchByParams('q','bag')}>MakeUp Cases</button>
+          <button className="acc_button" onClick={()=>fetchByParams('q','')}>All accessories</button>
         </div>
       </div>
       <h2 className="acc_h2">Make up brushes</h2>
       <p className="acc_text">DO YOU DREAM OF A FLAWLESS FINISH?</p>
+      <CatalogStatus />
 
-      <Box sx={{ display: "flex", flexWrap: "wrap", marginTop: "0px" }}>
+      <Box className="catalog-grid" sx={{ display: "flex", flexWrap: "wrap", marginTop: "0px" }}>
         {currentData().map((item) => (
           <ProductCard item={item} key={item.id} />
         ))}
@@ -74,7 +60,7 @@ const Accessories = () => {
       </Stack>
       <img
         className="acc_picture3"
-        src="https://images.kikocosmetics.com/mediaObject/2021/prod/NewCategoryImages_Dec2021/CategoryAccessories_01_brushes/webp-resolutions/res-600x600/CategoryAccessories_01_brushes.webp"
+        src="/images/beauty-eyes.jpg"
         alt="photo33"
       />
 
@@ -84,22 +70,9 @@ const Accessories = () => {
         ARE YOU LOOKING FOR A SOLUTION TO KEEP YOUR COSMETICS?
       </p>
 
-      <Box sx={{ display: "flex", flexWrap: "wrap", marginTop: "0px" }}>
-        {currentData().map((item) => (
-          <ProductCard item={item} key={item.id} />
-        ))}
-      </Box>
-      <Stack spacing={2}>
-        <Pagination
-          className="pagination"
-          count={count}
-          page={page}
-          onChange={handleChange}
-        />
-      </Stack>
       <img
         className="acc_picture4"
-        src="https://images.kikocosmetics.com/mediaObject/2021/prod/NewCategoryImages_Dec2021/CategoryAccessories_02_pochette/webp-resolutions/res-600x600/CategoryAccessories_02_pochette.webp"
+        src="/images/hero-gifts.webp"
         alt="photo33"
       />
     </div>

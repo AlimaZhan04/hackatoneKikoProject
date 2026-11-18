@@ -8,6 +8,12 @@ export const app = express();
 app.disable('x-powered-by');
 app.use(express.json({ limit:'100kb' }));
 app.use('/api/auth',authRoutes);
+app.post('/api/newsletter',async(req,res)=>{
+  const email=typeof req.body?.email==='string'?req.body.email.trim().toLowerCase():'';
+  if(email.length>254||!/^\S+@\S+\.\S+$/.test(email))return res.status(422).json({message:'Enter a valid email address.'});
+  await pool.query('INSERT INTO newsletter_subscriptions(email) VALUES($1) ON CONFLICT DO NOTHING',[email]);
+  res.status(201).json({message:'Subscription saved for this demo. No emails are sent.'});
+});
 app.get('/api/health', async (req,res) => { await pool.query('SELECT 1'); res.json({ status:'ok',database:'PostgreSQL',mode:'local' }); });
 app.use('/api/cosmetics', productRoutes);
 app.use('/api', (req,res) => res.status(404).json({ message:'Маршрут не найден.' }));

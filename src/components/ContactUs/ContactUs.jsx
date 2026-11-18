@@ -5,8 +5,11 @@ import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import { Button } from "react-bootstrap";
 import "./contact.css";
 import Map from "../Map/Map";
+import { useNavigate } from 'react-router-dom';
 
 const ContactUs = () => {
+  const navigate=useNavigate();
+  const directions=address=>window.open('https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(address),'_blank','noopener,noreferrer');
   return (
     <Box className="wrapper">
       <Box className="left-side">
@@ -29,15 +32,15 @@ const ContactUs = () => {
             </p>
           </div>
           <div className="btn-div">
-            <button className="black-btn">Info and promotions</button>
-            <button className="pink-btn">Take me here</button>
+            <button className="black-btn" onClick={()=>navigate('/offers')}>Info and promotions</button>
+            <button className="pink-btn" onClick={()=>directions('KIKO Milano Via Cavour 6 Parma Italy')}>Take me here</button>
           </div>
 
           <div>
             <img
               width="100%"
               height={350}
-              src="https://kiko-stores.kikocosmetics.com/upload/store/big/add/kiko882/0.jpg"
+              src="/images/store.webp"
               alt=""
             />
           </div>
@@ -59,15 +62,15 @@ const ContactUs = () => {
             </p>
           </div>
           <div className="btn-div">
-            <button className="black-btn">Info and promotions</button>
-            <button className="pink-btn">Take me here</button>
+            <button className="black-btn" onClick={()=>navigate('/offers')}>Info and promotions</button>
+            <button className="pink-btn" onClick={()=>directions('KIKO Milano Via S. Leonardo 69 Parma Italy')}>Take me here</button>
           </div>
           <div>
             <img
               className="end_pict"
               width={450}
               height={350}
-              src="https://kiko-stores.kikocosmetics.com/upload/store/big/add/kiko732/0.jpg"
+              src="/images/store.webp"
               alt=""
             />
           </div>

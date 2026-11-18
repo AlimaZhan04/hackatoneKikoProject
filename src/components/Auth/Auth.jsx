@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useAuth } from "../../contexts/AuthContextProvider";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -49,9 +49,15 @@ export default function Auth() {
   } = useAuth();
 
   const navigate = useNavigate();
+  const location=useLocation();
+  const [busy,setBusy]=React.useState(false),[recoveryInfo,setRecoveryInfo]=React.useState(false);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    if(busy)return;
+    setBusy(true);
+    try{if(await (hasAccount?handleLogIn():handleSignUp()))navigate(location.state?.from||'/');}
+    finally{setBusy(false);}
   };
 
   return (
@@ -70,7 +76,7 @@ export default function Auth() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Register
+            {hasAccount?'Log In':'Register'}
           </Typography>
           <Box
             component="form"
@@ -90,6 +96,7 @@ export default function Auth() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               helperText={errorEmail}
+              error={!!errorEmail}
               color="grey"
             />
             <TextField
@@ -104,6 +111,7 @@ export default function Auth() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               helperText={errorPassword}
+              error={!!errorPassword}
               color="grey"
             />
 
@@ -113,9 +121,7 @@ export default function Auth() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
-                onClick={async () => {
-                  if (await handleLogIn()) navigate("/");
-                }}
+                disabled={busy}
               >
                 Log In
               </Button>
@@ -125,7 +131,7 @@ export default function Auth() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
-                onClick={handleSignUp}
+                disabled={busy}
               >
                 Register
               </Button>
@@ -133,13 +139,14 @@ export default function Auth() {
 
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link component="button" type="button" onClick={()=>setRecoveryInfo(value=>!value)} variant="body2">
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
                 {hasAccount ? (
                   <Link
+                    component="button" type="button"
                     variant="body2"
                     onClick={() => setHasAccount(!hasAccount)}
                   >
@@ -147,6 +154,7 @@ export default function Auth() {
                   </Link>
                 ) : (
                   <Link
+                    component="button" type="button"
                     variant="body2"
                     onClick={() => setHasAccount(!hasAccount)}
                   >
@@ -155,6 +163,7 @@ export default function Auth() {
                 )}
               </Grid>
             </Grid>
+            {recoveryInfo&&<Typography role="status" sx={{mt:2,fontSize:13}}>Password recovery by email is not connected in this local demo. Use your saved password or the administrator account from README.</Typography>}
           </Box>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />

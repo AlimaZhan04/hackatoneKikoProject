@@ -9,7 +9,7 @@ const Offers = () => {
     <Box>
       <Box className="offers_first_photo">
         <img
-          src="https://images.kikocosmetics.com/mediaObject/2021/promo/outlet/Promo_Outlet_LandingCategory/webp-resolutions/res-1920x360/Promo_Outlet_LandingCategory.webp"
+          src="/images/hero-gifts.webp"
           alt=""
         />
       </Box>
@@ -19,7 +19,7 @@ const Offers = () => {
       </Box>
       <Box className="offers_second_photo ">
         <img
-          src="https://images.kikocosmetics.com/mediaObject/2023/promo/promo2-1ES/Promo_2-1ES_HPDesktop/webp-resolutions/res-1920x600/Promo_2-1ES_HPDesktop.webp"
+          src="/images/hero-lips.webp"
           alt="picture"
         />
       </Box>

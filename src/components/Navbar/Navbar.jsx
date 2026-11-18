@@ -19,6 +19,7 @@ import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import "./Navbar.css";
 import { useState } from "react";
+import { useFavorites } from '../../contexts/FavoritesContextProvider';
 import "./Navbar.css";
 
 const pages = [
@@ -27,7 +28,6 @@ const pages = [
   { name: "Accessories", link: "/accessories?type=accessories", id: 5 },
   { name: "About Us", link: "/aboutus", id: 1 },
   { name: "Contact Us", link: "/contacts", id: 4 },
-  { name: "", link: "/*", id: 6 },
 ];
 
 const style = {
@@ -63,12 +63,8 @@ function Navbar() {
 
   // корзина//
 
-  const [count, setCount] = React.useState(0);
-  const { addProductToCart } = useCart();
-
-  React.useEffect(() => {
-    setCount(getCountProductsInCart());
-  }, [addProductToCart]);
+  const { cartLength:count } = useCart();
+  const { favorites } = useFavorites();
 
   let [heartOpen, setHeartOpen] = useState(false);
 
@@ -85,14 +81,7 @@ function Navbar() {
         className="nav_logo"
         sx={{ display: "flex", justifyContent: "center", width: "100%" }}
       >
-        <img
-          onClick={() => {
-            navigate("/");
-          }}
-          width={100}
-          src="https://static.kikocosmetics.com/docroot/dist/images/kiko-logo-text.svg"
-          alt="Hello"
-        />
+        <Link to="/" aria-label="KIKO Milano home"><img width={100} height={48} src="/brand/kiko-logo.svg" alt="KIKO Milano" /></Link>
       </Box>
       <Container
         maxWidth="xl"
@@ -123,11 +112,12 @@ function Navbar() {
           >
             <IconButton
               size="large"
-              aria-label="account of current user"
+              aria-label="Open navigation"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              sx={{display:{xs:'inline-flex',md:'none'}}}
             >
               <MenuIcon />
             </IconButton>
@@ -195,15 +185,13 @@ function Navbar() {
           </Box>
         </Toolbar>
 
-        <IconButton>
+        <IconButton aria-label="Favorites" onClick={()=>navigate('/favorites')}>
+          <Badge badgeContent={favorites.length} color="primary">
           <FavoriteIcon
-            onClick={() => setHeartOpen((heartOpen = !heartOpen))}
-            className={`favorites ${heartOpen && "active"}`}
+            className={`favorites ${favorites.length>0 ? 'active':''}`}
             color="primary"
           />
-          {heartOpen && (
-            <div className="shop-cart"> THANK YOU FOR YOUR LIKE</div>
-          )}
+          </Badge>
         </IconButton>
 
         <Box
@@ -234,7 +222,7 @@ function Navbar() {
               <Typography id="pages_link">Log In</Typography>
             </Button>
           )}
-          <IconButton onClick={() => navigate("/cart")}>
+          <IconButton aria-label={`Shopping bag ${count} items`} onClick={() => navigate("/cart")}>
             <Badge badgeContent={count} color="primary">
               <LocalMallOutlinedIcon className="cart_logo" color="info" />
             </Badge>

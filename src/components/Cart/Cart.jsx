@@ -11,6 +11,7 @@ import { Button } from "@mui/material";
 import Payment from "../Product/Payment/Payment";
 import { Box } from "@mui/system";
 import { useNavigate } from "react-router-dom";
+import ProductImage from '../Product/ProductImage';
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -60,7 +61,7 @@ export default function Cart() {
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                <img src={row.item.image} width="100" height="100" alt="" />
+                <ProductImage src={row.item.image} width="100" height="100" alt={row.item.name} style={{objectFit:'contain'}} />
               </TableCell>
               <TableCell align="right">{row.item.name}</TableCell>
               <TableCell align="right">{row.item.type}</TableCell>
@@ -75,6 +76,7 @@ export default function Cart() {
                     changeProductCount(e.target.value, row.item.id)
                   }
                   value={row.count}
+                  aria-label={`Quantity for ${row.item.name}`}
                 />
               </TableCell>
               <TableCell align="right">{row.subPrice}</TableCell>
@@ -87,7 +89,9 @@ export default function Cart() {
           ))}
         </TableBody>
       </Table>
+      {!cart?.cosmetics.length&&<p className="catalog-status">Your bag is empty. Add a product from the catalog.</p>}
       <Button
+        disabled={!cart?.cosmetics.length}
         style={{
           border: "2px solid black",
           width: "250px",

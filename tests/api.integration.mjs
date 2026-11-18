@@ -21,6 +21,13 @@ test('реальный PostgreSQL: CRUD, валидация, фото и оши�
   const send=(url,method,body)=>apiFetch(base+url,{method,headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
   try{
     assert.equal((await fetch(base+'/health')).status,200);
+    const all=await(await fetch(base+'/cosmetics')).json();
+    const filtered=await(await fetch(base+'/cosmetics?type=care&price_lte=500')).json();
+    assert.ok(filtered.every(p=>p.type==='care'&&p.price<=500));
+    const first=all[0];
+    if(first){const found=await(await fetch(base+'/cosmetics?q='+encodeURIComponent(first.name))).json();assert.ok(found.some(p=>p.id===first.id));}
+    assert.deepEqual(await(await fetch(base+'/cosmetics?q=not-a-real-product-'+Date.now())).json(),[]);
+    assert.ok((await(await fetch(base+'/cosmetics?_limit=2')).json()).length<=2);
     let response=await send('/cosmetics','POST',{...product,price:-1});assert.equal(response.status,422);
     response=await send('/cosmetics','POST',product);assert.equal(response.status,201);const created=await response.json();id=created.id;assert.equal(created.price,345.5);
     assert.equal((await(await fetch(base+`/cosmetics/${id}`)).json()).name,product.name);
@@ -39,5 +46,12 @@ test('реальный PostgreSQL: CRUD, валидация, фото и оши�
     assert.equal((await apiFetch(base+`/cosmetics/${id}`,{method:'DELETE'})).status,204);
     assert.equal((await fetch(base+`/cosmetics/${id}`)).status,404);
     assert.equal((await fetch(base+`/cosmetics/${id}/image`)).status,404);
+    const newsletterEmail=`newsletter-${Date.now()}@kiko.test`;
+    try{
+      assert.equal((await send('/newsletter','POST',{email:'invalid'})).status,422);
+      assert.equal((await send('/newsletter','POST',{email:newsletterEmail})).status,201);
+      assert.equal((await send('/newsletter','POST',{email:newsletterEmail})).status,201);
+      assert.equal((await pool.query('SELECT count(*)::int AS count FROM newsletter_subscriptions WHERE email=$1',[newsletterEmail])).rows[0].count,1);
+    }finally{await pool.query('DELETE FROM newsletter_subscriptions WHERE email=$1',[newsletterEmail]);}
   }finally{if(id)await pool.query('DELETE FROM products WHERE id=$1',[id]);await pool.query('DELETE FROM users WHERE id=$1',[user.id]);await new Promise(resolve=>server.close(resolve));await pool.end();}
 });

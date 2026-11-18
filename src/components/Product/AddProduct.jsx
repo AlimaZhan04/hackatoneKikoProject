@@ -39,8 +39,9 @@ const AddProduct = () => {
   // console.log(cosmetics);
   return (
     <Box
+      className="product-form"
       sx={{
-        width: "40vw",
+        width: {xs:'100%',sm:'70vw',md:'40vw'},
         margin: "5vh auto",
         display: "flex",
         justifyContent: "center",

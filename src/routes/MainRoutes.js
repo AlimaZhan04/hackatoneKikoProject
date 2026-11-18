@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes,useLocation } from "react-router-dom";
 import AboutUs from "../components/AboutUs/AboutUs";
 import ContactUs from "../components/ContactUs/ContactUs";
 import Offers from "../pages/Offers/Offers";
@@ -19,9 +19,12 @@ import Cart from "../components/Cart/Cart";
 import PaymentPage from "../pages/PaymentPage/PaymentPage";
 import Thanks from "../pages/Thanks/Thanks";
 import ProjectWork from "../project-work/ProjectWork.jsx";
+import FavoritesPage from '../pages/FavoritesPage';
 const MainRoutes = () => {
-  const { user } = useAuth();
+  const { user,authLoading } = useAuth();
+  const location=useLocation();
   const PUBLIC_ROUTES = [
+    { link: "/favorites", element: <FavoritesPage />, id: "favorites" },
     { link: "/project-work", element: <ProjectWork />, id: "project-work" },
     { link: "/", element: <HomePage />, id: 1 },
     { link: "/products", element: <ProductPage />, id: 2 },
@@ -34,8 +37,8 @@ const MainRoutes = () => {
     { link: "/footer", element: <Footer />, id: 11 },
     { link: "/best", element: <BestSellers />, id: 12 },
     { link: "/cart", element: <Cart />, id: 13 },
-    { link: "/payment", element: <PaymentPage />, id: 13 },
-    { link: "/thanks", element: <Thanks />, id: 13 },
+    { link: "/payment", element: <PaymentPage />, id: 14 },
+    { link: "/thanks", element: <Thanks />, id: 15 },
   ];
   const PRIVATE_ROUTES = [
     { link: "/edit/:id", element: <EditProductPage />, id: 6 },
@@ -48,21 +51,19 @@ const MainRoutes = () => {
           <Route path={item.link} element={item.element} key={item.id} />
         ))}
 
-        {user
-          ? PRIVATE_ROUTES.map((item) => (
+        {PRIVATE_ROUTES.map((item) => (
               <Route
                 path={item.link}
                 element={
-                  user.email === ADMIN ? (
+                  authLoading ? <p role="status">Loading account…</p> : user?.role === 'admin' ? (
                     item.element
                   ) : (
-                    <Navigate replace to="*" />
+                    <Navigate replace to="/auth" state={{from:location.pathname}} />
                   )
                 }
                 key={item.id}
               />
-            ))
-          : null}
+            ))}
       </Routes>
     </>
   );

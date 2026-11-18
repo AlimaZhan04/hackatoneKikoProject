@@ -35,3 +35,4 @@ desktop.ini
 *.log
 .playwright-cli/
 /node_modules.legacy
+~$*.docx

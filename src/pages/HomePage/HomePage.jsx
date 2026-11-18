@@ -17,42 +17,50 @@ const HomePage = () => {
   const navigate = useNavigate();
   return (
     <div className="">
-      <Carousel>
+      <Carousel className="home-carousel" pause="hover" interval={6000}>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://images.kikocosmetics.com/mediaObject/2023/launches/greenme-2023/Launch_GreenMe_HPslider-Desktop/webp-resolutions/res-1920x600/Launch_GreenMe_HPslider-Desktop.webp"
+            src="/images/hero-lips.webp"
+            alt="KIKO Milano 3D Hydra lip gloss collection"
           />
           <Carousel.Caption>
-            <h3 className="carousel_text1">NEW GREEN ME</h3>
-            <p className="carousel_text2">REDUCED PLASTIC PACKAGING</p>
+            <span className="hero-brand">KIKO MILANO</span>
+            <h3 className="carousel_text1">SHINE IN EVERY SHADE</h3>
+            <p className="carousel_text2">Discover your everyday beauty essentials</p>
+            <button className="promo_btn" onClick={()=>navigate('/best?type=decorative')}>SHOP MAKEUP</button>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100 "
-            src="https://images.kikocosmetics.com/mediaObject/2023/launches/welcome-flawless/Launch_WelcomeFlawless_Landing_Header-Desktop/webp-resolutions/res-1920x600/Launch_WelcomeFlawless_Landing_Header-Desktop.webp"
+            src="/images/hero-gifts.webp"
+            alt="KIKO Milano makeup and beauty gift sets"
           />
 
           <Carousel.Caption>
-            <h3 className="carousel_text1">NEW BEAUTY ESSENTIALS COLLECTION</h3>
+            <span className="hero-brand">KIKO MILANO</span>
+            <h3 className="carousel_text1">THE BEAUTY OF GIVING</h3>
             <p className="carousel_text2">
-              YOUR DAILY ROUTINE TO RECHARGE YOURSELF
+              A little colour. A beautiful surprise.
             </p>
+            <button className="promo_btn" onClick={()=>navigate('/offers')}>DISCOVER MORE</button>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://images.kikocosmetics.com/mediaObject/2023/launches/reshape-your-lips/Launch_ReshapeYourLips_HP-Desktop/webp-resolutions/res-1920x600/Launch_ReshapeYourLips_HP-Desktop.webp"
-            alt="Third slide"
+            src="/images/hero-beauty.jpg"
+            alt="KIKO Milano foundation in a range of shades"
           />
 
           <Carousel.Caption>
-            <h3 className="carousel_text1">MakeUp</h3>
+            <span className="hero-brand">KIKO MILANO</span>
+            <h3 className="carousel_text1">YOUR EVERYDAY ESSENTIALS</h3>
             <p className="carousel_text2">
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              Find the perfect finish for your beauty routine
             </p>
+            <button className="promo_btn" onClick={()=>navigate('/best?type=care')}>EXPLORE SKINCARE</button>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
@@ -69,7 +77,8 @@ const HomePage = () => {
               style={{ borderRadius: "10px" }}
               width={600}
               height={400}
-              src="https://images.kikocosmetics.com/mediaObject/2023/promo/promo-gwp/us/US_Promo_GWP_01_Carousel/webp-resolutions/res-720x600/US_Promo_GWP_01_Carousel.webp"
+              src="/images/beauty-lips.jpg"
+              alt="KIKO Milano Unlimited Double Touch lip colour"
             />
           </div>
           <div className="promo_left">
@@ -89,7 +98,8 @@ const HomePage = () => {
               style={{ borderRadius: "10px" }}
               width={600}
               height={400}
-              src="https://images.kikocosmetics.com/mediaObject/2023/promo/promo2-1ES/Promo_2-1ES_Carousel/webp-resolutions/res-720x600/Promo_2-1ES_Carousel.webp"
+              src="/images/beauty-care.jpg"
+              alt="KIKO Milano Skin Trainer collection"
             />
           </div>
           <div className="promo_right">

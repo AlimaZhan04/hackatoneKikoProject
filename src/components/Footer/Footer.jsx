@@ -11,7 +11,12 @@ import kiko3 from "../../helpers/Новая папка/Снимок экрана
 import kiko4 from "../../helpers/Новая папка/Снимок экрана 2023-04-03 163124.png";
 import FooterEnd from "../FooterEnd/FooterEnd";
 import Button from "@mui/material/Button";
+import { useNavigate,Link } from 'react-router-dom';
+import { request } from '../../studio/api.mjs';
 const Footer = () => {
+  const navigate=useNavigate();
+  const [email,setEmail]=React.useState(''),[message,setMessage]=React.useState(''),[invalid,setInvalid]=React.useState(false),[busy,setBusy]=React.useState(false);
+  const subscribe=async event=>{event.preventDefault();if(busy)return;setBusy(true);setInvalid(false);try{const result=await request('/newsletter',{method:'POST',body:{email}});setMessage(result.message);setEmail('');}catch(error){setInvalid(true);setMessage(error.message);}finally{setBusy(false);}};
   return (
     <Box className="footer_wrapper">
       <Box className="main_footer_box">
@@ -85,11 +90,11 @@ const Footer = () => {
 
           <Box className="img_box">
             <img
-              src="https://images.kikocosmetics.com/mediaObject/2020/info/Modifiche-img-sito/Modifiche-img-sito/HpFooterEdm/webp-resolutions/res-720x480/HpFooterEdm.webp"
+              src="/images/beauty-lips.jpg"
               alt=""
             />
 
-            <Box className="white_paper">
+            <Box component="form" className="white_paper" onSubmit={subscribe} noValidate>
               <p style={{ marginTop: "3%" }}>
                 <strong>NEWSLETTER SIGN UP</strong>
               </p>
@@ -104,19 +109,22 @@ const Footer = () => {
                 sx={{
                   marginLeft: "15px",
                 }}
-                id="standard-basic"
+                id="newsletter-email"
                 label="Email*"
                 variant="standard"
+                type="email" value={email} onChange={event=>setEmail(event.target.value)}
+                error={invalid} helperText={invalid?message:''}
               />
               <Box>
                 <Button
+                  type="submit" disabled={busy}
                   className="send_btn"
                   sx={{
                     width: "200px",
                     border: "solid 2px black",
                     height: "30px",
                     borderRadius: "2rem",
-                    marginTop: "22%",
+                    marginTop: "12px",
                     color: "white",
                     backgroundColor: "black",
                     fontSize: "10px",
@@ -126,6 +134,7 @@ const Footer = () => {
                   Send
                 </Button>
               </Box>
+              {!invalid&&message&&<p role="status" style={{fontSize:12,padding:8}}>{message}</p>}
             </Box>
           </Box>
         </Box>
