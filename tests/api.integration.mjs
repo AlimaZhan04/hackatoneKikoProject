@@ -16,11 +16,15 @@ test('реальный PostgreSQL: CRUD, валидация, фото и оши�
   const login=await fetch(base+'/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password})});
   assert.equal(login.status,200);
   const cookie=login.headers.get('set-cookie').split(';')[0];
-  const apiFetch=(url,options={})=>fetch(url,{...options,headers:{...options.headers,Cookie:cookie}});
+  const apiFetch=(url,options={})=>fetch(url,{...options,headers:{...options.headers,Cookie:cookie,'X-Kiko-Lab':'1'}});
   const product={name:'API test '+Date.now(),description:'Временная тестовая запись',price:345.5,type:'care',image:''};
   const send=(url,method,body)=>apiFetch(base+url,{method,headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
   try{
     assert.equal((await fetch(base+'/health')).status,200);
+    const status=await(await fetch(base+'/lab/status')).json();assert.equal(status.database,'PostgreSQL');assert.ok(status.tables.includes('products'));
+    const source=await(await fetch(base+'/lab/source/validation')).json();assert.equal(source.path,'shared/product-validation.mjs');assert.match(source.code,/export function validateProduct/);
+    assert.equal((await fetch(base+'/lab/source/env')).status,404);
+    const readTrace=response=>JSON.parse(Buffer.from(response.headers.get('X-Kiko-Lab-Trace'),'base64url').toString('utf8'));
     const all=await(await fetch(base+'/cosmetics')).json();
     const filtered=await(await fetch(base+'/cosmetics?type=care&price_lte=500')).json();
     assert.ok(filtered.every(p=>p.type==='care'&&p.price<=500));
@@ -29,7 +33,10 @@ test('реальный PostgreSQL: CRUD, валидация, фото и оши�
     assert.deepEqual(await(await fetch(base+'/cosmetics?q=not-a-real-product-'+Date.now())).json(),[]);
     assert.ok((await(await fetch(base+'/cosmetics?_limit=2')).json()).length<=2);
     let response=await send('/cosmetics','POST',{...product,price:-1});assert.equal(response.status,422);
+    assert.deepEqual(readTrace(response).steps.map(s=>s.module),['routes','validation']);
     response=await send('/cosmetics','POST',product);assert.equal(response.status,201);const created=await response.json();id=created.id;assert.equal(created.price,345.5);
+    assert.deepEqual(readTrace(response).steps.map(s=>s.module),['routes','validation','repository','pool','database']);
+    assert.equal((await fetch(base+'/cosmetics')).headers.get('X-Kiko-Lab-Trace'),null);
     assert.equal((await(await fetch(base+`/cosmetics/${id}`)).json()).name,product.name);
     assert.ok((await(await fetch(base+'/cosmetics')).json()).some(p=>p.id===id));
     response=await send(`/cosmetics/${id}`,'PUT',{...product,name:'Обновлённый тест',price:999});assert.equal(response.status,200);assert.equal((await response.json()).price,999);

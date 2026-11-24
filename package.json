@@ -11,6 +11,8 @@
     "dev": "node scripts/dev.mjs",
     "dev:client": "vite --host 127.0.0.1",
     "server": "node --env-file=.env server/index.mjs",
+    "lab": "node --env-file=.env server/lab-service.mjs",
+    "start:lab": "npm run build && npm run lab",
     "db:migrate": "node --env-file=.env server/migrate.mjs",
     "db:seed": "node --env-file=.env server/seed.mjs",
     "db:local": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/local-postgres.ps1",

@@ -4,6 +4,8 @@ import { resolve } from 'node:path';
 import { productRoutes } from './modules/products/product.routes.mjs';
 import { pool } from './db.mjs';
 import { authRoutes } from './auth.mjs';
+import { labRoutes } from './lab/routes.mjs';
+import { labTrace } from './lab/trace.mjs';
 export const app = express();
 app.disable('x-powered-by');
 app.use(express.json({ limit:'100kb' }));
@@ -15,7 +17,8 @@ app.post('/api/newsletter',async(req,res)=>{
   res.status(201).json({message:'Subscription saved for this demo. No emails are sent.'});
 });
 app.get('/api/health', async (req,res) => { await pool.query('SELECT 1'); res.json({ status:'ok',database:'PostgreSQL',mode:'local' }); });
-app.use('/api/cosmetics', productRoutes);
+app.use('/api/lab',labRoutes);
+app.use('/api/cosmetics',labTrace, productRoutes);
 app.use('/api', (req,res) => res.status(404).json({ message:'Маршрут не найден.' }));
 if (existsSync(resolve('dist/index.html'))) {
   app.use(express.static(resolve('dist')));

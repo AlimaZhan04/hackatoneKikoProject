@@ -4,6 +4,7 @@ import { validateProduct, normalizeProduct } from '../../../shared/product-valid
 import * as repository from './product.repository.mjs';
 import { processProductPhoto } from './product.photo.mjs';
 import { requireAdmin } from '../../auth.mjs';
+import { markLab } from '../../lab/trace.mjs';
 export const productRoutes = Router();
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 5 * 1024 * 1024, files: 1 } });
 productRoutes.param('id', (req,res,next,value) => {
@@ -23,6 +24,7 @@ productRoutes.get('/', async (req,res) => {
 });
 productRoutes.get('/:id', async (req,res) => { const p = await repository.getProduct(req.productId); p ? res.json(p) : missing(res); });
 function validate(req,res,next) {
+  markLab('validation','validateProduct(req.body)');
   const errors = validateProduct(req.body);
   if (Object.keys(errors).length) return res.status(422).json({ message:'Проверьте поля формы.',errors });
   req.productData = normalizeProduct(req.body); next();

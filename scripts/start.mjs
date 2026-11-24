@@ -3,8 +3,9 @@ const build=spawn(process.execPath,['node_modules/vite/bin/vite.js','build'],{st
 build.on('error',error=>{console.error(error);process.exitCode=1;});
 build.on('exit',code=>{
  if(code){process.exitCode=code;return;}
- const server=spawn(process.execPath,['--env-file=.env','server/index.mjs'],{stdio:'inherit'});
- server.on('exit',code=>{process.exitCode=code||0;});
- server.on('error',error=>{console.error(error);process.exitCode=1;});
- process.on('SIGINT',()=>server.kill());process.on('SIGTERM',()=>server.kill());
+ const children=['server/index.mjs','server/lab-service.mjs'].map(path=>spawn(process.execPath,['--env-file=.env',path],{stdio:'inherit'}));
+ let stopping=false;
+ const stop=()=>{stopping=true;for(const child of children)child.kill();};
+ for(const child of children){child.on('exit',code=>{if(!stopping){process.exitCode=code||0;stop();}});child.on('error',error=>{console.error(error);process.exitCode=1;stop();});}
+ process.on('SIGINT',stop);process.on('SIGTERM',stop);
 });

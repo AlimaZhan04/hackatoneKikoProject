@@ -11,6 +11,7 @@ export default function ProjectWork(){
  const summary=summarizeProducts(products),visible=filterProducts(products,query,'');
  return <Box sx={{maxWidth:1100,mx:'auto',my:5,px:3}}>
   <Typography variant="h4" component="h1" gutterBottom>Project Work</Typography>
+  <Button component="a" href={`http://${window.location.hostname}:3003/`} variant="contained" sx={{mb:2}}>Открыть интерактивную схему связности и сцепления</Button>
   <Typography paragraph>Связность — отношения внутри модуля. Сцепление — зависимости между модулями. Обычные страницы магазина сохранены; эта страница предназначена для защиты лабораторных.</Typography>
   <Box sx={{display:'flex',gap:2,flexWrap:'wrap',mb:3}}><Button component={Link} to="/">Магазин</Button><Button component={Link} to="/admin">Добавить товар</Button><Button component={Link} to="/best">Каталог и CRUD</Button><Button component={Link} to="/auth">Войти</Button></Box>
   <Tabs value={tab} onChange={(e,value)=>setTab(value)}><Tab label="Лабораторная 1 — связность"/><Tab label="Лабораторная 2 — сцепление"/></Tabs>
